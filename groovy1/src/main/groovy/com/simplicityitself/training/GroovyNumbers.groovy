@@ -1,9 +1,5 @@
 package com.simplicityitself.training
 
-import groovy.transform.TailRecursive
-
-import java.math.RoundingMode
-
 /**
  * <p>These exercises give you a chance to work with various types of number in
  * Groovy. If you would like a gentle introduction beyond the Groovy quick

@@ -1,7 +1,5 @@
 package com.simplicityitself.training
 
-import org.apache.commons.codec.digest.DigestUtils
-
 /**
  * <p>You will inevitably need to use third-party libraries at some point, i.e.
  * classes and APIs that don't come as part of the JDK or Groovy. In these
