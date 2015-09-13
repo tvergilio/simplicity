@@ -13,3 +13,5 @@ dependencies {
 
     compile "commons-codec:commons-codec:1.10"
 }
+
+test.systemProperty "project.root.dir", rootDir.path

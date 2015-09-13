@@ -2,4 +2,7 @@
 .idea/
 .lazybones/
 build/
+lecture/
 *.iml
+*.ipr
+*.iws

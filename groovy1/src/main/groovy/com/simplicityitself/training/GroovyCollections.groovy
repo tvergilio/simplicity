@@ -12,7 +12,7 @@ package com.simplicityitself.training
 class GroovyCollections {
 
     /**
-     * <p>TODO #n: Calculate the mean average of a collection of numbers.
+     * <p>TODO #12: Calculate the mean average of a collection of numbers.
      * All you need to do is add all the numbers together and then divide
      * the result by the number of integers in the collection.</p>
      */
@@ -22,7 +22,7 @@ class GroovyCollections {
     }
 
     /**
-     * <p>TODO #n: Calculate the median of a collection of numbers. This
+     * <p>TODO #13: Calculate the median of a collection of numbers. This
      * involves ordering the numbers by value and then:</p>
      * <ul>
      * <li>Picking the middle value if there are an odd number of values.</li>
@@ -46,8 +46,8 @@ class GroovyCollections {
     }
 
     /**
-     * <p>TODO #n: Create an ordered list of <tt>n</tt> even numbers, starting
-     * from 0.</p>
+     * <p>TODO #14: Create an ordered list of <tt>n</tt> even numbers, starting
+     * from 0 and then incrementing by two each time, i.e. 0, 2, 4, 6, ...</p>
      */
     List<Integer> evens(int count) {
         def result = []
@@ -59,9 +59,11 @@ class GroovyCollections {
     }
 
     /**
-     * <p>TODO #n: Reverse the order of the given list of numbers. You should
+     * <p>TODO #15: Reverse the order of the given list of numbers. You should
      * do this manually rather than using the <tt>reverse()</tt> method that
-     * Groovy adds to lists.</p>
+     * Groovy adds to lists. You might want to use
+     * <a href="http://mrhaki.blogspot.co.uk/2009/03/use-negative-index-in-groovy-lists-to.html">negative
+     * indexes</a> in this exercise, although they're not required.</p>
      */
     List<Integer> reverse(List<Integer> numbers) {
         def result = []
@@ -73,7 +75,7 @@ class GroovyCollections {
     }
 
     /**
-     * <p>TODO #n: Convert a number word ('one', 'two', etc.) to the equivalent
+     * <p>TODO #16: Convert a number word ('one', 'two', etc.) to the equivalent
      * integer. You only need to handle the numbers 1 to 10. The easiest way to
      * do this is to create a map of words to their corresponding values. Return
      * {@code null} if the word is not recognised. Incoming words will be all
@@ -86,7 +88,7 @@ class GroovyCollections {
     }
 
     /**
-     * <p>TODO #n: Given a collection of strings, create a map in which the
+     * <p>TODO #17: Given a collection of strings, create a map in which the
      * keys are those strings and the map values are the string lengths.</p>
      */
     Map<String, Integer> stringSizes(Collection<String> strings) {
@@ -99,7 +101,7 @@ class GroovyCollections {
     }
 
     /**
-     * <p>TODO #n: Extract all the values from the given map whose key length is
+     * <p>TODO #18: Extract all the values from the given map whose key length is
      * less than or equal to <tt>keyLength</tt>. The matching keys should be
      * returned as a collection, be that a list or a set.</p>
      */

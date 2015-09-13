@@ -1,15 +1,16 @@
 package com.simplicityitself.training
 
 /**
- * <p>Dates and time are an important part of any language. Unfortunately the
+ * <p>Dates and times are an important part of any language. Unfortunately the
  * old API of {@code java.util.Date} and {@code java.util.Calendar} are quite
  * poor when it comes to working with historic dates and date calculations. In
  * these exercises we'll simply focus on the very basics of the <tt>Date</tt>
  * class.</p>
  * <p>In essence, a <tt>Date</tt> represents a fixed instant in time, recorded
  * as the number of milliseconds since January 1, 1970, 00:00:00 UTC. It's an
- * abstraction of the value returned by {@code System.currentTimeMillis()},
- * which you'll find documented in the Java API docs.</p>
+ * abstraction of the value returned by
+ * <a href="https://docs.oracle.com/javase/8/docs/api/?java/lang/System.html">
+ * <tt>System.currentTimeMillis()</tt></a>.</p>
  * <p>It's common to want to convert dates into textual representations. Java
  * has the {@code java.text.DateFormat} and {@code java.text.SimpleDateFormat}
  * classes for this, but as you'll discover in
@@ -26,7 +27,7 @@ package com.simplicityitself.training
 class GroovyDates {
 
     /**
-     * <p>TODO #n: Add a given number of days to a date to create a new date.
+     * <p>TODO #19: Add a given number of days to a date to create a new date.
      * You'll find just the methods you need in the
      * <a href="http://docs.groovy-lang.org/docs/next/html/groovy-jdk/?java/util/Date.html">Groovy
      * JDK for {@code Date}</a>. You should also take a look at the operator
@@ -38,7 +39,7 @@ class GroovyDates {
     }
 
     /**
-     * <p>TODO #n: Calculate the difference between two time instants in days.
+     * <p>TODO #20: Calculate the difference between two time instants in days.
      * Again, you'll find just the method you need in the
      * <a href="http://docs.groovy-lang.org/docs/next/html/groovy-jdk/?java/util/Date.html">Groovy
      * JDK for {@code Date}</a>. You'll have to convert the time instants to
@@ -51,7 +52,7 @@ class GroovyDates {
     }
 
     /**
-     * <p>TODO #n: Format a date using the pattern "dd MMM yyyy". You can either
+     * <p>TODO #21: Format a date using the pattern "dd MMM yyyy". You can either
      * use the traditional Java approach of <tt>SimpleDateFormat</tt> or look
      * at the Groovy JDK to find an appropriate method.</p>
      */

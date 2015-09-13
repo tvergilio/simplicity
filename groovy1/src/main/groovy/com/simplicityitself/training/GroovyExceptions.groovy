@@ -14,7 +14,7 @@ package com.simplicityitself.training
 class GroovyExceptions {
 
     /**
-     * <p>TODO #2: Calculate the length of a right-angled triangle using the
+     * <p>TODO #26: Calculate the length of a right-angled triangle using the
      * Pythagorean Theorem. This time, check that the arguments both have
      * values greater than zero. If either of them is zero or negative, then
      * throw an {@code IllegalArgumentException} with the message "Sides must
@@ -27,7 +27,7 @@ class GroovyExceptions {
     }
 
     /**
-     * <p>TODO #n: Calculate the number of characters in a file, handling different
+     * <p>TODO #27: Calculate the number of characters in a file, handling different
      * types of error:</p>
      * <ul>
      * <li>If the given path is null or empty, throw an {@code IllegalArgumentException}

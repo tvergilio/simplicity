@@ -1,5 +1,7 @@
 package com.simplicityitself.training
 
+import org.apache.commons.codec.digest.DigestUtils
+
 /**
  * <p>You will inevitably need to use third-party libraries at some point, i.e.
  * classes and APIs that don't come as part of the JDK or Groovy. In these
@@ -26,7 +28,7 @@ package com.simplicityitself.training
 class GroovyCommonsCodec {
 
     /**
-     * <p>TODO #n: Calculate the MD5 hash/digest of a string. Use the
+     * <p>TODO #33: Calculate the MD5 hash/digest of a string. Use the
      * <a href="https://commons.apache.org/proper/commons-codec/apidocs/?org/apache/commons/codec/digest/DigestUtils.html">DigestUtils</a>
      * class, which is provided by the commons-codec JAR. You'll specifically
      * want to use the <tt>md5Hex()</tt> method, as that's the one that generates
@@ -38,7 +40,7 @@ class GroovyCommonsCodec {
     }
 
     /**
-     * <p>TODO #n: Calculate the MD5 hash/digest of a byte array. This is very
+     * <p>TODO #34: Calculate the MD5 hash/digest of a byte array. This is very
      * similar to the previous exercise.</p>
      */
     String toMD5(byte[] data) {

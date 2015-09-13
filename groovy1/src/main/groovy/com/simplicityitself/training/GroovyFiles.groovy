@@ -39,7 +39,7 @@ package com.simplicityitself.training
 class GroovyFiles {
 
     /**
-     * <p>TODO #n: Calculate the size of the file at the given path.
+     * <p>TODO #22: Calculate the size of the file at the given path.
      * You'll find just the method you need in the
      * <a href="http://docs.groovy-lang.org/docs/next/html/groovy-jdk/?java/io/File.html">Groovy
      * JDK for {@code File}</a>. You don't need to read the file to find out.</p>
@@ -50,7 +50,7 @@ class GroovyFiles {
     }
 
     /**
-     * <p>TODO #n: Calculate the number of characters in the text file at the
+     * <p>TODO #23: Calculate the number of characters in the text file at the
      * given location. You will need to read the file in order to find out this
      * information. In addition, you should ideally load it using the "UTF-8"
      * character encoding.</p>
@@ -62,7 +62,7 @@ class GroovyFiles {
     }
 
     /**
-     * <p>TODO #n: Return the first <tt>count</tt> characters of a text file as
+     * <p>TODO #24: Return the first <tt>count</tt> characters of a text file as
      * a string. Remember that the text file is encoded as UTF-8.</p>
      */
     String firstChars(String path, int count) {
@@ -80,7 +80,8 @@ class GroovyFiles {
     }
 
     /**
-     * <p>TODO #n: Write some binary (byte) data to a file.</p>
+     * <p>TODO #25: Write some binary (byte) data to a file. The data is
+     * provided as the method's second argument.</p>
      */
     void writeBytes(String path, byte[] data) {
         def output

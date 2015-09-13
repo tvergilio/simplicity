@@ -1,12 +1,15 @@
 package com.simplicityitself.training
 
 /**
- * Created by pledbrook on 27/08/15.
+ * <p>These exercises give you a chance to work with strings in Groovy. If you
+ * would like a gentle introduction beyond the Groovy quick reference, read the
+ * <a href="http://pledbrook.github.io/practical-groovy-public/#_the_joy_of_strings">joy
+ * of strings</a> section of the in-progress Practical Groovy book.</p>
  */
 class GroovyStrings {
 
     /**
-     * <p>TODO #4: Return a greeting of the form "Hello <name>!". If no name
+     * <p>TODO #7: Return a greeting of the form "Hello <name>!". If no name
      * is given (the argument is {@code null} or blank), then this method
      * should return "Who are you?".</p>
      */
@@ -16,7 +19,7 @@ class GroovyStrings {
     }
 
     /**
-     * <p>TODO #5: Reverse the incoming strings. Be sure to check out the
+     * <p>TODO #8: Reverse the incoming strings. Be sure to check out the
      * <a href="http://groovy-lang.org/gdk.html">Groovy JDK documentation</a>
      * for strings! There is more than one way to do this.</p>
      */
@@ -26,7 +29,7 @@ class GroovyStrings {
     }
 
     /**
-     * <p>TODO #6: Return the first <tt>n</tt> characters of the given string.
+     * <p>TODO #9: Return the first <tt>n</tt> characters of the given string.
      * The Practical Groovy book should help here.</p>
      */
     String leadingChars(String str, int n) {
@@ -37,7 +40,7 @@ class GroovyStrings {
     }
 
     /**
-     * <p>TODO #7: Replace all vowels in the given string with the * character.
+     * <p>TODO #10: Replace all vowels in the given string with the * character.
      * There are a few ways to implement this method. If you wish to try it
      * using regular expressions, take a look at some regex examples from
      * <a href="http://mrhaki.blogspot.co.uk/2009/09/groovy-goodness-matchers-for-regular.html">MrHaki</a>.
@@ -53,7 +56,7 @@ class GroovyStrings {
     }
 
     /**
-     * <p>TODO #8: (Advanced) Calculate the number of characters, number of words,
+     * <p>TODO #11: (Advanced) Calculate the number of characters, number of words,
      * and number of lines in a given string and return a text report of the form:</p>
      * <pre>
      *     There are:
