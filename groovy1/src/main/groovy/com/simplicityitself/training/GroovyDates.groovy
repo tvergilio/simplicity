@@ -34,8 +34,7 @@ class GroovyDates {
      * overloading table that's in the Groovy syntax quick reference.</p>
      */
     Date addDays(Date start, int numDays) {
-        return start + numDays
-//        return -1
+        return null
     }
 
     /**
@@ -47,8 +46,7 @@ class GroovyDates {
      * is later than <tt>time1</tt>, i.e. the number is bigger.</p>
      */
     int diffDays(long time1, long time2) {
-        return new Date(time2) - new Date(time1)
-//        return -1
+        return -1
     }
 
     /**
@@ -57,7 +55,6 @@ class GroovyDates {
      * at the Groovy JDK to find an appropriate method.</p>
      */
     String formattedDate(Date date) {
-        return date.format("dd MMM yyyy")
-//        return -1
+        return ""
     }
 }

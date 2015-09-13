@@ -24,29 +24,8 @@ package com.simplicityitself.training
  * If you're still not sure what to do, ask.</p>
  */
 class TodoList {
-    private final List<Item> items = []
-
-    List<Item> getAllItems() {
-        return new ArrayList<Item>(items)
-    }
-
-    List<Item> dueBefore(Date date) {
-        def filteredItems = []
-        for (item in items) {
-            if (item.dueDate < date) filteredItems << item
-        }
-        return filteredItems
-    }
-
-    TodoList addItem(Item item) {
-        items << item
-        return this
-    }
-
-    TodoList leftShift(String summary) {
-        return addItem(new Item(summary: summary))
-    }
 }
+
 /**
  * <p>TODO: This class represents a TODO item and needs populating with the
  * following properties:</p>
@@ -58,9 +37,4 @@ class TodoList {
  * </ul>
  */
 class Item {
-    String summary
-    Date dueDate
-    final Date dateCreated
-
-    Item() { dateCreated = new Date() }
 }

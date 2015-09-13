@@ -23,8 +23,7 @@ class GroovyNumbers {
      * so a scale of 2 means the number has two decimal places.</p>
      */
     BigDecimal calculateVat(BigDecimal value) {
-        return (value * 0.2).setScale(2, RoundingMode.HALF_UP)
-//        return -1
+        return -1
     }
 
     /**
@@ -39,8 +38,7 @@ class GroovyNumbers {
      * the available operators.</p>
      */
     double hypotenuseLength(double side1, double side2) {
-        return Math.sqrt(side1 ** 2 + side2 ** 2)
-//        return -1
+        return -1
     }
 
 
@@ -68,17 +66,7 @@ class GroovyNumbers {
      * numbers, uncomment the fib(20,000) data set from the <tt>GroovyNumbersSpec</tt>
      * test case.</p>
      */
-    BigInteger fibonacci(int n) {
-        if (n == 1) return 1
-        else if (n == 2) return 1
-//        else return fibonacci(n - 1) + fibonacci(n - 2)
-        else return fastFib(1, 1, n)
-
-//        return -1
-    }
-
-    @TailRecursive
-    BigInteger fastFib(BigInteger a, BigInteger b, int n) {
-        return n > 1 ? fastFib(b, a + b, n - 1) : a
+    int fibonacci(int n) {
+        return -1
     }
 }

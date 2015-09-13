@@ -45,8 +45,7 @@ class GroovyFiles {
      * JDK for {@code File}</a>. You don't need to read the file to find out.</p>
      */
     long fileSize(String path) {
-        return new File(path).size()
-//        return -1
+        return -1
     }
 
     /**
@@ -56,9 +55,7 @@ class GroovyFiles {
      * character encoding.</p>
      */
     long characterCount(String path) {
-        def text = new File(path).getText("UTF-8")
-        return text.size()
-//        return -1
+        return -1
     }
 
     /**
@@ -66,17 +63,7 @@ class GroovyFiles {
      * a string. Remember that the text file is encoded as UTF-8.</p>
      */
     String firstChars(String path, int count) {
-        def buffer = new char[count]
-        def reader
-        try {
-            reader = new File(path).newReader("UTF-8")
-            reader.read(buffer, 0, count)
-            return buffer.toString()
-        }
-        finally {
-            reader?.close()
-        }
-//        return ""
+        return ""
     }
 
     /**
@@ -84,13 +71,5 @@ class GroovyFiles {
      * provided as the method's second argument.</p>
      */
     void writeBytes(String path, byte[] data) {
-        def output
-        try {
-            output = new File(path).newOutputStream()
-            output.write(data)
-        }
-        finally {
-            output?.close()
-        }
     }
 }

@@ -35,8 +35,7 @@ class GroovyCommonsCodec {
      * a string, as opposed to a byte array.</p>
      */
     String toMD5(String data) {
-        return DigestUtils.md5Hex(data)
-//        return ""
+        return ""
     }
 
     /**
@@ -44,7 +43,6 @@ class GroovyCommonsCodec {
      * similar to the previous exercise.</p>
      */
     String toMD5(byte[] data) {
-        return DigestUtils.md5Hex(data)
-//        return ""
+        return ""
     }
 }

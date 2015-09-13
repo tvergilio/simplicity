@@ -18,12 +18,7 @@ class GroovyBeans {
      * or <tt>person.getFirstName()</tt>. Try it!</p>
      */
     List<String> firstNames(List<Person> people) {
-        def result = []
-        for (p in people) {
-            result << p.firstName  // or p.getFirstName()
-        }
-        return result
-//        return -1
+        return []
     }
 
     /**
@@ -35,12 +30,7 @@ class GroovyBeans {
      * or <tt>person.getFullName()</tt>. Try it!</p>
      */
     List<String> fullNames(List<Person> people) {
-        def result = []
-        for (p in people) {
-            result << p.fullName  // or p.getFullName()
-        }
-        return result
-//        return -1
+        return []
     }
 
     /**
@@ -52,9 +42,6 @@ class GroovyBeans {
      * or <tt>person.setFullName(...)</tt>. Try it!</p>
      */
     void namesToUpperCase(Person person) {
-        person.firstName = person.firstName.toUpperCase()   // or person.setFirstName(...toUpperCase())
-        person.lastName = person.lastName.toUpperCase()     // or person.setLastName(...toUpperCase())
-//
     }
 
     /**
@@ -64,13 +51,7 @@ class GroovyBeans {
      * resulting two values (first name and last name).</p>
      */
     List<Person> createPeople(List<String> names) {
-        def result = []
-        for (name in names) {
-            def (first, last) = name.split(/\s+/)
-            result << new Person(firstName: first, lastName: last)
-        }
-        return result
-//        return -1
+        return []
     }
 
     /**
@@ -85,12 +66,7 @@ class GroovyBeans {
      * be careful using visibility scopes on fields.</p>
      */
     List<Integer> heights(List<Person> people) {
-        def result = []
-        for (p in people) {
-            result << p.height  // p.getHeight() doesn't work!
-        }
-        return result
-//        return -1
+        return []
     }
 }
 

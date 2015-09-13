@@ -22,8 +22,7 @@ class GroovyExceptions {
      * to find out how to throw an exception.</p>
      */
     double hypotenuseLength(double side1, double side2) {
-        if (side1 <= 0 || side2 <= 0) throw new IllegalArgumentException("Sides must have a length greater than zero")
-        return Math.sqrt(side1 ** 2 + side2 ** 2)
+        return -1
     }
 
     /**
@@ -40,15 +39,6 @@ class GroovyExceptions {
      * file first (unless you're sure it's supposed to be there).</p>
      */
     long characterCount(String path) {
-        if (!path?.trim()) throw new IllegalArgumentException("Path is null or empty: '$path'")
-
-        try {
-            def text = new File(path).getText("UTF-8")
-            return text.size()
-        }
-        catch (FileNotFoundException ex) {
-            return -1
-        }
-//        return -1
+        return -1
     }
 }

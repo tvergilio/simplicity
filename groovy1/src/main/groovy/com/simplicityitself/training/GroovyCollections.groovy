@@ -17,8 +17,7 @@ class GroovyCollections {
      * the result by the number of integers in the collection.</p>
      */
     BigDecimal mean(Collection<Integer> numbers) {
-        return numbers.sum() / numbers.size()
-//        return -1
+        return -1
     }
 
     /**
@@ -33,16 +32,7 @@ class GroovyCollections {
      * in the Groovy syntax quick reference as that will be useful here.</p>
      */
     BigDecimal median(Collection<Integer> numbers) {
-        if (numbers.size() % 2 == 0) {
-            // Even number of values
-            def firstIndex = numbers.size().intdiv(2) - 1
-            return mean(numbers.sort()[firstIndex..(firstIndex + 1)])
-        }
-        else {
-            def index = numbers.size().intdiv(2)
-            return numbers.sort()[index]
-        }
-//        return -1
+        return -1
     }
 
     /**
@@ -50,12 +40,7 @@ class GroovyCollections {
      * from 0 and then incrementing by two each time, i.e. 0, 2, 4, 6, ...</p>
      */
     List<Integer> evens(int count) {
-        def result = []
-        for (i in 0..<count) {
-            result << i * 2
-        }
-        return result
-//        return []
+        return []
     }
 
     /**
@@ -66,12 +51,7 @@ class GroovyCollections {
      * indexes</a> in this exercise, although they're not required.</p>
      */
     List<Integer> reverse(List<Integer> numbers) {
-        def result = []
-        for (i in 0..<numbers.size()) {
-            result << numbers[-(i + 1)]
-        }
-        return result
-//        return []
+        return []
     }
 
     /**
@@ -82,9 +62,7 @@ class GroovyCollections {
      * lower case.</p>
      */
     Integer wordToNumber(String numberWord) {
-        def map = [one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10]
-        return map[numberWord]
-//        return 0
+        return 0
     }
 
     /**
@@ -92,12 +70,7 @@ class GroovyCollections {
      * keys are those strings and the map values are the string lengths.</p>
      */
     Map<String, Integer> stringSizes(Collection<String> strings) {
-        def map = [:]
-        for (str in strings) {
-            map[str] = str.size()
-        }
-        return map
-//        return [:]
+        return [:]
     }
 
     /**
@@ -106,11 +79,6 @@ class GroovyCollections {
      * returned as a collection, be that a list or a set.</p>
      */
     Collection<String> filterKeys(Map<String, String> map, int keyLength) {
-        def result = []
-        for (entry in map) {
-            if (entry.key.size() <= keyLength) result << entry.value
-        }
-        return result
-//        return [:]
+        return []
     }
 }

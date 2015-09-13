@@ -14,8 +14,7 @@ class GroovyStrings {
      * should return "Who are you?".</p>
      */
     String hello(String name) {
-        return name?.trim() ? "Hello ${name.trim()}!" : "Who are you?"
-//        return ""
+        return ""
     }
 
     /**
@@ -24,8 +23,7 @@ class GroovyStrings {
      * for strings! There is more than one way to do this.</p>
      */
     String reverse(String str) {
-        return str.reverse()
-//        return ""
+        return ""
     }
 
     /**
@@ -33,10 +31,7 @@ class GroovyStrings {
      * The Practical Groovy book should help here.</p>
      */
     String leadingChars(String str, int n) {
-        if (n == 0) return ""
-        else if (str.size() < n) return str
-        else return str[0..(n-1)]
-//        return ""
+        return ""
     }
 
     /**
@@ -51,8 +46,7 @@ class GroovyStrings {
      * by Ted Naleid to get an introduction to the Groovy way of using them.</p>
      */
     String replaceVowels(String str) {
-        return str.replaceAll(/(?i)[aeiou]/, '*')
-//        return ""
+        return ""
     }
 
     /**
