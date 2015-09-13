@@ -1,0 +1,27 @@
+apply plugin: "groovy"
+
+version = "1.0"
+archivesBaseName = "stuff"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.codehaus.groovy:groovy:1.8.8", "junit:junit:3.8.2"
+    testCompile "org.spockframework:spock-core:0.7-groovy-1.8"
+}
+
+sourceSets {
+    main {
+        groovy {
+            srcDir "src"
+        }
+    }
+
+    test {
+        groovy {
+            srcDir "test"
+        }
+    }
+}

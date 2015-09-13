@@ -1,0 +1,64 @@
+<project name="groovyTesting" default="test">
+    <property environment="env"/>
+    <property name="classes.dir" value="${basedir}/classes"/>
+    <property name="test.classes.dir" value="${basedir}/test-classes"/>
+    <property name="reports.dir" value="${basedir}/reports"/>
+    <property name="html.reports.dir" value="${reports.dir}/html"/>
+
+    <taskdef name="groovyc" classname="org.codehaus.groovy.ant.Groovyc">
+        <classpath>
+            <fileset dir="${env.GROOVY_HOME}/embeddable" includes="groovy-all*.jar"/>
+        </classpath>
+    </taskdef>
+
+    <target name="clean">
+        <delete dir="${classes.dir}"/>
+        <delete dir="${test.classes.dir}"/>
+        <delete dir="${reports.dir}"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="${classes.dir}"/>
+        <groovyc srcdir="src" destdir="${classes.dir}" encoding="UTF-8">
+            <classpath>
+                <fileset dir="${env.GROOVY_HOME}/lib" includes="junit-3.8*.jar"/>
+            </classpath>
+            <javac includeantruntime="false" deprecation="on" debug="yes" source="1.5" target="1.5"/>
+        </groovyc>
+    </target>
+    <target name="compile-tests" depends="compile">
+        <mkdir dir="${test.classes.dir}"/>
+        <groovyc srcdir="test" destdir="${test.classes.dir}" encoding="UTF-8">
+            <classpath>
+                <pathelement location="${classes.dir}" />
+                <fileset dir="${env.GROOVY_HOME}/lib" includes="junit-3.8*.jar"/>
+            </classpath>
+            <javac debug="on" deprecation="on" encoding="UTF-8"/>
+        </groovyc>
+    </target>
+
+    <target name="test" depends="compile-tests">
+        <mkdir dir="${reports.dir}"/>
+        <junit fork="true" forkmode="perBatch" clonevm="true" printsummary="on">
+            <classpath>
+                <pathelement location="${classes.dir}" />
+                <pathelement location="${test.classes.dir}" />
+                <fileset dir="${env.GROOVY_HOME}/lib" includes="junit-3.8*.jar"/>
+                <fileset dir="${env.GROOVY_HOME}/embeddable" includes="groovy-all*.jar"/>
+            </classpath>
+
+            <formatter type="xml" />
+
+            <batchtest todir="${reports.dir}">
+                <fileset dir="${test.classes.dir}" includes="**/*Tests.class"/>
+            </batchtest>
+        </junit>
+        
+        <mkdir dir="${html.reports.dir}"/>
+        <junitreport todir="${html.reports.dir}">
+            <fileset dir="${reports.dir}" includes="TEST-*.xml" />
+            <report format="frames" todir="${html.reports.dir}" />
+        </junitreport>
+
+    </target>
+</project>
