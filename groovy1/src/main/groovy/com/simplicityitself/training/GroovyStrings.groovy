@@ -50,25 +50,30 @@ class GroovyStrings {
     }
 
     /**
-     * <p>TODO #11: (Advanced) Calculate the number of characters, number of words,
-     * and number of lines in a given string and return a text report of the form:</p>
-     * <pre>
-     *     There are:
+     * <p>TODO #11: (Advanced) Calculate the number of characters, number of
+     * lines, number of single-letter words, number of hyphenated words and
+     * the number of all caps words. Return the results in a map with the
+     * keys:</p>
+     * <ul>
+     *     <li><em>charCount</em></li>
+     *     <li><em>lineCount</em></li>
+     *     <li><em>singleLetterCount</em></li>
+     *     <li><em>hyphenatedCount</em></li>
+     *     <li><em>allCapsCount</em></li>
+     * </ul>
+     * <p>You can do this in a number of ways, but the easiest is probably
+     * through regular expressions. Ted Naleid wrote an
+     * <a href="http://naleid.com/blog/2008/05/19/dont-fear-the-regexp">old
+     * but still useful blog post</a> about how Groovy incorporates regex
+     * support at the language level. If you're new to Java regular expressions,
+     * take a look through the
+     * <a href="https://docs.oracle.com/javase/tutorial/essential/regex/">Java
+     * tutorial</a> first.
      *
-     *     * 1342 characters
-     *     * 320 words
-     *     * 50 lines
-     *
-     *     in the given text.
-     * </pre>
-     *
-     * <p>Treat any sequence of word characters as a word. Ignore contractions,
-     * such as "there's". There won't be any in the sample text. Line endings
-     * will always be Unix-style, i.e. '\n'.</p>
-     *
-     * <p><p>
+     * <p>Ignore contractions, such as "there's". There won't be any in the
+     * sample text. Line endings will always be Unix-style, i.e. '\n'.</p>
      */
-    String wordStats(String str) {
-
+    Map wordStats(String str) {
+        return [:]
     }
 }
