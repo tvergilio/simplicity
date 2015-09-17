@@ -18,7 +18,13 @@ class GroovyBeans {
      * or <tt>person.getFirstName()</tt>. Try it!</p>
      */
     List<String> firstNames(List<Person> people) {
-        return []
+        def result = new ArrayList<String>()
+        if (people != null && !people.isEmpty()) {
+            for (Person p in people) {
+                result << p.firstName
+            }
+        }
+        return result
     }
 
     /**
@@ -30,7 +36,13 @@ class GroovyBeans {
      * or <tt>person.getFullName()</tt>. Try it!</p>
      */
     List<String> fullNames(List<Person> people) {
-        return []
+        def result = new ArrayList<String>()
+        if (people != null && !people.isEmpty()) {
+            for (Person p in people) {
+                result << p.fullName
+            }
+        }
+        return result
     }
 
     /**
@@ -42,6 +54,10 @@ class GroovyBeans {
      * or <tt>person.setFullName(...)</tt>. Try it!</p>
      */
     void namesToUpperCase(Person person) {
+        if (person != null) {
+            person.setFirstName(person.firstName.toUpperCase())
+            person.setLastName(person.lastName.toUpperCase())
+        }
     }
 
     /**
@@ -51,7 +67,16 @@ class GroovyBeans {
      * resulting two values (first name and last name).</p>
      */
     List<Person> createPeople(List<String> names) {
-        return []
+        def persons = new ArrayList<Person>()
+        if (names != null && !names.isEmpty()) {
+            for (String fullName in names) {
+                def tokens = fullName.split(" ")
+                if (tokens != null && tokens.size() > 1) {
+                    persons.add(new Person([firstName: tokens[0], lastName: tokens[1]]))
+                }
+            }
+        }
+        return persons
     }
 
     /**
@@ -66,7 +91,13 @@ class GroovyBeans {
      * be careful using visibility scopes on fields.</p>
      */
     List<Integer> heights(List<Person> people) {
-        return []
+        def heights = new ArrayList<Integer>()
+        if (people != null && !people.isEmpty()) {
+            for (Person p in people) {
+                heights.add(p.height)
+            }
+        }
+        return heights
     }
 }
 
