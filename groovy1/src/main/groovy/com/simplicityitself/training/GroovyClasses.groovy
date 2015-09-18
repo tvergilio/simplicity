@@ -24,6 +24,37 @@ package com.simplicityitself.training
  * If you're still not sure what to do, ask.</p>
  */
 class TodoList {
+    List<Item> items
+    final List<Item> allItems
+
+    TodoList() {
+        items = new ArrayList<>()
+    }
+
+    List<Item> addItem(Item item) {
+        items.add(item)
+        return items
+    }
+
+    List<Item> getAllItems() {
+        return items
+    }
+
+    List<Item> dueBefore(Date date) {
+        List<Item> results = new ArrayList<>()
+        for (Item item in items) {
+            if (item.dueDate < date) {
+                results.add(item)
+            }
+        }
+        return results
+    }
+
+    TodoList leftShift(String summary) {
+        items.add(new Item([summary: summary]))
+        return this
+    }
+
 }
 
 /**
@@ -37,4 +68,11 @@ class TodoList {
  * </ul>
  */
 class Item {
+    String summary
+    Date dueDate
+    final Date dateCreated
+
+    Item() {
+        dateCreated = new Date(System.currentTimeMillis())
+    }
 }

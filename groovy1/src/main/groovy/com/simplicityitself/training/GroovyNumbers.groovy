@@ -19,7 +19,8 @@ class GroovyNumbers {
      * so a scale of 2 means the number has two decimal places.</p>
      */
     BigDecimal calculateVat(BigDecimal value) {
-        return -1
+        def absolute = value*0.20
+        return absolute.setScale(2, BigDecimal.ROUND_UP)
     }
 
     /**
@@ -34,7 +35,7 @@ class GroovyNumbers {
      * the available operators.</p>
      */
     double hypotenuseLength(double side1, double side2) {
-        return -1
+        return Math.sqrt(side1*side1 + side2*side2)
     }
 
 
@@ -63,6 +64,12 @@ class GroovyNumbers {
      * test case.</p>
      */
     int fibonacci(int n) {
-        return -1
+        assert n >= 0;
+        if (n == 0 || n == 1) {
+            return n;
+        } else {
+//            ​recurrence - get result of one above in the sequence plus result of two above in the sequence
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
     }
 }
