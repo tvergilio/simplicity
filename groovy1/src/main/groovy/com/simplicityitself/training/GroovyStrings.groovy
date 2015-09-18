@@ -57,6 +57,7 @@ class GroovyStrings {
      * by Ted Naleid to get an introduction to the Groovy way of using them.</p>
      */
     String replaceVowels(String str) {
+        /* old Java way
         Matcher matcher = str =~ /[aeiouAEIOU]/
         def result = str
         def match
@@ -65,6 +66,8 @@ class GroovyStrings {
             result = result.replace(match, '*')
         }
         return result
+        */
+        return str.replaceAll(/[AaEeIiOoUu]/, '*')
     }
 
     /**
@@ -92,6 +95,48 @@ class GroovyStrings {
      * sample text. Line endings will always be Unix-style, i.e. '\n'.</p>
      */
     Map wordStats(String str) {
-        return [:]
+        def result = [:]
+        if (str != null) {
+            //Declare Regex patterns and matchers
+            Matcher carriageReturn = str =~ /[\n\r]+/
+            Matcher singleLetter = str =~ /\b[a-zA-Z]\b/
+            Matcher hyphenated = str =~ /\b[a-zA-Z]+\-[a-zA-Z]+\b/
+            Matcher allCaps = str =~ /\b[A-Z]+\b/
+
+            //declare count variables
+            int charCount = 0
+            int lineCount = str.isEmpty() ? 0 : 1
+            int singleLetterCount = 0
+            int hyphCount = 0
+            int capsCount = 0
+
+            //find character count and add to map
+            result.charCount = str.length()
+
+            //find line count and add to map
+            while (carriageReturn.find()) {
+                lineCount ++
+            }
+            result.lineCount = lineCount
+
+            //find single letter count and add to map
+            while (singleLetter.find()) {
+                singleLetterCount ++
+            }
+            result.singleLetterCount = singleLetterCount
+
+            //find hyphenated count and add to map
+            while (hyphenated.find()) {
+                hyphCount ++
+            }
+            result.hyphenatedCount = hyphCount
+
+            //find all caps count and add to map
+            while (allCaps.find()) {
+                capsCount ++
+            }
+            result.allCapsCount = capsCount
+        }
+        return result
     }
 }
