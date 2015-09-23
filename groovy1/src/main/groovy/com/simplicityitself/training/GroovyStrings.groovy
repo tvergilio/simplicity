@@ -95,6 +95,7 @@ class GroovyStrings {
      * sample text. Line endings will always be Unix-style, i.e. '\n'.</p>
      */
     Map wordStats(String str) {
+        /*
         def result = [:]
         if (str != null) {
             //Declare Regex patterns and matchers
@@ -138,5 +139,12 @@ class GroovyStrings {
             result.allCapsCount = capsCount
         }
         return result
+        */
+        def singleLetters = (str =~ /\b[a-zA-Z]\b/).count
+        def hyphenated = (str =~ /\b[a-zA-Z]+\-[a-zA-Z]+\b/).count
+        def allCaps = (str =~ /\b[A-Z]+\b/).count
+
+        return [charCount: str.length(), lineCount: str.readLines().size(), singleLetterCount: singleLetters, hyphenatedCount: hyphenated, allCapsCount: allCaps]
+
     }
 }

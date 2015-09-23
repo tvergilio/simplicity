@@ -58,7 +58,7 @@ class TodoList {
 }
 
 /**
- * <p>TODO: This class represents a TODO item and needs populating with the
+ * <p>TODO #35: This class represents a TODO item and needs populating with the
  * following properties:</p>
  * <ul>
  *   <li>A string <tt>summary</tt>.</li>
