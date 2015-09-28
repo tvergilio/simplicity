@@ -81,6 +81,11 @@ class GroovyStringsSpec extends Specification {
 
         then: "I get the appropriate counts for the various word types"
         result == expected
+        result["charCount"] == expected.charCount
+        result["lineCount"] == expected.lineCount
+        result["singleLetterCount"] == expected.singleLetterCount
+        result["hyphenatedCount"] == expected.hyphenatedCount
+        result["allCapsCount"] == expected.allCapsCount
 
         where:
         input   | expected
