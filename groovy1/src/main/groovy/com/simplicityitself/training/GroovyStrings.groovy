@@ -1,8 +1,5 @@
 package com.simplicityitself.training
 
-import java.util.regex.Matcher
-import java.util.regex.Pattern
-
 /**
  * <p>These exercises give you a chance to work with strings in Groovy. If you
  * would like a gentle introduction beyond the Groovy quick reference, read the
@@ -17,11 +14,7 @@ class GroovyStrings {
      * should return "Who are you?".</p>
      */
     String hello(String name) {
-        def greeting = "Who are you?"
-        if (name != null && !name.isEmpty()) {
-            greeting = "Hello ${name}!"
-        }
-        return greeting
+        return ""
     }
 
     /**
@@ -30,7 +23,7 @@ class GroovyStrings {
      * for strings! There is more than one way to do this.</p>
      */
     String reverse(String str) {
-        return str.reverse()
+        return ""
     }
 
     /**
@@ -38,12 +31,8 @@ class GroovyStrings {
      * The Practical Groovy book should help here.</p>
      */
     String leadingChars(String str, int n) {
-        def result = str
-        if (str != null && n < str.length()) {
-            result = str.substring(0, n)
-        }
-            return result
-        }
+        return ""
+    }
 
     /**
      * <p>TODO #10: Replace all vowels in the given string with the * character.
@@ -57,17 +46,7 @@ class GroovyStrings {
      * by Ted Naleid to get an introduction to the Groovy way of using them.</p>
      */
     String replaceVowels(String str) {
-        /* old Java way
-        Matcher matcher = str =~ /[aeiouAEIOU]/
-        def result = str
-        def match
-        while(matcher.find()) {
-            match = matcher.group()
-            result = result.replace(match, '*')
-        }
-        return result
-        */
-        return str.replaceAll(/[AaEeIiOoUu]/, '*')
+        return ""
     }
 
     /**
@@ -95,56 +74,6 @@ class GroovyStrings {
      * sample text. Line endings will always be Unix-style, i.e. '\n'.</p>
      */
     Map wordStats(String str) {
-        /*
-        def result = [:]
-        if (str != null) {
-            //Declare Regex patterns and matchers
-            Matcher carriageReturn = str =~ /[\n\r]+/
-            Matcher singleLetter = str =~ /\b[a-zA-Z]\b/
-            Matcher hyphenated = str =~ /\b[a-zA-Z]+\-[a-zA-Z]+\b/
-            Matcher allCaps = str =~ /\b[A-Z]+\b/
-
-            //declare count variables
-            int charCount = 0
-            int lineCount = str.isEmpty() ? 0 : 1
-            int singleLetterCount = 0
-            int hyphCount = 0
-            int capsCount = 0
-
-            //find character count and add to map
-            result.charCount = str.length()
-
-            //find line count and add to map
-            while (carriageReturn.find()) {
-                lineCount ++
-            }
-            result.lineCount = lineCount
-
-            //find single letter count and add to map
-            while (singleLetter.find()) {
-                singleLetterCount ++
-            }
-            result.singleLetterCount = singleLetterCount
-
-            //find hyphenated count and add to map
-            while (hyphenated.find()) {
-                hyphCount ++
-            }
-            result.hyphenatedCount = hyphCount
-
-            //find all caps count and add to map
-            while (allCaps.find()) {
-                capsCount ++
-            }
-            result.allCapsCount = capsCount
-        }
-        return result
-        */
-        def singleLetters = (str =~ /\b[a-zA-Z]\b/).count
-        def hyphenated = (str =~ /\b[a-zA-Z]+\-[a-zA-Z]+\b/).count
-        def allCaps = (str =~ /\b[A-Z]+\b/).count
-
-        return [charCount: str.length(), lineCount: str.readLines().size(), singleLetterCount: singleLetters, hyphenatedCount: hyphenated, allCapsCount: allCaps]
-
+        return [:]
     }
 }

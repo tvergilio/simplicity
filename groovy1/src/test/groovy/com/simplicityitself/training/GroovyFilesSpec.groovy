@@ -6,7 +6,7 @@ import spock.lang.Unroll
 
 class GroovyFilesSpec extends Specification {
     final String encoding = "UTF-8"
-    final String testFilePath = resolveFilePath("src/test/resources/README.txt")
+    final String testFilePath = resolveFilePath("groovy1/src/test/resources/README.txt")
 
     def "Calculate the byte size of a file"() {
         given: "The files exercise"

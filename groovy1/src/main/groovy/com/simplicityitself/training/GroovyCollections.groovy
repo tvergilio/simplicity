@@ -1,7 +1,5 @@
 package com.simplicityitself.training
 
-import org.codehaus.plexus.interpolation.StringSearchInterpolator
-
 /**
  *  <p>These exercises give you a chance to work with the Java collections in
  * Groovy. If you would like a gentle introduction beyond the Groovy quick
@@ -19,15 +17,7 @@ class GroovyCollections {
      * the result by the number of integers in the collection.</p>
      */
     BigDecimal mean(Collection<Integer> numbers) {
-        BigDecimal result = 0
-        if (numbers != null && !numbers.isEmpty()) {
-            def elements = numbers.size()
-            for (Integer n in numbers) {
-                result += n
-            }
-            result = result.divide(elements)
-        }
-        return result
+        return -1
     }
 
     /**
@@ -42,25 +32,7 @@ class GroovyCollections {
      * in the Groovy syntax quick reference as that will be useful here.</p>
      */
     BigDecimal median(Collection<Integer> numbers) {
-        BigDecimal result = 0
-        if (numbers != null && !numbers.isEmpty()) {
-            Collections.sort(numbers)
-            Integer size = numbers.size()
-            if (size == 1) {
-                result = numbers[0]
-            } else if (size % 2 == 0) {
-                List<Integer> middleNumbers = new ArrayList<Integer>()
-                Integer first = (Integer) Math.round(size.div(2))
-                Integer second = (Integer) Math.round(size.div(2)) -1
-                middleNumbers.add(numbers[first])
-                middleNumbers.add(numbers[second])
-                result = mean(middleNumbers)
-            } else {
-                def index = (Integer) size/2 - 0.5
-                result = numbers[index]
-            }
-            return result
-        }
+        return -1
     }
 
     /**
@@ -68,15 +40,7 @@ class GroovyCollections {
      * from 0 and then incrementing by two each time, i.e. 0, 2, 4, 6, ...</p>
      */
     List<Integer> evens(int count) {
-        List<Integer> result = new ArrayList<Integer>()
-        if (count > 0) {
-           int i = 0
-           while (result.size() < count) {
-             result.add(i)
-             i += 2
-           }
-        }
-        return result
+        return []
     }
 
     /**
@@ -87,13 +51,7 @@ class GroovyCollections {
      * indexes</a> in this exercise, although they're not required.</p>
      */
     List<Integer> reverse(List<Integer> numbers) {
-        List<Integer> result = new ArrayList<Integer>()
-        def index = numbers.size() -1
-        for (Integer i in numbers) {
-            result.add(numbers.get(index))
-            index --
-        }
-        return result
+        return []
     }
 
     /**
@@ -104,12 +62,7 @@ class GroovyCollections {
      * lower case.</p>
      */
     Integer wordToNumber(String numberWord) {
-        def results
-        def numbers = [one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10]
-        if (numbers.containsKey(numberWord)) {
-            results = numbers.get(numberWord)
-        }
-        return results
+        return 0
     }
 
     /**
@@ -117,13 +70,7 @@ class GroovyCollections {
      * keys are those strings and the map values are the string lengths.</p>
      */
     Map<String, Integer> stringSizes(Collection<String> strings) {
-        def results = [:]
-        if (strings != null && !strings.isEmpty()) {
-            for (String s in strings) {
-                results.put(s, s.length())
-            }
-        }
-        return results
+        return [:]
     }
 
     /**
@@ -132,14 +79,6 @@ class GroovyCollections {
      * returned as a collection, be that a list or a set.</p>
      */
     Collection<String> filterKeys(Map<String, String> map, int keyLength) {
-        def values = new ArrayList<>()
-        if (map != null && !map.isEmpty()) {
-            for (String key in map.keySet()) {
-                if (key.length() <= keyLength) {
-                    values.add(map.get(key))
-                }
-            }
-        }
-        return values
+        return []
     }
 }

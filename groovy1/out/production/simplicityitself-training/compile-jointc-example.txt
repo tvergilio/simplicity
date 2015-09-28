@@ -1,1 +1,0 @@
-groovyc --sourcepath src -d out src/Main.java src/org/example/java/* src/org/example/groovy/*

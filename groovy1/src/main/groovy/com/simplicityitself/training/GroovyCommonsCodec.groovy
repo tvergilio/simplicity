@@ -1,7 +1,5 @@
 package com.simplicityitself.training
 
-import org.apache.commons.codec.digest.DigestUtils
-
 /**
  * <p>You will inevitably need to use third-party libraries at some point, i.e.
  * classes and APIs that don't come as part of the JDK or Groovy. In these
@@ -35,7 +33,7 @@ class GroovyCommonsCodec {
      * a string, as opposed to a byte array.</p>
      */
     String toMD5(String data) {
-        return DigestUtils.md5Hex(data)
+        return ""
     }
 
     /**
@@ -43,6 +41,6 @@ class GroovyCommonsCodec {
      * similar to the previous exercise.</p>
      */
     String toMD5(byte[] data) {
-        return DigestUtils.md5Hex(data)
+        return ""
     }
 }

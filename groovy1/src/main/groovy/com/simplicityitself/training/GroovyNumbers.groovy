@@ -8,7 +8,6 @@ package com.simplicityitself.training
  * as a calculator</a> section of the in-progress Practical Groovy book.</p>
  */
 class GroovyNumbers {
-    List<Integer> seq
     /**
      * <p>TODO #4: Calculate the VAT to be applied to the given value, with a
      * VAT rate of 20%. The result should ideally be rounded to two decimal
@@ -20,7 +19,7 @@ class GroovyNumbers {
      * so a scale of 2 means the number has two decimal places.</p>
      */
     BigDecimal calculateVat(BigDecimal value) {
-        (value*0.20).setScale(2, BigDecimal.ROUND_UP)
+        return -1
     }
 
     /**
@@ -35,7 +34,7 @@ class GroovyNumbers {
      * the available operators.</p>
      */
     double hypotenuseLength(double side1, double side2) {
-        Math.sqrt(side1**2 + side2**2)
+        return -1
     }
 
 
@@ -63,26 +62,7 @@ class GroovyNumbers {
      * numbers, uncomment the fib(20,000) data set from the <tt>GroovyNumbersSpec</tt>
      * test case.</p>
      */
-
     int fibonacci(int n) {
-        assert n >= 0 : "this only works for positive numbers!"
-        if (seq == null) {
-            seq = new ArrayList<>()
-            seq.add(0, 0)
-        }
-        if (seq.size() > n) {
-            return seq.get(n)
-        }
-        //need to return a value for zero for the recursion logic to work when n==1, but zero is not part of the sequence
-        if (n == 0 || n == 1) {
-            seq.add(n, n)
-            return n
-        } else {
-//            ​recurrence - add the value of the preceding item in the sequence (n-1) to the value of the item preceding that one (n-2)
-//            not very efficient because all the calculations are repeated for each new element that is added to the sequence
-            def fib = fibonacci(n - 1) + fibonacci(n - 2)
-            seq.add(n, fib)
-            return fib
-        }
+        return -1
     }
 }
