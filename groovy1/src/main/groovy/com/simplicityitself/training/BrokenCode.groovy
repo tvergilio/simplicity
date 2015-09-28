@@ -15,7 +15,7 @@ class BrokenCode {
      */
     int sumNumbers(numbers) {
         def result = 0
-        for (int i in number) {
+        for (int i in numbers) {
             result += i
         }
         return result
@@ -30,7 +30,7 @@ class BrokenCode {
     Collection<String> reverseStrings(Collection<String> strings) {
         def result = []
         for (str in strings) {
-            result << str.revers()
+            result << str.reverse()
         }
         return result
     }
@@ -42,9 +42,11 @@ class BrokenCode {
      * understand the exception message and stack trace.
      */
     Collection<String> altReverseStrings(Collection<String> strings) {
-        def result
-        for (str in strings) {
-            result << str.reverse()
+        def result = new ArrayList<String>()
+        if (strings != null && !strings.isEmpty()) {
+            for (str in strings) {
+                result << str.reverse()
+            }
         }
         return result
     }
