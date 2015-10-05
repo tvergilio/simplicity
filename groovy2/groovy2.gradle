@@ -10,7 +10,7 @@ repositories {
 dependencies {
     compile "org.codehaus.groovy:groovy-all:2.4.3"
     testCompile "org.spockframework:spock-core:1.0-groovy-2.4"
-
+    compile "joda-time:joda-time:1.5"
     compile "commons-codec:commons-codec:1.10"
 }
 
