@@ -12,11 +12,11 @@ import spock.lang.Unroll
 class GroovyClassesSpec extends Specification {
     @Shared people = [
             new Person("Joe", Date.parse("yyyy-MM-dd", "1990-01-02")),
-            new Person("Anne", Date.parse("yyyy-MM-dd", "1990-01-02")),
-            new Person("Roberto", Date.parse("yyyy-MM-dd", "1990-01-02")),
-            new Person("Lizzy", Date.parse("yyyy-MM-dd", "1990-01-02")),
-            new Person("Edward", Date.parse("yyyy-MM-dd", "1990-01-02")),
-            new Person("Veronica", Date.parse("yyyy-MM-dd", "1990-01-02")) ]
+            new Person("Anne", Date.parse("yyyy-MM-dd", "1985-05-27")),
+            new Person("Roberto", Date.parse("yyyy-MM-dd", "1960-11-23")),
+            new Person("Lizzy", Date.parse("yyyy-MM-dd", "1985-08-12")),
+            new Person("Edward", Date.parse("yyyy-MM-dd", "1978-02-28")),
+            new Person("Veronica", Date.parse("yyyy-MM-dd", "1964-12-25")) ]
 
 
     /**
