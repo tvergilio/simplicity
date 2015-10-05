@@ -4,28 +4,28 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 /**
- * TODO #18: Create a GroovyFiles class under src/main/groovy in the same
+ * TODO #18: Create a GroovyFiles2 class under src/main/groovy in the same
  * package as this test case. For the implementations, take a look at the
  * {@code withReader|Writer|InputStream|OutputStream} methods added to
  * {@code File} by the Groovy JDK. These methods open the corresponding
  * stream type on the file, pass it in as an argument to the given closure,
  * and ensure that the file is closed whether the closure completes normally
  * or throws an exception. Use these methods in place of
- * {@code getText()|setText()|getBytes()|setBytes()}.
+ * {@code getText ( ) |setText()|getBytes()|setBytes()}.
  */
-class GroovyFilesSpec extends Specification {
+class GroovyFiles2Spec extends Specification {
     final String encoding = "UTF-8"
     final String testFilePath = resolveFilePath("groovy2/src/test/resources/README.txt")
 
     /**
-     * TODO #19: Add a {@code firstChars()} method to {@code GroovyFiles} that
+     * TODO #19: Add a {@code firstChars ( )} method to {@code GroovyFiles2} that
      * only reads as many characters as requested, i.e. by creating a Reader.
      * See the Java API docs to see how readers work.
      */
     @Unroll
     def "Fetch first #count characters of a text file"() {
         given: "The files exercise"
-        def exercise //= new GroovyFiles()
+        def exercise = new GroovyFiles2()
 
         expect: "The first n characters to be returned as a string"
         exercise.firstChars(testFilePath, count) == expected
@@ -38,12 +38,12 @@ class GroovyFilesSpec extends Specification {
     }
 
     /**
-     * TODO #20: Add a {@code writeBytes()} method to {@code GroovyFiles} that
+     * TODO #20: Add a {@code writeBytes ( )} method to {@code GroovyFiles2} that
      * uses an {@code OutputStream} to write the given bytes to a file.
      */
     def "Write binary data to a file"() {
         given: "The files exercise and a temporary file location"
-        def exercise //= new GroovyFiles()
+        def exercise = new GroovyFiles2()
         def destFile = File.createTempFile("training-", "")
         destFile.deleteOnExit()
 
