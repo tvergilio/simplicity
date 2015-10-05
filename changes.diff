@@ -1,0 +1,1017 @@
+diff --git a/gradlew.bat b/gradlew.bat
+index aec9973..8a0b282 100644
+--- a/gradlew.bat
++++ b/gradlew.bat
+@@ -1,90 +1,90 @@
+-@if "%DEBUG%" == "" @echo off
+-@rem ##########################################################################
+-@rem
+-@rem  Gradle startup script for Windows
+-@rem
+-@rem ##########################################################################
+-
+-@rem Set local scope for the variables with windows NT shell
+-if "%OS%"=="Windows_NT" setlocal
+-
+-@rem Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
+-set DEFAULT_JVM_OPTS=
+-
+-set DIRNAME=%~dp0
+-if "%DIRNAME%" == "" set DIRNAME=.
+-set APP_BASE_NAME=%~n0
+-set APP_HOME=%DIRNAME%
+-
+-@rem Find java.exe
+-if defined JAVA_HOME goto findJavaFromJavaHome
+-
+-set JAVA_EXE=java.exe
+-%JAVA_EXE% -version >NUL 2>&1
+-if "%ERRORLEVEL%" == "0" goto init
+-
+-echo.
+-echo ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
+-echo.
+-echo Please set the JAVA_HOME variable in your environment to match the
+-echo location of your Java installation.
+-
+-goto fail
+-
+-:findJavaFromJavaHome
+-set JAVA_HOME=%JAVA_HOME:"=%
+-set JAVA_EXE=%JAVA_HOME%/bin/java.exe
+-
+-if exist "%JAVA_EXE%" goto init
+-
+-echo.
+-echo ERROR: JAVA_HOME is set to an invalid directory: %JAVA_HOME%
+-echo.
+-echo Please set the JAVA_HOME variable in your environment to match the
+-echo location of your Java installation.
+-
+-goto fail
+-
+-:init
+-@rem Get command-line arguments, handling Windowz variants
+-
+-if not "%OS%" == "Windows_NT" goto win9xME_args
+-if "%@eval[2+2]" == "4" goto 4NT_args
+-
+-:win9xME_args
+-@rem Slurp the command line arguments.
+-set CMD_LINE_ARGS=
+-set _SKIP=2
+-
+-:win9xME_args_slurp
+-if "x%~1" == "x" goto execute
+-
+-set CMD_LINE_ARGS=%*
+-goto execute
+-
+-:4NT_args
+-@rem Get arguments from the 4NT Shell from JP Software
+-set CMD_LINE_ARGS=%$
+-
+-:execute
+-@rem Setup the command line
+-
+-set CLASSPATH=%APP_HOME%\gradle\wrapper\gradle-wrapper.jar
+-
+-@rem Execute Gradle
+-"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %GRADLE_OPTS% "-Dorg.gradle.appname=%APP_BASE_NAME%" -classpath "%CLASSPATH%" org.gradle.wrapper.GradleWrapperMain %CMD_LINE_ARGS%
+-
+-:end
+-@rem End local scope for the variables with windows NT shell
+-if "%ERRORLEVEL%"=="0" goto mainEnd
+-
+-:fail
+-rem Set variable GRADLE_EXIT_CONSOLE if you need the _script_ return code instead of
+-rem the _cmd.exe /c_ return code!
+-if  not "" == "%GRADLE_EXIT_CONSOLE%" exit 1
+-exit /b 1
+-
+-:mainEnd
+-if "%OS%"=="Windows_NT" endlocal
+-
+-:omega
++@if "%DEBUG%" == "" @echo off
++@rem ##########################################################################
++@rem
++@rem  Gradle startup script for Windows
++@rem
++@rem ##########################################################################
++
++@rem Set local scope for the variables with windows NT shell
++if "%OS%"=="Windows_NT" setlocal
++
++@rem Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
++set DEFAULT_JVM_OPTS=
++
++set DIRNAME=%~dp0
++if "%DIRNAME%" == "" set DIRNAME=.
++set APP_BASE_NAME=%~n0
++set APP_HOME=%DIRNAME%
++
++@rem Find java.exe
++if defined JAVA_HOME goto findJavaFromJavaHome
++
++set JAVA_EXE=java.exe
++%JAVA_EXE% -version >NUL 2>&1
++if "%ERRORLEVEL%" == "0" goto init
++
++echo.
++echo ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
++echo.
++echo Please set the JAVA_HOME variable in your environment to match the
++echo location of your Java installation.
++
++goto fail
++
++:findJavaFromJavaHome
++set JAVA_HOME=%JAVA_HOME:"=%
++set JAVA_EXE=%JAVA_HOME%/bin/java.exe
++
++if exist "%JAVA_EXE%" goto init
++
++echo.
++echo ERROR: JAVA_HOME is set to an invalid directory: %JAVA_HOME%
++echo.
++echo Please set the JAVA_HOME variable in your environment to match the
++echo location of your Java installation.
++
++goto fail
++
++:init
++@rem Get command-line arguments, handling Windowz variants
++
++if not "%OS%" == "Windows_NT" goto win9xME_args
++if "%@eval[2+2]" == "4" goto 4NT_args
++
++:win9xME_args
++@rem Slurp the command line arguments.
++set CMD_LINE_ARGS=
++set _SKIP=2
++
++:win9xME_args_slurp
++if "x%~1" == "x" goto execute
++
++set CMD_LINE_ARGS=%*
++goto execute
++
++:4NT_args
++@rem Get arguments from the 4NT Shell from JP Software
++set CMD_LINE_ARGS=%$
++
++:execute
++@rem Setup the command line
++
++set CLASSPATH=%APP_HOME%\gradle\wrapper\gradle-wrapper.jar
++
++@rem Execute Gradle
++"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %GRADLE_OPTS% "-Dorg.gradle.appname=%APP_BASE_NAME%" -classpath "%CLASSPATH%" org.gradle.wrapper.GradleWrapperMain %CMD_LINE_ARGS%
++
++:end
++@rem End local scope for the variables with windows NT shell
++if "%ERRORLEVEL%"=="0" goto mainEnd
++
++:fail
++rem Set variable GRADLE_EXIT_CONSOLE if you need the _script_ return code instead of
++rem the _cmd.exe /c_ return code!
++if  not "" == "%GRADLE_EXIT_CONSOLE%" exit 1
++exit /b 1
++
++:mainEnd
++if "%OS%"=="Windows_NT" endlocal
++
++:omega
+diff --git a/groovy1/files/subdirectory/testjs.js b/groovy1/files/subdirectory/testjs.js
+new file mode 100644
+index 0000000..0add39a
+--- /dev/null
++++ b/groovy1/files/subdirectory/testjs.js
+@@ -0,0 +1,3 @@
++/**
++ * Created by vergil01 on 21/09/2015.
++ */
+diff --git a/groovy1/files/subdirectory/testsubdir.txt b/groovy1/files/subdirectory/testsubdir.txt
+new file mode 100644
+index 0000000..e69de29
+diff --git a/groovy1/files/testDifferentFile.txt b/groovy1/files/testDifferentFile.txt
+new file mode 100644
+index 0000000..e69de29
+diff --git a/groovy1/files/testFile.txt b/groovy1/files/testFile.txt
+new file mode 100644
+index 0000000..e69de29
+diff --git a/groovy1/out/production/groovy1/test/resources/README.txt b/groovy1/out/production/groovy1/test/resources/README.txt
+new file mode 100644
+index 0000000..1aa5f47
+--- /dev/null
++++ b/groovy1/out/production/groovy1/test/resources/README.txt
+@@ -0,0 +1,23 @@
++Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non odio id quam vulputate varius vel ut dui. Maecenas volutpat porttitor lacus. Vestibulum congue auctor justo, sed semper diam fringilla viverra. Cras felis lectus, dictum sed iaculis eu, consectetur a elit. Maecenas in elementum ante. Proin quis velit in libero lobortis auctor. Praesent pulvinar ligula quis metus blandit, vel efficitur leo mollis. Vestibulum id turpis felis. Cras pulvinar interdum nisl, eu varius mi dapibus sed. Pellentesque elementum augue vitae efficitur tincidunt.
++
++Sed venenatis nulla at congue pellentesque. Maecenas urna orci, consequat id interdum dictum, vehicula ultrices purus. Nulla sed purus elit. Aenean ipsum lorem, aliquet sit amet risus in, mattis venenatis odio. Praesent laoreet velit ac nisl iaculis dignissim. Nulla facilisi. Vestibulum tincidunt, dui vitae ultrices scelerisque, lorem ex tincidunt lacus, nec euismod lectus sem nec nunc. Sed nulla orci, volutpat eu molestie id, tempus in lacus. Aenean venenatis aliquam erat nec pharetra.
++
++In ut justo mollis, tincidunt dui et, rutrum ligula. Fusce pulvinar auctor magna, non sollicitudin tellus dapibus at. Nunc ac elit leo. Fusce lobortis quam et elit consectetur, ac aliquam nunc maximus. Pellentesque sit amet vulputate justo. Vestibulum fermentum pretium nunc eu suscipit. Cras a sagittis sapien, eu lacinia risus. Integer mattis quam in odio pretium, in malesuada risus rutrum. Praesent nec nulla ligula. Vestibulum eget arcu metus. Pellentesque ornare viverra congue. Quisque et ante eget est sagittis consequat at id leo. Pellentesque accumsan tortor vel dolor sodales, at cursus dolor auctor. Ut feugiat consectetur posuere. Nam ornare, odio id maximus euismod, diam augue sodales nisl, at porttitor quam sem a nunc. Vivamus condimentum ligula mauris, id maximus lorem tristique quis.
++
++Integer et nisl quis nisl blandit suscipit sit amet ut nunc. Quisque pretium ornare turpis, et congue ante sagittis in. Nullam rhoncus, est sit amet cursus ullamcorper, diam diam placerat lorem, sed volutpat massa metus in dui. Nullam non cursus nisl. Proin maximus velit fringilla metus sollicitudin, et luctus velit dictum. Duis facilisis sed diam at aliquet. Mauris a turpis tincidunt turpis congue semper sed vitae tortor. Pellentesque a lectus sed enim condimentum fringilla quis vestibulum massa.
++
++Proin pulvinar mollis risus, nec placerat tortor congue sit amet. Vestibulum scelerisque malesuada dolor vel tempor. Maecenas auctor sit amet dui quis consectetur. Pellentesque et tellus tincidunt, ullamcorper diam at, sodales libero. Aenean convallis dapibus consequat. Donec eleifend vulputate purus, eget cursus nulla pellentesque sit amet. Praesent ut mauris justo. Donec vehicula lobortis diam, fermentum aliquam nunc aliquam nec. Praesent egestas purus faucibus sollicitudin efficitur. Nam molestie turpis eu dui sagittis, non feugiat orci porta. Fusce lobortis in orci vel fermentum. Duis maximus non tortor eget lacinia. Nullam neque mauris, condimentum sit amet imperdiet quis, fermentum tincidunt mauris.
++
++Aenean dignissim porta lacus pharetra mollis. Mauris hendrerit lorem sed dui faucibus tempus. Aliquam nec volutpat ex. Etiam condimentum, neque at tempor feugiat, lacus nibh consectetur elit, id facilisis metus lectus ac eros. Nullam enim dui, egestas nec arcu sodales, ullamcorper tempor tellus. In vel odio metus. Donec lobortis ipsum in diam blandit, eget volutpat lorem sollicitudin. Vestibulum sit amet enim sapien. Duis ultrices, nulla ac scelerisque ornare, urna justo volutpat lorem, id posuere lectus arcu quis velit. Cras fermentum ante ac massa pellentesque, nec consectetur leo condimentum. Nullam tincidunt mauris a lorem sollicitudin iaculis. Phasellus sed augue ligula. Maecenas ipsum urna, vehicula laoreet aliquet eu, porta id lectus. Phasellus et bibendum risus. Nulla in pretium lorem.
++
++Curabitur placerat nisi ut nulla faucibus consequat. Maecenas eget pretium metus. Suspendisse dignissim viverra tempus. Aliquam nec arcu bibendum, eleifend sapien at, semper quam. Suspendisse potenti. Nunc sit amet velit augue. Mauris et tortor justo. Ut molestie egestas ante, quis facilisis justo commodo tincidunt. Phasellus condimentum in orci ut vulputate. Suspendisse potenti. Maecenas sodales sem fringilla risus venenatis, in varius leo scelerisque. Donec convallis, mi eget vehicula ultricies, orci eros efficitur mi, ut luctus eros odio vel diam.
++
++Praesent suscipit gravida magna, ut eleifend nulla pulvinar ut. Nullam risus magna, viverra eu tellus quis, consequat mollis lacus. Donec mollis nibh a massa pellentesque, sit amet aliquam sapien gravida. Cras vitae dolor vitae nunc interdum tincidunt nec sed est. Aliquam ullamcorper ligula non tellus molestie sollicitudin. Nam venenatis nibh ut justo sagittis, vel pellentesque metus egestas. Integer sed gravida ante. Donec efficitur pharetra felis sit amet vulputate. Donec quis justo euismod, tempus mauris a, malesuada orci. Sed sed eleifend ante. Fusce lacus arcu, pulvinar at diam at, ornare bibendum felis. Vestibulum bibendum vulputate mauris et vulputate.
++
++Morbi a neque a leo ultrices bibendum. Integer pharetra quam ut velit iaculis, et vulputate eros convallis. Quisque gravida pellentesque interdum. Nunc eleifend convallis tellus, a pellentesque eros euismod in. Sed convallis commodo tellus, a consequat ex bibendum nec. Nullam ut pellentesque urna. Donec tincidunt non nunc eget bibendum.
++
++Maecenas vulputate egestas tempor. Nulla facilisi. Cras id quam sed dui dignissim porta. Maecenas pretium accumsan nisi, nec imperdiet lacus dapibus id. Proin ornare sem non ex ultrices, vel eleifend arcu elementum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent eget nisi pulvinar, porttitor mauris non, tempus ante. Vivamus aliquet purus at vulputate laoreet. Donec a dignissim nisl. Nullam risus risus, faucibus ac aliquam auctor, elementum a neque. Vestibulum sit amet arcu at lorem fringilla suscipit. Nunc gravida egestas nisl, in pellentesque nisl pulvinar eu. Pellentesque finibus pulvinar felis eu mollis. Curabitur aliquam dapibus placerat.
++
++Aliquam erat volutpat. Integer ac tortor nec justo iaculis hendrerit a ac velit. Cras at aliquam enim, sed pulvinar ligula. Mauris ex orci, sagittis a elit id, laoreet tristique odio. Aenean luctus sodales nunc, nec pellentesque dui viverra sed. Nunc fringilla suscipit metus, sed eleifend nunc laoreet sit amet. Donec quam mauris, vulputate nec maximus sed, efficitur nec eros. Pellentesque non urna sed justo varius placerat at eget dolor. Quisque non mauris nulla. In luctus dignissim massa, elementum dictum ex dictum non. Fusce non suscipit est, at pulvinar risus. Aenean aliquam enim et enim sodales dictum. Nam nisl mauris, maximus vitae lacinia quis, tempor et magna. Vestibulum blandit ex.
++
++это манекен текста
+diff --git a/groovy1/out/production/simplicityitself-training/compile-jointc-example.txt b/groovy1/out/production/simplicityitself-training/compile-jointc-example.txt
+new file mode 100644
+index 0000000..cba9772
+--- /dev/null
++++ b/groovy1/out/production/simplicityitself-training/compile-jointc-example.txt
+@@ -0,0 +1 @@
++groovyc --sourcepath src -d out src/Main.java src/org/example/java/* src/org/example/groovy/*
+diff --git a/groovy1/src/main/groovy/com/simplicityitself/training/BrokenCode.groovy b/groovy1/src/main/groovy/com/simplicityitself/training/BrokenCode.groovy
+index 2caff25..ede2e0f 100644
+--- a/groovy1/src/main/groovy/com/simplicityitself/training/BrokenCode.groovy
++++ b/groovy1/src/main/groovy/com/simplicityitself/training/BrokenCode.groovy
+@@ -15,7 +15,7 @@ class BrokenCode {
+      */
+     int sumNumbers(numbers) {
+         def result = 0
+-        for (int i in number) {
++        for (int i in numbers) {
+             result += i
+         }
+         return result
+@@ -30,7 +30,7 @@ class BrokenCode {
+     Collection<String> reverseStrings(Collection<String> strings) {
+         def result = []
+         for (str in strings) {
+-            result << str.revers()
++            result << str.reverse()
+         }
+         return result
+     }
+@@ -42,9 +42,11 @@ class BrokenCode {
+      * understand the exception message and stack trace.
+      */
+     Collection<String> altReverseStrings(Collection<String> strings) {
+-        def result
+-        for (str in strings) {
+-            result << str.reverse()
++        def result = new ArrayList<String>()
++        if (strings != null && !strings.isEmpty()) {
++            for (str in strings) {
++                result << str.reverse()
++            }
+         }
+         return result
+     }
+diff --git a/groovy1/src/main/groovy/com/simplicityitself/training/CountFiles.groovy b/groovy1/src/main/groovy/com/simplicityitself/training/CountFiles.groovy
+new file mode 100644
+index 0000000..982ef22
+--- /dev/null
++++ b/groovy1/src/main/groovy/com/simplicityitself/training/CountFiles.groovy
+@@ -0,0 +1,23 @@
++package com.simplicityitself.training
++
++/**
++ * Created by vergil01 on 21/09/2015.
++ */
++class CountFiles {
++    Integer countFiles(String path, String suffix) {
++        if (path == null) {
++            //get path of where the script is called from
++            path = System.getProperty("user.dir")
++        }
++        def files = []
++        def directory = new File(path)
++        if (directory.exists()) {
++            directory.eachFile {
++                if (suffix != null && !suffix.isEmpty() && it.name.endsWith(suffix)) {
++                    files << it
++                }
++            }
++        }
++        return files.size()
++    }
++}
+diff --git a/groovy1/src/main/groovy/com/simplicityitself/training/GroovyBeans.groovy b/groovy1/src/main/groovy/com/simplicityitself/training/GroovyBeans.groovy
+index 81dcdd0..8aa2c61 100644
+--- a/groovy1/src/main/groovy/com/simplicityitself/training/GroovyBeans.groovy
++++ b/groovy1/src/main/groovy/com/simplicityitself/training/GroovyBeans.groovy
+@@ -18,7 +18,13 @@ class GroovyBeans {
+      * or <tt>person.getFirstName()</tt>. Try it!</p>
+      */
+     List<String> firstNames(List<Person> people) {
+-        return []
++        def result = new ArrayList<String>()
++        if (people != null && !people.isEmpty()) {
++            for (Person p in people) {
++                result << p.firstName
++            }
++        }
++        return result
+     }
+ 
+     /**
+@@ -30,7 +36,13 @@ class GroovyBeans {
+      * or <tt>person.getFullName()</tt>. Try it!</p>
+      */
+     List<String> fullNames(List<Person> people) {
+-        return []
++        def result = new ArrayList<String>()
++        if (people != null && !people.isEmpty()) {
++            for (Person p in people) {
++                result << p.fullName
++            }
++        }
++        return result
+     }
+ 
+     /**
+@@ -42,6 +54,10 @@ class GroovyBeans {
+      * or <tt>person.setFullName(...)</tt>. Try it!</p>
+      */
+     void namesToUpperCase(Person person) {
++        if (person != null) {
++            person.setFirstName(person.firstName.toUpperCase())
++            person.setLastName(person.lastName.toUpperCase())
++        }
+     }
+ 
+     /**
+@@ -51,7 +67,16 @@ class GroovyBeans {
+      * resulting two values (first name and last name).</p>
+      */
+     List<Person> createPeople(List<String> names) {
+-        return []
++        def persons = new ArrayList<Person>()
++        if (names != null && !names.isEmpty()) {
++            for (String fullName in names) {
++                def tokens = fullName.split(" ")
++                if (tokens != null && tokens.size() > 1) {
++                    persons.add(new Person([firstName: tokens[0], lastName: tokens[1]]))
++                }
++            }
++        }
++        return persons
+     }
+ 
+     /**
+@@ -66,7 +91,13 @@ class GroovyBeans {
+      * be careful using visibility scopes on fields.</p>
+      */
+     List<Integer> heights(List<Person> people) {
+-        return []
++        def heights = new ArrayList<Integer>()
++        if (people != null && !people.isEmpty()) {
++            for (Person p in people) {
++                heights.add(p.height)
++            }
++        }
++        return heights
+     }
+ }
+ 
+diff --git a/groovy1/src/main/groovy/com/simplicityitself/training/GroovyClasses.groovy b/groovy1/src/main/groovy/com/simplicityitself/training/GroovyClasses.groovy
+index e42a901..6c10fb5 100644
+--- a/groovy1/src/main/groovy/com/simplicityitself/training/GroovyClasses.groovy
++++ b/groovy1/src/main/groovy/com/simplicityitself/training/GroovyClasses.groovy
+@@ -24,10 +24,41 @@ package com.simplicityitself.training
+  * If you're still not sure what to do, ask.</p>
+  */
+ class TodoList {
++    List<Item> items
++    final List<Item> allItems
++
++    TodoList() {
++        items = new ArrayList<>()
++    }
++
++    List<Item> addItem(Item item) {
++        items.add(item)
++        return items
++    }
++
++    List<Item> getAllItems() {
++        return items
++    }
++
++    List<Item> dueBefore(Date date) {
++        List<Item> results = new ArrayList<>()
++        for (Item item in items) {
++            if (item.dueDate < date) {
++                results.add(item)
++            }
++        }
++        return results
++    }
++
++    TodoList leftShift(String summary) {
++        items.add(new Item([summary: summary]))
++        return this
++    }
++
+ }
+ 
+ /**
+- * <p>TODO: This class represents a TODO item and needs populating with the
++ * <p>TODO #35: This class represents a TODO item and needs populating with the
+  * following properties:</p>
+  * <ul>
+  *   <li>A string <tt>summary</tt>.</li>
+@@ -37,4 +68,11 @@ class TodoList {
+  * </ul>
+  */
+ class Item {
++    String summary
++    Date dueDate
++    final Date dateCreated
++
++    Item() {
++        dateCreated = new Date(System.currentTimeMillis())
++    }
+ }
+diff --git a/groovy1/src/main/groovy/com/simplicityitself/training/GroovyCollections.groovy b/groovy1/src/main/groovy/com/simplicityitself/training/GroovyCollections.groovy
+index ee2df42..207c571 100644
+--- a/groovy1/src/main/groovy/com/simplicityitself/training/GroovyCollections.groovy
++++ b/groovy1/src/main/groovy/com/simplicityitself/training/GroovyCollections.groovy
+@@ -1,5 +1,7 @@
+ package com.simplicityitself.training
+ 
++import org.codehaus.plexus.interpolation.StringSearchInterpolator
++
+ /**
+  *  <p>These exercises give you a chance to work with the Java collections in
+  * Groovy. If you would like a gentle introduction beyond the Groovy quick
+@@ -17,7 +19,15 @@ class GroovyCollections {
+      * the result by the number of integers in the collection.</p>
+      */
+     BigDecimal mean(Collection<Integer> numbers) {
+-        return -1
++        BigDecimal result = 0
++        if (numbers != null && !numbers.isEmpty()) {
++            def elements = numbers.size()
++            for (Integer n in numbers) {
++                result += n
++            }
++            result = result.divide(elements)
++        }
++        return result
+     }
+ 
+     /**
+@@ -32,7 +42,25 @@ class GroovyCollections {
+      * in the Groovy syntax quick reference as that will be useful here.</p>
+      */
+     BigDecimal median(Collection<Integer> numbers) {
+-        return -1
++        BigDecimal result = 0
++        if (numbers != null && !numbers.isEmpty()) {
++            Collections.sort(numbers)
++            Integer size = numbers.size()
++            if (size == 1) {
++                result = numbers[0]
++            } else if (size % 2 == 0) {
++                List<Integer> middleNumbers = new ArrayList<Integer>()
++                Integer first = (Integer) Math.round(size.div(2))
++                Integer second = (Integer) Math.round(size.div(2)) -1
++                middleNumbers.add(numbers[first])
++                middleNumbers.add(numbers[second])
++                result = mean(middleNumbers)
++            } else {
++                def index = (Integer) size/2 - 0.5
++                result = numbers[index]
++            }
++            return result
++        }
+     }
+ 
+     /**
+@@ -40,7 +68,15 @@ class GroovyCollections {
+      * from 0 and then incrementing by two each time, i.e. 0, 2, 4, 6, ...</p>
+      */
+     List<Integer> evens(int count) {
+-        return []
++        List<Integer> result = new ArrayList<Integer>()
++        if (count > 0) {
++           int i = 0
++           while (result.size() < count) {
++             result.add(i)
++             i += 2
++           }
++        }
++        return result
+     }
+ 
+     /**
+@@ -51,7 +87,13 @@ class GroovyCollections {
+      * indexes</a> in this exercise, although they're not required.</p>
+      */
+     List<Integer> reverse(List<Integer> numbers) {
+-        return []
++        List<Integer> result = new ArrayList<Integer>()
++        def index = numbers.size() -1
++        for (Integer i in numbers) {
++            result.add(numbers.get(index))
++            index --
++        }
++        return result
+     }
+ 
+     /**
+@@ -62,7 +104,12 @@ class GroovyCollections {
+      * lower case.</p>
+      */
+     Integer wordToNumber(String numberWord) {
+-        return 0
++        def results
++        def numbers = [one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10]
++        if (numbers.containsKey(numberWord)) {
++            results = numbers.get(numberWord)
++        }
++        return results
+     }
+ 
+     /**
+@@ -70,7 +117,13 @@ class GroovyCollections {
+      * keys are those strings and the map values are the string lengths.</p>
+      */
+     Map<String, Integer> stringSizes(Collection<String> strings) {
+-        return [:]
++        def results = [:]
++        if (strings != null && !strings.isEmpty()) {
++            for (String s in strings) {
++                results.put(s, s.length())
++            }
++        }
++        return results
+     }
+ 
+     /**
+@@ -79,6 +132,14 @@ class GroovyCollections {
+      * returned as a collection, be that a list or a set.</p>
+      */
+     Collection<String> filterKeys(Map<String, String> map, int keyLength) {
+-        return []
++        def values = new ArrayList<>()
++        if (map != null && !map.isEmpty()) {
++            for (String key in map.keySet()) {
++                if (key.length() <= keyLength) {
++                    values.add(map.get(key))
++                }
++            }
++        }
++        return values
+     }
+ }
+diff --git a/groovy1/src/main/groovy/com/simplicityitself/training/GroovyCommonsCodec.groovy b/groovy1/src/main/groovy/com/simplicityitself/training/GroovyCommonsCodec.groovy
+index ccb9c2f..38494d9 100644
+--- a/groovy1/src/main/groovy/com/simplicityitself/training/GroovyCommonsCodec.groovy
++++ b/groovy1/src/main/groovy/com/simplicityitself/training/GroovyCommonsCodec.groovy
+@@ -1,5 +1,7 @@
+ package com.simplicityitself.training
+ 
++import org.apache.commons.codec.digest.DigestUtils
++
+ /**
+  * <p>You will inevitably need to use third-party libraries at some point, i.e.
+  * classes and APIs that don't come as part of the JDK or Groovy. In these
+@@ -33,7 +35,7 @@ class GroovyCommonsCodec {
+      * a string, as opposed to a byte array.</p>
+      */
+     String toMD5(String data) {
+-        return ""
++        return DigestUtils.md5Hex(data)
+     }
+ 
+     /**
+@@ -41,6 +43,6 @@ class GroovyCommonsCodec {
+      * similar to the previous exercise.</p>
+      */
+     String toMD5(byte[] data) {
+-        return ""
++        return DigestUtils.md5Hex(data)
+     }
+ }
+diff --git a/groovy1/src/main/groovy/com/simplicityitself/training/GroovyDates.groovy b/groovy1/src/main/groovy/com/simplicityitself/training/GroovyDates.groovy
+index a8fe333..33486fb 100644
+--- a/groovy1/src/main/groovy/com/simplicityitself/training/GroovyDates.groovy
++++ b/groovy1/src/main/groovy/com/simplicityitself/training/GroovyDates.groovy
+@@ -1,5 +1,9 @@
+ package com.simplicityitself.training
+ 
++import org.apache.ivy.util.DateUtil
++
++import java.text.DateFormat
++
+ /**
+  * <p>Dates and times are an important part of any language. Unfortunately the
+  * old API of {@code java.util.Date} and {@code java.util.Calendar} are quite
+@@ -34,7 +38,7 @@ class GroovyDates {
+      * overloading table that's in the Groovy syntax quick reference.</p>
+      */
+     Date addDays(Date start, int numDays) {
+-        return null
++        return start + numDays
+     }
+ 
+     /**
+@@ -46,7 +50,9 @@ class GroovyDates {
+      * is later than <tt>time1</tt>, i.e. the number is bigger.</p>
+      */
+     int diffDays(long time1, long time2) {
+-        return -1
++        Date d1 = new Date (time1)
++        Date d2 = new Date (time2)
++        return d1 > d2 ? d1 - d2 : d2 - d1
+     }
+ 
+     /**
+@@ -55,6 +61,6 @@ class GroovyDates {
+      * at the Groovy JDK to find an appropriate method.</p>
+      */
+     String formattedDate(Date date) {
+-        return ""
++        date.format('dd MMM yyyy')
+     }
+ }
+diff --git a/groovy1/src/main/groovy/com/simplicityitself/training/GroovyExceptions.groovy b/groovy1/src/main/groovy/com/simplicityitself/training/GroovyExceptions.groovy
+index 4397306..15e43fc 100644
+--- a/groovy1/src/main/groovy/com/simplicityitself/training/GroovyExceptions.groovy
++++ b/groovy1/src/main/groovy/com/simplicityitself/training/GroovyExceptions.groovy
+@@ -21,8 +21,11 @@ class GroovyExceptions {
+      * have a length greater than zero". See the Groovy syntax quick reference
+      * to find out how to throw an exception.</p>
+      */
+-    double hypotenuseLength(double side1, double side2) {
+-        return -1
++    double hypotenuseLength(double side1, double side2) throws IllegalArgumentException {
++        if (side1 <= 0 || side2 <= 0) {
++            throw new IllegalArgumentException("Sides must have a length greater than zero")
++        }
++        return Math.sqrt(side1*side1 + side2*side2)
+     }
+ 
+     /**
+@@ -39,6 +42,17 @@ class GroovyExceptions {
+      * file first (unless you're sure it's supposed to be there).</p>
+      */
+     long characterCount(String path) {
+-        return -1
++        String text
++        long count
++        if (path == null || path.isEmpty()) {
++            throw new IllegalArgumentException("Path is null or empty: '${path}'")
++        }
++        try {
++            FileReader reader = new FileReader(path)
++            text = reader.getText()
++        } catch (FileNotFoundException e) {
++            return -1
++        }
++        count = text.size()
+     }
+ }
+diff --git a/groovy1/src/main/groovy/com/simplicityitself/training/GroovyFiles.groovy b/groovy1/src/main/groovy/com/simplicityitself/training/GroovyFiles.groovy
+index 9119cd2..36a40eb 100644
+--- a/groovy1/src/main/groovy/com/simplicityitself/training/GroovyFiles.groovy
++++ b/groovy1/src/main/groovy/com/simplicityitself/training/GroovyFiles.groovy
+@@ -45,7 +45,8 @@ class GroovyFiles {
+      * JDK for {@code File}</a>. You don't need to read the file to find out.</p>
+      */
+     long fileSize(String path) {
+-        return -1
++        def file = new File(path)
++        return file.size()
+     }
+ 
+     /**
+@@ -55,7 +56,9 @@ class GroovyFiles {
+      * character encoding.</p>
+      */
+     long characterCount(String path) {
+-        return -1
++        def file = new File(path)
++        def text = file.getText('UTF-8')
++        return text.size()
+     }
+ 
+     /**
+@@ -63,7 +66,9 @@ class GroovyFiles {
+      * a string. Remember that the text file is encoded as UTF-8.</p>
+      */
+     String firstChars(String path, int count) {
+-        return ""
++        def file = new File(path)
++        def text = file.getText('UTF-8')
++        return text.substring(0, count)
+     }
+ 
+     /**
+@@ -71,5 +76,8 @@ class GroovyFiles {
+      * provided as the method's second argument.</p>
+      */
+     void writeBytes(String path, byte[] data) {
++        FileOutputStream stream = new FileOutputStream(new File(path))
++        stream.write(data)
++        stream.close()
+     }
+ }
+diff --git a/groovy1/src/main/groovy/com/simplicityitself/training/GroovyNumbers.groovy b/groovy1/src/main/groovy/com/simplicityitself/training/GroovyNumbers.groovy
+index b42e0f7..44daca4 100644
+--- a/groovy1/src/main/groovy/com/simplicityitself/training/GroovyNumbers.groovy
++++ b/groovy1/src/main/groovy/com/simplicityitself/training/GroovyNumbers.groovy
+@@ -8,6 +8,7 @@ package com.simplicityitself.training
+  * as a calculator</a> section of the in-progress Practical Groovy book.</p>
+  */
+ class GroovyNumbers {
++    List<Integer> seq
+     /**
+      * <p>TODO #4: Calculate the VAT to be applied to the given value, with a
+      * VAT rate of 20%. The result should ideally be rounded to two decimal
+@@ -19,7 +20,7 @@ class GroovyNumbers {
+      * so a scale of 2 means the number has two decimal places.</p>
+      */
+     BigDecimal calculateVat(BigDecimal value) {
+-        return -1
++        (value*0.20).setScale(2, BigDecimal.ROUND_UP)
+     }
+ 
+     /**
+@@ -34,7 +35,7 @@ class GroovyNumbers {
+      * the available operators.</p>
+      */
+     double hypotenuseLength(double side1, double side2) {
+-        return -1
++        Math.sqrt(side1**2 + side2**2)
+     }
+ 
+ 
+@@ -62,7 +63,26 @@ class GroovyNumbers {
+      * numbers, uncomment the fib(20,000) data set from the <tt>GroovyNumbersSpec</tt>
+      * test case.</p>
+      */
++
+     int fibonacci(int n) {
+-        return -1
++        assert n >= 0 : "this only works for positive numbers!"
++        if (seq == null) {
++            seq = new ArrayList<>()
++            seq.add(0, 0)
++        }
++        if (seq.size() > n) {
++            return seq.get(n)
++        }
++        //need to return a value for zero for the recursion logic to work when n==1, but zero is not part of the sequence
++        if (n == 0 || n == 1) {
++            seq.add(n, n)
++            return n
++        } else {
++//            ​recurrence - add the value of the preceding item in the sequence (n-1) to the value of the item preceding that one (n-2)
++//            not very efficient because all the calculations are repeated for each new element that is added to the sequence
++            def fib = fibonacci(n - 1) + fibonacci(n - 2)
++            seq.add(n, fib)
++            return fib
++        }
+     }
+ }
+diff --git a/groovy1/src/main/groovy/com/simplicityitself/training/GroovyStrings.groovy b/groovy1/src/main/groovy/com/simplicityitself/training/GroovyStrings.groovy
+index a471709..c31eb6f 100644
+--- a/groovy1/src/main/groovy/com/simplicityitself/training/GroovyStrings.groovy
++++ b/groovy1/src/main/groovy/com/simplicityitself/training/GroovyStrings.groovy
+@@ -1,5 +1,8 @@
+ package com.simplicityitself.training
+ 
++import java.util.regex.Matcher
++import java.util.regex.Pattern
++
+ /**
+  * <p>These exercises give you a chance to work with strings in Groovy. If you
+  * would like a gentle introduction beyond the Groovy quick reference, read the
+@@ -14,7 +17,11 @@ class GroovyStrings {
+      * should return "Who are you?".</p>
+      */
+     String hello(String name) {
+-        return ""
++        def greeting = "Who are you?"
++        if (name != null && !name.isEmpty()) {
++            greeting = "Hello ${name}!"
++        }
++        return greeting
+     }
+ 
+     /**
+@@ -23,7 +30,7 @@ class GroovyStrings {
+      * for strings! There is more than one way to do this.</p>
+      */
+     String reverse(String str) {
+-        return ""
++        return str.reverse()
+     }
+ 
+     /**
+@@ -31,8 +38,12 @@ class GroovyStrings {
+      * The Practical Groovy book should help here.</p>
+      */
+     String leadingChars(String str, int n) {
+-        return ""
+-    }
++        def result = str
++        if (str != null && n < str.length()) {
++            result = str.substring(0, n)
++        }
++            return result
++        }
+ 
+     /**
+      * <p>TODO #10: Replace all vowels in the given string with the * character.
+@@ -46,7 +57,17 @@ class GroovyStrings {
+      * by Ted Naleid to get an introduction to the Groovy way of using them.</p>
+      */
+     String replaceVowels(String str) {
+-        return ""
++        /* old Java way
++        Matcher matcher = str =~ /[aeiouAEIOU]/
++        def result = str
++        def match
++        while(matcher.find()) {
++            match = matcher.group()
++            result = result.replace(match, '*')
++        }
++        return result
++        */
++        return str.replaceAll(/[AaEeIiOoUu]/, '*')
+     }
+ 
+     /**
+@@ -74,6 +95,56 @@ class GroovyStrings {
+      * sample text. Line endings will always be Unix-style, i.e. '\n'.</p>
+      */
+     Map wordStats(String str) {
+-        return [:]
++        /*
++        def result = [:]
++        if (str != null) {
++            //Declare Regex patterns and matchers
++            Matcher carriageReturn = str =~ /[\n\r]+/
++            Matcher singleLetter = str =~ /\b[a-zA-Z]\b/
++            Matcher hyphenated = str =~ /\b[a-zA-Z]+\-[a-zA-Z]+\b/
++            Matcher allCaps = str =~ /\b[A-Z]+\b/
++
++            //declare count variables
++            int charCount = 0
++            int lineCount = str.isEmpty() ? 0 : 1
++            int singleLetterCount = 0
++            int hyphCount = 0
++            int capsCount = 0
++
++            //find character count and add to map
++            result.charCount = str.length()
++
++            //find line count and add to map
++            while (carriageReturn.find()) {
++                lineCount ++
++            }
++            result.lineCount = lineCount
++
++            //find single letter count and add to map
++            while (singleLetter.find()) {
++                singleLetterCount ++
++            }
++            result.singleLetterCount = singleLetterCount
++
++            //find hyphenated count and add to map
++            while (hyphenated.find()) {
++                hyphCount ++
++            }
++            result.hyphenatedCount = hyphCount
++
++            //find all caps count and add to map
++            while (allCaps.find()) {
++                capsCount ++
++            }
++            result.allCapsCount = capsCount
++        }
++        return result
++        */
++        def singleLetters = (str =~ /\b[a-zA-Z]\b/).count
++        def hyphenated = (str =~ /\b[a-zA-Z]+\-[a-zA-Z]+\b/).count
++        def allCaps = (str =~ /\b[A-Z]+\b/).count
++
++        return [charCount: str.length(), lineCount: str.readLines().size(), singleLetterCount: singleLetters, hyphenatedCount: hyphenated, allCapsCount: allCaps]
++
+     }
+ }
+diff --git a/groovy1/src/test/groovy/com/simplicityitself/training/CountFilesSpec.groovy b/groovy1/src/test/groovy/com/simplicityitself/training/CountFilesSpec.groovy
+new file mode 100644
+index 0000000..89f35a9
+--- /dev/null
++++ b/groovy1/src/test/groovy/com/simplicityitself/training/CountFilesSpec.groovy
+@@ -0,0 +1,41 @@
++package com.simplicityitself.training
++
++import spock.lang.Specification
++import spock.lang.Unroll
++
++/**
++ * Created by vergil01 on 21/09/2015.
++ */
++class CountFilesSpec extends Specification {
++    final String absolutePath = new File("").getAbsolutePath()
++
++    @Unroll
++    def "Number of files in #directory with suffix #suffix"() {
++        given: "the CountFiles exercise"
++        def exercise = new CountFiles()
++
++        expect: "The number of files with the given suffix is calculated correctly"
++        exercise.countFiles("${absolutePath}\\${directory}", suffix) == expected
++
++        where:
++        directory            | suffix   | expected
++        "files"              | "txt"    | 2
++        "files/subdirectory" | "js"     | 1
++        "nowhere"            | "txt"    | 0
++        "nowhere/nosub"      | "txt"    | 0
++        "files"              | ""       | 0
++        null                 | "txt"    | 0
++    }
++
++    def "Number of files with a given suffix in a directory when the directory passed in is null"() {
++        given: "the CountFiles exercise"
++        def exercise = new CountFiles()
++
++        and: "a given suffix"
++        def suffix = "txt"
++
++        expect: "The number of files with the given suffix is the number of files in the user's current directory"
++        exercise.countFiles(null, suffix) == 0
++
++    }
++}
+diff --git a/groovy1/src/test/groovy/com/simplicityitself/training/GroovyFilesSpec.groovy b/groovy1/src/test/groovy/com/simplicityitself/training/GroovyFilesSpec.groovy
+index 4ed1481..2b9c514 100644
+--- a/groovy1/src/test/groovy/com/simplicityitself/training/GroovyFilesSpec.groovy
++++ b/groovy1/src/test/groovy/com/simplicityitself/training/GroovyFilesSpec.groovy
+@@ -6,7 +6,7 @@ import spock.lang.Unroll
+ 
+ class GroovyFilesSpec extends Specification {
+     final String encoding = "UTF-8"
+-    final String testFilePath = resolveFilePath("groovy1/src/test/resources/README.txt")
++    final String testFilePath = resolveFilePath("src/test/resources/README.txt")
+ 
+     def "Calculate the byte size of a file"() {
+         given: "The files exercise"
+diff --git a/groovy1/src/test/groovy/com/simplicityitself/training/GroovyStringsSpec.groovy b/groovy1/src/test/groovy/com/simplicityitself/training/GroovyStringsSpec.groovy
+index 9755cb3..653ecf8 100644
+--- a/groovy1/src/test/groovy/com/simplicityitself/training/GroovyStringsSpec.groovy
++++ b/groovy1/src/test/groovy/com/simplicityitself/training/GroovyStringsSpec.groovy
+@@ -81,10 +81,6 @@ class GroovyStringsSpec extends Specification {
+ 
+         then: "I get the appropriate counts for the various word types"
+         result == expected
+-        result["charCount"] == charCount
+-        result["lineCount"] == lineCount
+-        result["singleLetterCount"] == hyphenatedCount
+-        result["allCapsCount"] == allCapsCount
+ 
+         where:
+         input   | expected
+diff --git a/out/test/simplicityitself-training/resources/README.txt b/out/test/simplicityitself-training/resources/README.txt
+new file mode 100644
+index 0000000..1aa5f47
+--- /dev/null
++++ b/out/test/simplicityitself-training/resources/README.txt
+@@ -0,0 +1,23 @@
++Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non odio id quam vulputate varius vel ut dui. Maecenas volutpat porttitor lacus. Vestibulum congue auctor justo, sed semper diam fringilla viverra. Cras felis lectus, dictum sed iaculis eu, consectetur a elit. Maecenas in elementum ante. Proin quis velit in libero lobortis auctor. Praesent pulvinar ligula quis metus blandit, vel efficitur leo mollis. Vestibulum id turpis felis. Cras pulvinar interdum nisl, eu varius mi dapibus sed. Pellentesque elementum augue vitae efficitur tincidunt.
++
++Sed venenatis nulla at congue pellentesque. Maecenas urna orci, consequat id interdum dictum, vehicula ultrices purus. Nulla sed purus elit. Aenean ipsum lorem, aliquet sit amet risus in, mattis venenatis odio. Praesent laoreet velit ac nisl iaculis dignissim. Nulla facilisi. Vestibulum tincidunt, dui vitae ultrices scelerisque, lorem ex tincidunt lacus, nec euismod lectus sem nec nunc. Sed nulla orci, volutpat eu molestie id, tempus in lacus. Aenean venenatis aliquam erat nec pharetra.
++
++In ut justo mollis, tincidunt dui et, rutrum ligula. Fusce pulvinar auctor magna, non sollicitudin tellus dapibus at. Nunc ac elit leo. Fusce lobortis quam et elit consectetur, ac aliquam nunc maximus. Pellentesque sit amet vulputate justo. Vestibulum fermentum pretium nunc eu suscipit. Cras a sagittis sapien, eu lacinia risus. Integer mattis quam in odio pretium, in malesuada risus rutrum. Praesent nec nulla ligula. Vestibulum eget arcu metus. Pellentesque ornare viverra congue. Quisque et ante eget est sagittis consequat at id leo. Pellentesque accumsan tortor vel dolor sodales, at cursus dolor auctor. Ut feugiat consectetur posuere. Nam ornare, odio id maximus euismod, diam augue sodales nisl, at porttitor quam sem a nunc. Vivamus condimentum ligula mauris, id maximus lorem tristique quis.
++
++Integer et nisl quis nisl blandit suscipit sit amet ut nunc. Quisque pretium ornare turpis, et congue ante sagittis in. Nullam rhoncus, est sit amet cursus ullamcorper, diam diam placerat lorem, sed volutpat massa metus in dui. Nullam non cursus nisl. Proin maximus velit fringilla metus sollicitudin, et luctus velit dictum. Duis facilisis sed diam at aliquet. Mauris a turpis tincidunt turpis congue semper sed vitae tortor. Pellentesque a lectus sed enim condimentum fringilla quis vestibulum massa.
++
++Proin pulvinar mollis risus, nec placerat tortor congue sit amet. Vestibulum scelerisque malesuada dolor vel tempor. Maecenas auctor sit amet dui quis consectetur. Pellentesque et tellus tincidunt, ullamcorper diam at, sodales libero. Aenean convallis dapibus consequat. Donec eleifend vulputate purus, eget cursus nulla pellentesque sit amet. Praesent ut mauris justo. Donec vehicula lobortis diam, fermentum aliquam nunc aliquam nec. Praesent egestas purus faucibus sollicitudin efficitur. Nam molestie turpis eu dui sagittis, non feugiat orci porta. Fusce lobortis in orci vel fermentum. Duis maximus non tortor eget lacinia. Nullam neque mauris, condimentum sit amet imperdiet quis, fermentum tincidunt mauris.
++
++Aenean dignissim porta lacus pharetra mollis. Mauris hendrerit lorem sed dui faucibus tempus. Aliquam nec volutpat ex. Etiam condimentum, neque at tempor feugiat, lacus nibh consectetur elit, id facilisis metus lectus ac eros. Nullam enim dui, egestas nec arcu sodales, ullamcorper tempor tellus. In vel odio metus. Donec lobortis ipsum in diam blandit, eget volutpat lorem sollicitudin. Vestibulum sit amet enim sapien. Duis ultrices, nulla ac scelerisque ornare, urna justo volutpat lorem, id posuere lectus arcu quis velit. Cras fermentum ante ac massa pellentesque, nec consectetur leo condimentum. Nullam tincidunt mauris a lorem sollicitudin iaculis. Phasellus sed augue ligula. Maecenas ipsum urna, vehicula laoreet aliquet eu, porta id lectus. Phasellus et bibendum risus. Nulla in pretium lorem.
++
++Curabitur placerat nisi ut nulla faucibus consequat. Maecenas eget pretium metus. Suspendisse dignissim viverra tempus. Aliquam nec arcu bibendum, eleifend sapien at, semper quam. Suspendisse potenti. Nunc sit amet velit augue. Mauris et tortor justo. Ut molestie egestas ante, quis facilisis justo commodo tincidunt. Phasellus condimentum in orci ut vulputate. Suspendisse potenti. Maecenas sodales sem fringilla risus venenatis, in varius leo scelerisque. Donec convallis, mi eget vehicula ultricies, orci eros efficitur mi, ut luctus eros odio vel diam.
++
++Praesent suscipit gravida magna, ut eleifend nulla pulvinar ut. Nullam risus magna, viverra eu tellus quis, consequat mollis lacus. Donec mollis nibh a massa pellentesque, sit amet aliquam sapien gravida. Cras vitae dolor vitae nunc interdum tincidunt nec sed est. Aliquam ullamcorper ligula non tellus molestie sollicitudin. Nam venenatis nibh ut justo sagittis, vel pellentesque metus egestas. Integer sed gravida ante. Donec efficitur pharetra felis sit amet vulputate. Donec quis justo euismod, tempus mauris a, malesuada orci. Sed sed eleifend ante. Fusce lacus arcu, pulvinar at diam at, ornare bibendum felis. Vestibulum bibendum vulputate mauris et vulputate.
++
++Morbi a neque a leo ultrices bibendum. Integer pharetra quam ut velit iaculis, et vulputate eros convallis. Quisque gravida pellentesque interdum. Nunc eleifend convallis tellus, a pellentesque eros euismod in. Sed convallis commodo tellus, a consequat ex bibendum nec. Nullam ut pellentesque urna. Donec tincidunt non nunc eget bibendum.
++
++Maecenas vulputate egestas tempor. Nulla facilisi. Cras id quam sed dui dignissim porta. Maecenas pretium accumsan nisi, nec imperdiet lacus dapibus id. Proin ornare sem non ex ultrices, vel eleifend arcu elementum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent eget nisi pulvinar, porttitor mauris non, tempus ante. Vivamus aliquet purus at vulputate laoreet. Donec a dignissim nisl. Nullam risus risus, faucibus ac aliquam auctor, elementum a neque. Vestibulum sit amet arcu at lorem fringilla suscipit. Nunc gravida egestas nisl, in pellentesque nisl pulvinar eu. Pellentesque finibus pulvinar felis eu mollis. Curabitur aliquam dapibus placerat.
++
++Aliquam erat volutpat. Integer ac tortor nec justo iaculis hendrerit a ac velit. Cras at aliquam enim, sed pulvinar ligula. Mauris ex orci, sagittis a elit id, laoreet tristique odio. Aenean luctus sodales nunc, nec pellentesque dui viverra sed. Nunc fringilla suscipit metus, sed eleifend nunc laoreet sit amet. Donec quam mauris, vulputate nec maximus sed, efficitur nec eros. Pellentesque non urna sed justo varius placerat at eget dolor. Quisque non mauris nulla. In luctus dignissim massa, elementum dictum ex dictum non. Fusce non suscipit est, at pulvinar risus. Aenean aliquam enim et enim sodales dictum. Nam nisl mauris, maximus vitae lacinia quis, tempor et magna. Vestibulum blandit ex.
++
++это манекен текста
