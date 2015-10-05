@@ -2,6 +2,7 @@ package com.simplicityitself.training
 
 import spock.lang.Shared
 import spock.lang.Specification
+import spock.lang.Unroll
 
 /**
  * <p>TODO #15: Create a GroovyInterfaces class under src/main/groovy in the same
@@ -13,7 +14,7 @@ import spock.lang.Specification
  * </ul>
  * <p>These classes should implement the {@code java.util.Comparator} interface
  * (allow the IDE to automatically generate the required methods for you). Implement
- * the {@code compareTo()} method in each of the classes based on their names. So
+ * the {@code compareTo ( )} method in each of the classes based on their names. So
  * the {@code StringLengthComparator} implementation should compare the lengths
  * of the two string arguments, while {@code CaseInsensitiveComparator} should do
  * an case-insensitive alphabetic sort.</p>
@@ -41,25 +42,55 @@ import spock.lang.Specification
  * sufficient for the course.</p>
  */
 class GroovyInterfacesSpec extends Specification {
-    @Shared strings = [
-            "oranges",
-            "Lemons",
-            "pears",
-            "Figs",
-            "pineapples" ]
+    @Shared
+            strings = [
+                    "oranges",
+                    "Lemons",
+                    "pears",
+                    "Figs",
+                    "pineapples"]
 
     /**
      * TODO #16: Create a method in GroovyInterfaces that returns a list of the
      * words in {@code strings} sorted by word length. In the implementation,
-     * use the {@code sort(boolean, Comparator)} method added to lists by the
+     * use the {@code sort ( boolean , Comparator )} method added to lists by the
      * Groovy JDK and pass in the {@code Comparator} implementation you created
      * that matches the required behaviour.
      */
+    @Unroll
+    def "Test that getWordsSortedByLength() returns the words sorted by length"() {
+        given: "an instance of groovyInterfaces"
+        def groovyInterfaces = new GroovyInterfaces() //= new groovyInterfaces()
+
+        expect: "A list to be returned with the all the words sorted by length ascending"
+        groovyInterfaces.getWordsSortedByLength(initialList) == expected
+
+        where:
+        initialList | expected
+        strings     | ["Figs", "pears", "Lemons", "oranges", "pineapples"]
+        []          | []
+        null        | null
+    }
 
     /**
      * TODO #17: Create a method in GroovyInterfaces that returns a list of the
      * words in {@code strings} sorted alphabetically, ignoring case. In the
-     * implementation, use the {@code sort(boolean, Comparator)} method as in
+     * implementation, use the {@code sort ( boolean , Comparator )} method as in
      * the previous exercise.
      */
+    @Unroll
+    def "Test that getWordsSortedAlphabetically() returns the words sorted alphabetically, ignoring case"() {
+        given: "an instance of groovyInterfaces"
+        def groovyInterfaces = new GroovyInterfaces() //= new groovyInterfaces()
+
+        expect: "A list to be returned with the all the words sorted alphabetically, ignoring case"
+        groovyInterfaces.getWordsSortedAlphabetically(initialList) == expected
+
+        where:
+        initialList              | expected
+        strings                  | ["Figs", "Lemons", "oranges", "pears", "pineapples"]
+        ["CHERRIES", "apricots"] | ["apricots", "CHERRIES"]
+        []                       | []
+        null                     | null
+    }
 }
