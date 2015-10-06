@@ -12,6 +12,6 @@ public class GroovyFiles2 {
     }
 
     def writeBytes(String path, byte[] bytes) {
-        new File(path)?.withDataOutputStream { it?.write(bytes) }
+        new File(path)?.withOutputStream { it?.write(bytes) }
     }
 }
