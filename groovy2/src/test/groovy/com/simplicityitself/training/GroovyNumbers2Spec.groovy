@@ -135,14 +135,14 @@ class GroovyNumbers2Spec extends Specification {
      * method can be applied to ranges.
      */
     @Unroll
-    def "Test that getEvenNumbersBetweenZeroAndTwenty() returns the number of even numbers between 0 and 20"() {
+    def "Test that getEvenNumbersBetweenZeroAndTwenty() returns the even numbers between 0 and 20 inclusive"() {
         given: "an instance of GroovyNumbers2"
         def groovyNumbers = new GroovyNumbers2() //= new GroovyNumbers2()
 
         when: "the  getEvenNumbersBetweenZeroAndTwenty() method is called"
         def result = groovyNumbers.getEvenNumbersBetweenZeroAndTwenty()
 
-        then: "The number 11 is returned"
-        result == 11
+        then: "The expected result is returned"
+        result == [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
     }
 }

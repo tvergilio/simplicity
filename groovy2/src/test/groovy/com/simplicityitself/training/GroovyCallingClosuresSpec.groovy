@@ -1,5 +1,6 @@
 package com.simplicityitself.training
 
+import spock.lang.Shared
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -8,6 +9,15 @@ import spock.lang.Unroll
  * same package as this test case.
  */
 class GroovyCallingClosuresSpec extends Specification {
+
+    @Shared
+    def date1 = new Date().parse('yyyy/MM/dd', '1980/07/09');
+    @Shared
+    def date2 = new Date().parse('yyyy/MM/dd', '2015/06/10');
+    @Shared
+    def date1Plus1Day = new Date().parse('yyyy/MM/dd', '1980/07/10');
+    @Shared
+    def date2Plus1Day = new Date().parse('yyyy/MM/dd', '2015/06/11');
 
     /**
      * <p>TODO #30: Create a method in GroovyCallingClosures that does exactly
@@ -25,12 +35,14 @@ class GroovyCallingClosuresSpec extends Specification {
         groovyCallingClosures.manualCollect(initialList, closureToApply) == expected
 
         where:
-        initialList  | closureToApply | expected
-        [2, 2, 3, 4] | { it * 2 }     | [4, 4, 6, 8]
-        [1, 1, 1, 1] | { it + 1 }     | [2, 2, 2, 2]
-        []           | { it**3 }      | []
-        []           | null           | []
-        null         | null           | []
+        initialList        | closureToApply         | expected
+        [2, 2, 3, 4]       | { it * 2 }             | [4, 4, 6, 8]
+        ["black", "white"] | { it.substring(0, 1) } | ["b", "w"]
+        [date1, date2]     | { it + 1 }             | [date1Plus1Day, date2Plus1Day]
+        [1, 1, 1, 1]       | { it + 1 }             | [2, 2, 2, 2]
+        []                 | { it**3 }              | []
+        []                 | null                   | []
+        null               | null                   | []
     }
 
     /**

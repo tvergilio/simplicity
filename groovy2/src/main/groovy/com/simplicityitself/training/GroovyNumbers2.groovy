@@ -26,6 +26,6 @@ class GroovyNumbers2 {
     }
 
     def getEvenNumbersBetweenZeroAndTwenty() {
-        return (0..20).count { it % 2 == 0 }
+        return (0..20).findAll { it % 2 == 0 }
     }
 }
