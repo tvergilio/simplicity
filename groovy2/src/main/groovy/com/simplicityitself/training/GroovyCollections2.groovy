@@ -5,19 +5,19 @@ package com.simplicityitself.training
  */
 class GroovyCollections2 {
 
-    def getProduct(List<Integer> numbers) {
+    Integer getProduct(List<Integer> numbers) {
         if (!numbers) {
-            return 0
+            return null
         } else {
             return numbers?.inject { a, b -> a * b }
         }
     }
 
-    def getSumOfSquares(List<Integer> numbers) {
+    Integer getSumOfSquares(List<Integer> numbers) {
         return numbers?.inject(0) { a, b -> a + b**2 }
     }
 
-    def getGroupedNumbers(List<Integer> numbers) {
+    Map<String, List<Integer>> getGroupedNumbers(List<Integer> numbers) {
         def groupByClosure = {
             if (it == 0) {
                 return "zero"

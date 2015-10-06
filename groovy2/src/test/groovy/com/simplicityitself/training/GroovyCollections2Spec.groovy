@@ -35,8 +35,8 @@ class GroovyCollections2Spec extends Specification {
         initialList  | expected
         [2, 2, 3, 4] | 48
         [1, 1, 1, 1] | 1
-        []           | 0
-        null         | 0
+        []           | null
+        null         | null
     }
 
     /**

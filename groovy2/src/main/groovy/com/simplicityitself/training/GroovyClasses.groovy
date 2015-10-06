@@ -11,7 +11,7 @@ class GroovyClasses {
 
     def getNamesSortedByLength(List<Person> people) {
         if (people) {
-            return people*.name?.sort { it.length() }
+            return people*.name.sort { it.length() }
         } else {
             return []
         }
@@ -19,7 +19,7 @@ class GroovyClasses {
 
     def getDOBMostRecentFirst(List<Person> people) {
         if (people) {
-            return people*.dob?.sort { a, b -> b.compareTo(a) }
+            return people*.dob.sort { a, b -> b.compareTo(a) }
         } else {
             return []
         }
