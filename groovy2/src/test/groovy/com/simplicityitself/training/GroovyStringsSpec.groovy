@@ -27,8 +27,8 @@ class GroovyStringsSpec extends Specification {
      */
 
     /**
-     * TODO #11: Create a method in GroovyStrings that returns the first number
-     * in {@code strings} that has a magnitude greater than 10.
+     * TODO #11: Create a method in GroovyStrings that returns the first element
+     * in {@code strings} that begins with the letter 'p'.
      */
 
     /**
