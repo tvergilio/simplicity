@@ -58,9 +58,25 @@ class GroovyStrings2Spec extends Specification {
     }
 
     /**
-     * TODO #11: Create a method in GroovyStrings that returns the first number
-     * in {@code strings} that has a magnitude greater than 10.
+     * TODO #11: Create a method in GroovyStrings that returns the first element
+     * in {@code strings} that begins with the letter 'p'.
      */
+   @Unroll
+    def "Test that getFirstElementStartingWithP() returns the first element which starts with the letter p"() {
+        given: "an instance of groovyStrings2"
+        def groovyStrings2 = new GroovyStrings2() //= new groovyStrings2()
+
+        expect: "The element #expected to be returned for #initialist"
+        groovyStrings2.getFirstElementStartingWithP(initialList) == expected
+
+        where:
+        initialList         | expected
+        strings             | "pears"
+        []                  | null
+        ["plums", "pears"]  | "plums"
+        null                | null
+    }
+
 
     /**
      * TODO #12: Create a method in GroovyStrings that returns a list of the
