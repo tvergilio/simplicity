@@ -26,4 +26,8 @@ class GroovyStrings2 {
             a.length() <=> b.length() ?: a <=> b
         }
     }
+
+    def getFirstElementStartingWithP(List<String> words) {
+        return words?.find { it.startsWith('p') }
+    }
 }
