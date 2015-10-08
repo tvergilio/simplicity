@@ -40,7 +40,7 @@ class GroovyClassesSpec extends Specification {
         people                   | ["Joe", "Anne", "Lizzy", "Edward", "Roberto", "Veronica"]
         []                       | []
         [new Person([name: ""])] | [""]
-        null                     | []
+        null                     | null
     }
 
     /**
@@ -60,7 +60,7 @@ class GroovyClassesSpec extends Specification {
         people                                                                      | [Date.parse("yyyy-MM-dd", "1990-01-02"), Date.parse("yyyy-MM-dd", "1985-08-12"), Date.parse("yyyy-MM-dd", "1985-05-27"), Date.parse("yyyy-MM-dd", "1978-02-28"), Date.parse("yyyy-MM-dd", "1964-12-25"), Date.parse("yyyy-MM-dd", "1960-11-23")]
         []                                                                          | []
         [new Person([name: "Sergio", dob: Date.parse("yyyy-MM-dd", "1980-03-09")])] | [Date.parse("yyyy-MM-dd", "1980-03-09")]
-        null                                                                        | []
+        null                                                                        | null
     }
 
     /**
@@ -81,7 +81,7 @@ class GroovyClassesSpec extends Specification {
         people                                                                      | ["Joe 25", "Anne 30", "Roberto 54", "Lizzy 30", "Edward 37", "Veronica 50"]
         []                                                                          | []
         [new Person([name: "Sergio", dob: Date.parse("yyyy-MM-dd", "1980-03-09")])] | ["Sergio 35"]
-        null                                                                        | []
+        null                                                                        | null
     }
 }
 
