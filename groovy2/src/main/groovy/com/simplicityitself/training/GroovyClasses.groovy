@@ -10,27 +10,15 @@ import org.joda.time.Years
 class GroovyClasses {
 
     def getNamesSortedByLength(List<Person> people) {
-        if (people) {
-            return people*.name.sort { it.length() }
-        } else {
-            return []
-        }
+        return people*.name?.sort { it.length() }
     }
 
     def getDOBMostRecentFirst(List<Person> people) {
-        if (people) {
-            return people*.dob.sort { a, b -> b.compareTo(a) }
-        } else {
-            return []
-        }
+        return people*.dob?.sort { a, b -> b.compareTo(a) }
     }
 
     def getNamesAndAges(List<Person> people) {
-        if (people) {
-            return people*.getNameAge()
-        } else {
-            return []
-        }
+        return people*.getNameAge()
     }
 }
 
