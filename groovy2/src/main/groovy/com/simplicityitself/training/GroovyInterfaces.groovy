@@ -6,20 +6,14 @@ package com.simplicityitself.training
 class GroovyInterfaces {
 
     def getWordsSortedByLength(List<String> words) {
-        return words?.sort(false, new Comparator<String>() {
-            @Override
-            int compare(String o1, String o2) {
-                o1?.length() <=> o2?.length()
-            }
-        })
+        return words?.sort(false, { String o1, String o2 ->
+            o1?.length() <=> o2?.length()
+        } as Comparator<String>)
     }
 
     def getWordsSortedAlphabetically(List<String> words) {
-        return words?.sort(false, new Comparator<String>() {
-            @Override
-            int compare(String o1, String o2) {
-                o1?.toUpperCase() <=> o2?.toUpperCase()
-            }
-        })
+        return words?.sort(false, { String o1, String o2 ->
+            o1?.toUpperCase() <=> o2?.toUpperCase()
+        } as Comparator<String>)
     }
 }
