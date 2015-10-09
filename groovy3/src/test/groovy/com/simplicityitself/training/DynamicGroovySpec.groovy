@@ -11,7 +11,7 @@ class DynamicGroovySpec extends Specification {
         def exercise = new DynamicGroovy()
 
         expect: "A string listing the details of each book in the CSV file"
-        exercise.generateBookDetails(testCsvPath) == """\
+        exercise.generateBookDetails(testCsvPath) == """
 Colossus by Niall Ferguson (ISBN: 32486286)
 Empire by Niall Ferguson (ISBN: 29457346)
 Misery by Stephen King (ISBN: 04353487)
@@ -56,7 +56,7 @@ The Chamber of Secrets by J. K. Rowling (ISBN: 14358761)
 
         expect: "A list of the full names of given Person objects"
         exercise.getBookTitlesFromJson(testJsonPath) == ["Colossus", "Empire", "Misery",
-                                                 "The Kite Runner", "The Chamber of Secrets"]
+                                                         "The Kite Runner", "The Chamber of Secrets"]
     }
 
     private String resolveFilePath(String path) {

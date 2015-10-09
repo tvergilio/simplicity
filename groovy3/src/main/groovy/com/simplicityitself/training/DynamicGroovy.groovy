@@ -24,13 +24,13 @@ class DynamicGroovy {
      * <p>Although there are various approaches you can take with this exercise,
      * you should try to create a list of {@code Expando} objects that represent
      * each book, with properties for the title, author and ISBN. Also add a
-     * {@code displayName()} method to each {@code Expando} instance that creates
+     * {@code displayName ( )} method to each {@code Expando} instance that creates
      * the string <tt>"[title] by [author] (ISBN: [isbn])"</tt>. Remember that a
      * method can be added to an {@code Expando} object as a property with the
      * same name as the method and a closure as its value. The parameter list of
      * the closure should match that of the method.</p>
      * <p>Once you have a list of these {@code Expando} objects, use the dynamic
-     * {@code displayName()} method to render the final text.</p>
+     * {@code displayName ( )} method to render the final text.</p>
      * <p><b>Variant:</b> Try replacing your use of {@code Expando} with maps
      * instead. You should discover that the code works just the same. That's
      * because Groovy effectively treats maps as if they were dynamic objects,
@@ -39,7 +39,28 @@ class DynamicGroovy {
      * added ones.</p>
      */
     String generateBookDetails(String csvPath) {
-        return ""
+        String result = """
+"""
+        def lines = new File(csvPath)?.readLines()
+        def bookList = new ArrayList<Expando>()
+        def keys = []
+        lines.first().split(',')?.each { keys.add(it) }
+        lines = lines.tail()
+        while (lines) {
+            Expando bookExpando = new Expando()
+            def bookLine = lines.first().split(',')
+            keys.each { it -> bookExpando.setProperty(it, bookLine[keys.indexOf(it)]) }
+            bookExpando.toStringFormatted = { Expando it ->
+                """${it.getProperty(keys[0])} by ${it.getProperty(keys[1])} (${keys[2]}: ${it.getProperty(keys[2])})
+"""
+            }
+            bookList.add(bookExpando)
+            lines = lines.tail()
+        }
+        bookList.each { it ->
+            result += it.toStringFormatted(it)
+        }
+        return result
     }
 
     /**
