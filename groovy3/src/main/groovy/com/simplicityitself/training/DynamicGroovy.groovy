@@ -1,5 +1,7 @@
 package com.simplicityitself.training
 
+import groovy.json.JsonSlurper
+
 /**
  * <p>These exercises are designed to get you working with types that rely on
  * the dynamic behaviour of Groovy. Be sure to read the lecture notes on
@@ -103,6 +105,14 @@ class DynamicGroovy {
      * techniques will be helpful here.</p>
      */
     List<String> getBookTitlesFromJson(String jsonPath) {
-        return []
+        List<String> result = []
+        def fileText = new char[1000]
+        new File(jsonPath)?.withReader {
+            it.read(fileText)
+        }
+        def slurper = new JsonSlurper()
+        def jsonData = slurper.parseText(fileText.toString())
+        jsonData.each { result << it.title }
+        return result
     }
 }
