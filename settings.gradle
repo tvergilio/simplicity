@@ -1,4 +1,4 @@
-include "groovy1", "groovy2"
+include "groovy1", "groovy2", "groovy3"
 
 rootProject.name = "ggTraining"
 
