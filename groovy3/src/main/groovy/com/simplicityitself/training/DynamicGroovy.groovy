@@ -1,6 +1,7 @@
 package com.simplicityitself.training
 
 import groovy.json.JsonSlurper
+import groovy.xml.MarkupBuilder
 
 /**
  * <p>These exercises are designed to get you working with types that rely on
@@ -43,22 +44,7 @@ class DynamicGroovy {
     String generateBookDetails(String csvPath) {
         String result = """
 """
-        def lines = new File(csvPath)?.readLines()
-        def bookList = new ArrayList<Expando>()
-        def keys = []
-        lines.first().split(',')?.each { keys.add(it) }
-        lines = lines.tail()
-        while (lines) {
-            Expando bookExpando = new Expando()
-            def bookLine = lines.first().split(',')
-            keys.each { it -> bookExpando.setProperty(it, bookLine[keys.indexOf(it)]) }
-            bookExpando.toStringFormatted = { Expando it ->
-                """${it.getProperty(keys[0])} by ${it.getProperty(keys[1])} (${keys[2]}: ${it.getProperty(keys[2])})
-"""
-            }
-            bookList.add(bookExpando)
-            lines = lines.tail()
-        }
+        ArrayList<Expando> bookList = getBookListFromCSV(csvPath)
         bookList.each { it ->
             result += it.toStringFormatted(it)
         }
@@ -87,7 +73,18 @@ class DynamicGroovy {
      * </p>
      */
     String generateXmlBookDetails(String csvPath) {
-        return ""
+        def stringWriter = new StringWriter()
+        MarkupBuilder markupBuilder = new MarkupBuilder(stringWriter)
+        List<Expando> bookExpandos = getBookListFromCSV(csvPath)
+        markupBuilder.books {
+            for (bookExpando in bookExpandos) {
+                book(title: bookExpando.Title) {
+                    author bookExpando.Author
+                    isbn bookExpando.ISBN
+                }
+            }
+        }
+        return stringWriter.toString()
     }
 
     /**
@@ -114,5 +111,25 @@ class DynamicGroovy {
         def jsonData = slurper.parseText(fileText.toString())
         jsonData.each { result << it.title }
         return result
+    }
+
+    private ArrayList<Expando> getBookListFromCSV(String csvPath) {
+        def bookList = new ArrayList<Expando>()
+        def lines = new File(csvPath)?.readLines()
+        def keys = []
+        lines.first().split(',')?.each { keys.add(it) }
+        lines = lines.tail()
+        while (lines) {
+            Expando bookExpando = new Expando()
+            def bookLine = lines.first().split(',')
+            keys.each { it -> bookExpando.setProperty(it, bookLine[keys.indexOf(it)]) }
+            bookExpando.toStringFormatted = { Expando it ->
+                """${it.getProperty(keys[0])} by ${it.getProperty(keys[1])} (${keys[2]}: ${it.getProperty(keys[2])})
+"""
+            }
+            bookList.add(bookExpando)
+            lines = lines.tail()
+        }
+        bookList
     }
 }

@@ -25,8 +25,7 @@ The Chamber of Secrets by J. K. Rowling (ISBN: 14358761)
         def exercise = new DynamicGroovy()
 
         expect: "An XML string containing all the book details"
-        exercise.generateXmlBookDetails(testCsvPath).trim() == """\
-<books>
+        exercise.generateXmlBookDetails(testCsvPath).trim() == """<books>
   <book title='Colossus'>
     <author>Niall Ferguson</author>
     <isbn>32486286</isbn>
