@@ -18,6 +18,29 @@ import groovyx.gbench.BenchmarkList
  * of dynamic Groovy at runtime. That's because it generates exactly the same
  * bytecode. The only difference is the compile-time type checking.</p>
  */
+
+/**
+ * @TypeChecked takes as long to run as normal Groovy because the compiler check doesn't change the compiled code.
+ * @CompileStatic, on the other hand, changes the compiled Groovy code so it runs pretty much the same speed as compiled Java.
+ * Results:
+ *
+ * without anything:
+ *                        user        system      cpu         real
+ * Groovy quicksort       86667300    0           86667300    86667300
+ * Java   quicksort       11116610    214         11116824    11217712
+ *
+ *
+ * with @CompileStatic:
+ *                        user        system       cpu        real
+ * Groovy quicksort       12275297    0            12275297   12444040
+ * Java quicksort         11586424    0            11586424   11586424
+ *
+ * with @TypeChecked:
+ *                        user        system       cpu        real
+ * Groovy quicksort       84630410    0            84630410   84630410
+ * Java quicksort         11625961    0            11625961   11625961
+ */
+
 class BenchmarkApp {
 
     static void main(String[] args) {
