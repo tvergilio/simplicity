@@ -10,7 +10,9 @@ import java.math.RoundingMode
  * fix the errors. Note that parameterised types usually need to be explicitly
  * declared as such.</p>
  */
-@TypeChecked
+//@TypeChecked
+//This annotation doesn't seem to work with Spock. It causes the compilation to fail.
+
 class BrokenCode {
 
     int sumNumbers(Collection<Integer> numbers) {

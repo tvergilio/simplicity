@@ -1,5 +1,6 @@
 package com.simplicityitself.training
 
+import spock.lang.Shared
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -14,6 +15,15 @@ import spock.lang.Unroll
  */
 class DuckTypingSpec extends Specification {
 
+    @Shared
+    def joe = new Expando([firstName: "Joe", lastName: "Bloggs", fullName: "Joe Bloggs"])
+    @Shared
+    def jill = new Expando([fullName: "Jill Dash"])
+    @Shared
+    def arthur = new Expando([fullName: "Arthur Dent"])
+    @Shared
+    def selina = new Expando([fullName: "Selina Kyle"])
+
     def "Get the full names of people"() {
         given: "The exercise"
         def exercise = new DuckTyping()
@@ -22,7 +32,7 @@ class DuckTypingSpec extends Specification {
         // TODO #6: create a list of objects (Expando or Map is good here) that
         // satisfy the requirements of the method under test and the test data.
         // Have a look at the method to see what it does with its argument.
-        def people
+        def people = [joe, jill, arthur, selina]
 
         expect: "A list of the full names of given Person objects"
         exercise.fullNames(people) == ["Joe Bloggs", "Jill Dash", "Arthur Dent", "Selina Kyle"]
@@ -35,7 +45,7 @@ class DuckTypingSpec extends Specification {
         and: "An initial person"
         // TODO #7: create any object that satisfies the requirements of the
         // method under test and the test data.
-        def person
+        def person = joe
 
         when: "I try to upper cast the names of a given person"
         exercise.namesToUpperCase(person)
@@ -50,11 +60,14 @@ class DuckTypingSpec extends Specification {
         given: "The exercise"
         def exercise = new DuckTyping()
 
+        //Really? Without using File?! Is this cheating? ;)
+        and: "an external URL from which to get the Lorem Ipsum text"
+        def testFilePath = "http://loripsum.net/api/plaintext".toURL()
+
         expect: "The correct size of the test file to be returned"
         // TODO #8: create any object that satisfies the requirements of the
         // method under test and the test data. However, the object shouldn't
         // interact with the file system (so that rules out File)!
-        def testFilePath
         exercise.firstChars(testFilePath, count) == expected
 
         where:
