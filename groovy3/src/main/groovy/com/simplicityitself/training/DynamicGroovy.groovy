@@ -3,6 +3,8 @@ package com.simplicityitself.training
 import groovy.json.JsonSlurper
 import groovy.xml.MarkupBuilder
 
+import java.nio.charset.StandardCharsets
+
 /**
  * <p>These exercises are designed to get you working with types that rely on
  * the dynamic behaviour of Groovy. Be sure to read the lecture notes on
@@ -44,9 +46,9 @@ class DynamicGroovy {
     String generateBookDetails(String csvPath) {
         String result = """
 """
-        ArrayList<Expando> bookList = getBookListFromCSV(csvPath)
-        bookList.each { it ->
-            result += it.toStringFormatted(it)
+        def bookList = getBookListFromCSV(csvPath)
+        bookList.each { book ->
+            result += book.toStringFormatted(book)
         }
         return result
     }
@@ -103,10 +105,7 @@ class DynamicGroovy {
      */
     List<String> getBookTitlesFromJson(String jsonPath) {
         List<String> result = []
-        def fileText = new char[1000]
-        new File(jsonPath)?.withReader {
-            it.read(fileText)
-        }
+        def fileText = new File(jsonPath)?.getText('UTF-8')
         def slurper = new JsonSlurper()
         def jsonData = slurper.parseText(fileText.toString())
         jsonData.each { result << it.title }
@@ -116,19 +115,16 @@ class DynamicGroovy {
     private ArrayList<Expando> getBookListFromCSV(String csvPath) {
         def bookList = new ArrayList<Expando>()
         def lines = new File(csvPath)?.readLines()
-        def keys = []
-        lines.first().split(',')?.each { keys.add(it) }
+        def keys = Arrays.asList(lines.first().split(','))
         lines = lines.tail()
-        while (lines) {
+        lines.each { line ->
             Expando bookExpando = new Expando()
-            def bookLine = lines.first().split(',')
-            keys.each { it -> bookExpando.setProperty(it, bookLine[keys.indexOf(it)]) }
-            bookExpando.toStringFormatted = { Expando it ->
-                """${it.getProperty(keys[0])} by ${it.getProperty(keys[1])} (${keys[2]}: ${it.getProperty(keys[2])})
-"""
+            def bookLine = line.split(',')
+            keys.each { key -> bookExpando.setProperty(key, bookLine[keys.indexOf(key)]) }
+            bookExpando.toStringFormatted = { Expando book ->
+                """${book."${keys[0]}"} by ${book."${keys[1]}"} (${keys[2]}: ${book."${keys[2]}"})"""
             }
             bookList.add(bookExpando)
-            lines = lines.tail()
         }
         bookList
     }

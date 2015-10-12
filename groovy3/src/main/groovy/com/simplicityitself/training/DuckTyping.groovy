@@ -26,4 +26,5 @@ class DuckTyping {
         }
         return buffer.toString()
     }
+
 }
