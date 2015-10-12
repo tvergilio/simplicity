@@ -24,7 +24,7 @@ class BrokenCode {
     }
 
     def mean(Collection<Integer> numbers) {
-        return numbers.sum() / numbers.size()
+        return (numbers.sum() as int) / numbers.size()
     }
 
     BigDecimal median(Collection<Integer> numbers) {
