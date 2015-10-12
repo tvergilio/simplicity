@@ -11,8 +11,7 @@ class DynamicGroovySpec extends Specification {
         def exercise = new DynamicGroovy()
 
         expect: "A string listing the details of each book in the CSV file"
-        exercise.generateBookDetails(testCsvPath) == """
-Colossus by Niall Ferguson (ISBN: 32486286)
+        exercise.generateBookDetails(testCsvPath) == """Colossus by Niall Ferguson (ISBN: 32486286)
 Empire by Niall Ferguson (ISBN: 29457346)
 Misery by Stephen King (ISBN: 04353487)
 The Kite Runner by Khaled Hosseini (ISBN: 43527654)

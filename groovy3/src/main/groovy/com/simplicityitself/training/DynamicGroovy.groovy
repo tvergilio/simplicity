@@ -3,8 +3,6 @@ package com.simplicityitself.training
 import groovy.json.JsonSlurper
 import groovy.xml.MarkupBuilder
 
-import java.nio.charset.StandardCharsets
-
 /**
  * <p>These exercises are designed to get you working with types that rely on
  * the dynamic behaviour of Groovy. Be sure to read the lecture notes on
@@ -44,8 +42,7 @@ class DynamicGroovy {
      * added ones.</p>
      */
     String generateBookDetails(String csvPath) {
-        String result = """
-"""
+        String result = """"""
         def bookList = getBookListFromCSV(csvPath)
         bookList.each { book ->
             result += book.toStringFormatted(book)
@@ -122,7 +119,8 @@ class DynamicGroovy {
             def bookLine = line.split(',')
             keys.each { key -> bookExpando.setProperty(key, bookLine[keys.indexOf(key)]) }
             bookExpando.toStringFormatted = { Expando book ->
-                """${book."${keys[0]}"} by ${book."${keys[1]}"} (${keys[2]}: ${book."${keys[2]}"})"""
+                """${book."${keys[0]}"} by ${book."${keys[1]}"} (${keys[2]}: ${book."${keys[2]}"})
+"""
             }
             bookList.add(bookExpando)
         }

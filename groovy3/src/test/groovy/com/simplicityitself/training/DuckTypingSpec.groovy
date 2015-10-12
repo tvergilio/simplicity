@@ -72,6 +72,7 @@ class DuckTypingSpec extends Specification {
         path.withReader = { String charSet, Closure<String> closure ->
             closure.call(reader)
         }
+
         expect: "The correct size of the test file to be returned"
         // TODO #8: create any object that satisfies the requirements of the
         // method under test and the test data. However, the object shouldn't
