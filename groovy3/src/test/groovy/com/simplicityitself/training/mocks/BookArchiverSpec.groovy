@@ -58,25 +58,23 @@ class BookArchiverSpec extends Specification {
      */
     def "Should archive all the books provided by the corresponding URL"() {
         given: "A mock RestClient"
-        RestClient.metaClass.getContent = { String url ->
-            return """{"books": [{ "title": "Colossus", "author": "Niall Ferguson"},
+        def restClient = Mock(RestClient)
+        restClient.getContent(_) >> """{"books": [{ "title": "Colossus", "author": "Niall Ferguson"},
 { "title": "Empire", "author": "Niall Ferguson"},
 { "title": "Misery", "author": "Stephen King"},
 { "title": "The Kite Runner", "author": "Khaled Hosseini"}
 ]}"""
-        }
-        def restClient = Mock(RestClient)
-
         and: "A mock BookDao"
-        BookDao.metaClass.persist = { Book book ->
-            return book
-        }
         def bookDao = Mock(BookDao)
+        bookDao.persist(_) >> { Book book -> return book }
 
         and: "The exercise"
         def exercise = new BookArchiver(restClient, bookDao)
 
-        expect: "The list of books #expected will be returned"
-        exercise.archiveBooks() == expectedBooks
+        when: "The archiveBooks method is called"
+        def result = exercise.archiveBooks()
+
+        then: "The list of books #expected will be returned"
+        result == expectedBooks
     }
 }
