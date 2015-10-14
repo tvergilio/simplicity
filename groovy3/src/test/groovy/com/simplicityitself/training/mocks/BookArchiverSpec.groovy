@@ -2,13 +2,15 @@ package com.simplicityitself.training.mocks
 
 import spock.lang.Shared
 import spock.lang.Specification
+import spock.lang.Unroll
 
 class BookArchiverSpec extends Specification {
-    @Shared expectedBooks = [
-            new Book("Colossus", "Niall Ferguson"),
-            new Book("Empire", "Niall Ferguson"),
-            new Book("Misery", "Stephen King"),
-            new Book("The Kite Runner", "Khaled Hosseini")]
+    @Shared
+            expectedBooks = [
+                    new Book("Colossus", "Niall Ferguson"),
+                    new Book("Empire", "Niall Ferguson"),
+                    new Book("Misery", "Stephen King"),
+                    new Book("The Kite Runner", "Khaled Hosseini")]
 
     /**
      * <p>TODO #9: Write a test for the {@link BookArchiver#archiveBooks()} method,
@@ -19,19 +21,17 @@ class BookArchiverSpec extends Specification {
      * tests should run without interacting with anything outside of the JVM.</p>
      * <p>Your mock REST client should return a JSON string of the form:
      * <pre>
-     *     {"books": [
-     *       { "title": "Colossus", "author": "Niall Ferguson"},
-     *       { "title": "Empire", "author": "Niall Ferguson"},
-     *       { "title": "Misery", "author": "Stephen King"},
-     *       { "title": "The Kite Runner", "author": "Khaled Hosseini"}
-     *     ]}
-     * </pre>
-     * which your {@code archiveBooks()} implementation should parse to create
+     *{"books": [
+     *{ "title": "Colossus", "author": "Niall Ferguson"},
+     *{ "title": "Empire", "author": "Niall Ferguson"},
+     *{ "title": "Misery", "author": "Stephen King"},
+     *{ "title": "The Kite Runner", "author": "Khaled Hosseini"}*     ]}* </pre>
+     * which your {@code archiveBooks ( )} implementation should parse to create
      * {@link Book} instances. Note that {@code Book} is an immutable class so
-     * you will need to use a tuple constructor {@code Book(String, String)}
+     * you will need to use a tuple constructor {@code Book ( String , String )}
      * rather than the Groovy Beans style.</p>
      * <p>The mock DAO object doesn't need to do anything other than verify
-     * that the {@code persist()} method is called for each of the books in the
+     * that the {@code persist ( )} method is called for each of the books in the
      * original JSON. It should also return the {@code Book} instance each time.
      * </p>
      * <p>You can use any mocking library you want for this exercise, but I
@@ -57,6 +57,26 @@ class BookArchiverSpec extends Specification {
      * that's used heavily in Grails.</p>
      */
     def "Should archive all the books provided by the corresponding URL"() {
+        given: "A mock RestClient"
+        RestClient.metaClass.getContent = { String url ->
+            return """{"books": [{ "title": "Colossus", "author": "Niall Ferguson"},
+{ "title": "Empire", "author": "Niall Ferguson"},
+{ "title": "Misery", "author": "Stephen King"},
+{ "title": "The Kite Runner", "author": "Khaled Hosseini"}
+]}"""
+        }
+        def restClient = Mock(RestClient)
 
+        and: "A mock BookDao"
+        BookDao.metaClass.persist = { Book book ->
+            return book
+        }
+        def bookDao = Mock(BookDao)
+
+        and: "The exercise"
+        def exercise = new BookArchiver(restClient, bookDao)
+
+        expect: "The list of books #expected will be returned"
+        exercise.archiveBooks() == expectedBooks
     }
 }
