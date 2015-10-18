@@ -25,7 +25,7 @@ class GroovyExceptions {
         if (side1 <= 0 || side2 <= 0) {
             throw new IllegalArgumentException("Sides must have a length greater than zero")
         }
-        return Math.sqrt(side1*side1 + side2*side2)
+        return Math.sqrt(side1 * side1 + side2 * side2)
     }
 
     /**
@@ -44,11 +44,11 @@ class GroovyExceptions {
     long characterCount(String path) {
         String text
         long count
-        if (path == null || path.isEmpty()) {
+        if (!path) {
             throw new IllegalArgumentException("Path is null or empty: '${path}'")
         }
         try {
-            FileReader reader = new FileReader(path)
+            def reader = new FileReader(path)
             text = reader.getText()
         } catch (FileNotFoundException e) {
             return -1

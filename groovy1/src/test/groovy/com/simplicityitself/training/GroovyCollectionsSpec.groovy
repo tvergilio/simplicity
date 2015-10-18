@@ -19,6 +19,8 @@ class GroovyCollectionsSpec extends Specification {
         [2, 4, 9, -2, 0] | 2.6
         [-1, -3, -6, -4] | -3.5
         [1, 1, 3, 3]     | 2
+        null             | 0
+        []               | 0
     }
 
     @Unroll

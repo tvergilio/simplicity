@@ -10,11 +10,11 @@ class CountFiles {
             path = System.getProperty("user.dir")
         }
         def files = []
-        def directory = new File(path)
-        if (directory.exists()) {
-            directory.eachFile {
-                if (suffix != null && !suffix.isEmpty() && it.name.endsWith(suffix)) {
-                    files << it
+        def file = new File(path)
+        if (file.exists()) {
+            file.eachFile { subFile ->
+                if (suffix && subFile.name.endsWith(suffix)) {
+                    files << subFile
                 }
             }
         }

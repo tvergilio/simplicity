@@ -1,8 +1,4 @@
 package com.simplicityitself.training
-
-
-import java.text.DateFormat
-
 /**
  * <p>Dates and times are an important part of any language. Unfortunately the
  * old API of {@code java.util.Date} and {@code java.util.Calendar} are quite
@@ -49,8 +45,8 @@ class GroovyDates {
      * is later than <tt>time1</tt>, i.e. the number is bigger.</p>
      */
     int diffDays(long time1, long time2) {
-        Date d1 = new Date (time1)
-        Date d2 = new Date (time2)
+        def d1 = new Date(time1)
+        def d2 = new Date(time2)
         return d1 > d2 ? d1 - d2 : d2 - d1
     }
 
@@ -60,6 +56,6 @@ class GroovyDates {
      * at the Groovy JDK to find an appropriate method.</p>
      */
     String formattedDate(Date date) {
-        date.format('dd MMM yyyy')
+        return date.format('dd MMM yyyy')
     }
 }

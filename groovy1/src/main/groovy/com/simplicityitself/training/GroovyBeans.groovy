@@ -18,10 +18,10 @@ class GroovyBeans {
      * or <tt>person.getFirstName()</tt>. Try it!</p>
      */
     List<String> firstNames(List<Person> people) {
-        def result = new ArrayList<String>()
-        if (people != null && !people.isEmpty()) {
-            for (Person p in people) {
-                result << p.firstName
+        def result = []
+        people.each { person ->
+            if (person.firstName) {
+                result << person.firstName
             }
         }
         return result
@@ -36,11 +36,9 @@ class GroovyBeans {
      * or <tt>person.getFullName()</tt>. Try it!</p>
      */
     List<String> fullNames(List<Person> people) {
-        def result = new ArrayList<String>()
-        if (people != null && !people.isEmpty()) {
-            for (Person p in people) {
-                result << p.fullName
-            }
+        def result = []
+        people.each { person ->
+            result << person.fullName
         }
         return result
     }
@@ -54,10 +52,8 @@ class GroovyBeans {
      * or <tt>person.setFullName(...)</tt>. Try it!</p>
      */
     void namesToUpperCase(Person person) {
-        if (person != null) {
-            person.setFirstName(person.firstName.toUpperCase())
-            person.setLastName(person.lastName.toUpperCase())
-        }
+        person?.setFirstName(person.firstName?.toUpperCase())
+        person?.setLastName(person.lastName?.toUpperCase())
     }
 
     /**
@@ -67,14 +63,10 @@ class GroovyBeans {
      * resulting two values (first name and last name).</p>
      */
     List<Person> createPeople(List<String> names) {
-        def persons = new ArrayList<Person>()
-        if (names != null && !names.isEmpty()) {
-            for (String fullName in names) {
-                def tokens = fullName.split(" ")
-                if (tokens != null && tokens.size() > 1) {
-                    persons.add(new Person([firstName: tokens[0], lastName: tokens[1]]))
-                }
-            }
+        def persons = []
+        names.each { nameString ->
+            def tokens = nameString.split(" ")
+            persons.add(new Person([firstName: tokens[0], lastName: tokens[1]]))
         }
         return persons
     }
@@ -91,11 +83,9 @@ class GroovyBeans {
      * be careful using visibility scopes on fields.</p>
      */
     List<Integer> heights(List<Person> people) {
-        def heights = new ArrayList<Integer>()
-        if (people != null && !people.isEmpty()) {
-            for (Person p in people) {
-                heights.add(p.height)
-            }
+        def heights = []
+        people.each { person ->
+            heights << person.height
         }
         return heights
     }
@@ -103,9 +93,10 @@ class GroovyBeans {
 
 class Person {
     public int height
-
     String firstName
     String lastName
 
-    String getFullName() { return "$firstName $lastName" }
+    String getFullName() {
+        return "$firstName $lastName"
+    }
 }

@@ -15,7 +15,7 @@ class BrokenCode {
      */
     int sumNumbers(numbers) {
         def result = 0
-        for (int i in numbers) {
+        for (i in numbers) {
             result += i
         }
         return result

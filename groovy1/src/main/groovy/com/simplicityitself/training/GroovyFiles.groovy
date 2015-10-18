@@ -1,5 +1,7 @@
 package com.simplicityitself.training
 
+import groovy.transform.CompileStatic
+
 /**
  * <p>Working with the filesystem is an important part of much software
  * development and script writing. These exercises give you a chance to
@@ -36,6 +38,7 @@ package com.simplicityitself.training
  * tutorial</a> will you give you a solid introduction to this powerful API. You'll
  * also find that Groovy adds extension methods to the <tt>Path</tt> interface.</p>
  */
+@CompileStatic //Will this check my exception handling for me to make sure they're correct?
 class GroovyFiles {
 
     /**
@@ -45,8 +48,7 @@ class GroovyFiles {
      * JDK for {@code File}</a>. You don't need to read the file to find out.</p>
      */
     long fileSize(String path) {
-        def file = new File(path)
-        return file.size()
+        return new File(path).size()
     }
 
     /**
@@ -55,28 +57,24 @@ class GroovyFiles {
      * information. In addition, you should ideally load it using the "UTF-8"
      * character encoding.</p>
      */
-    long characterCount(String path) {
-        def file = new File(path)
-        def text = file.getText('UTF-8')
-        return text.size()
+    long characterCount(String path) throws IOException {
+        return new File(path).getText('UTF-8')?.size()
     }
 
     /**
      * <p>TODO #24: Return the first <tt>count</tt> characters of a text file as
      * a string. Remember that the text file is encoded as UTF-8.</p>
      */
-    String firstChars(String path, int count) {
-        def file = new File(path)
-        def text = file.getText('UTF-8')
-        return text.substring(0, count)
+    String firstChars(String path, int count) throws IOException {
+        return new File(path).getText('UTF-8')?.substring(0, count)
     }
 
     /**
      * <p>TODO #25: Write some binary (byte) data to a file. The data is
      * provided as the method's second argument.</p>
      */
-    void writeBytes(String path, byte[] data) {
-        FileOutputStream stream = new FileOutputStream(new File(path))
+    void writeBytes(String path, byte[] data) throws IOException {
+        def stream = new FileOutputStream(new File(path))
         stream.write(data)
         stream.close()
     }

@@ -28,7 +28,7 @@ class TodoList {
     final List<Item> allItems
 
     TodoList() {
-        items = new ArrayList<>()
+        items = []
     }
 
     List<Item> addItem(Item item) {
@@ -41,8 +41,8 @@ class TodoList {
     }
 
     List<Item> dueBefore(Date date) {
-        List<Item> results = new ArrayList<>()
-        for (Item item in items) {
+        def results = []
+        items.each { item ->
             if (item.dueDate < date) {
                 results.add(item)
             }
@@ -73,6 +73,6 @@ class Item {
     final Date dateCreated
 
     Item() {
-        dateCreated = new Date(System.currentTimeMillis())
+        dateCreated = new Date()
     }
 }

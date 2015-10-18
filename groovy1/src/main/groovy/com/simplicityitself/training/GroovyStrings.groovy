@@ -1,8 +1,4 @@
 package com.simplicityitself.training
-
-import java.util.regex.Matcher
-import java.util.regex.Pattern
-
 /**
  * <p>These exercises give you a chance to work with strings in Groovy. If you
  * would like a gentle introduction beyond the Groovy quick reference, read the
@@ -17,11 +13,7 @@ class GroovyStrings {
      * should return "Who are you?".</p>
      */
     String hello(String name) {
-        def greeting = "Who are you?"
-        if (name != null && !name.isEmpty()) {
-            greeting = "Hello ${name}!"
-        }
-        return greeting
+        return name ? "Hello ${name}!" : "Who are you?"
     }
 
     /**
@@ -39,11 +31,11 @@ class GroovyStrings {
      */
     String leadingChars(String str, int n) {
         def result = str
-        if (str != null && n < str.length()) {
+        if (str && n < str.length()) {
             result = str.substring(0, n)
         }
-            return result
-        }
+        return result
+    }
 
     /**
      * <p>TODO #10: Replace all vowels in the given string with the * character.
