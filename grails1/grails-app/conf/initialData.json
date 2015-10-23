@@ -1,0 +1,56 @@
+{"faculties": [
+  {"name": "Physical Sciences"},
+  {"name": "Modern Foreign Languages"},
+  {"name": "Humanities"},
+  {"name": "Media"}
+ ],
+ "courses": [
+   {
+     "code": "PHYS",
+     "title": "Physics Bsc",
+     "description": "Something about the subject Physics",
+     "faculty": "Physical Sciences"
+   },
+   {
+     "code": "CHEM",
+     "title": "Chemistry Bsc",
+     "description": "Chemistry is the art of turning lead into gold",
+     "faculty": "Physical Sciences"
+   },
+   {
+     "code": "ENG",
+     "title": "English BA",
+     "description": "Language and literature",
+     "faculty": "Humanities"
+   },
+   {
+     "code": "MSCP",
+     "title": "Music production",
+     "description": "Make excellent music",
+     "faculty": "Media"
+   },
+   {
+     "code": "HIST",
+     "title": "History BA",
+     "description": "Learn to analyse past events and people",
+     "faculty": "Humanities"
+   },
+   {
+     "code": "FRCH",
+     "title": "French",
+     "description": "Learn about French!",
+     "faculty": "Modern Foreign Languages"
+   },
+   {
+     "code": "SPN",
+     "title": "Spanish",
+     "description": "Spanish",
+     "faculty": "Modern Foreign Languages"
+   },
+   {
+     "code": "MDRN",
+     "title": "Mandarin",
+     "description": "Learn the most widely spoken Chinese dialect",
+     "faculty": "Modern Foreign Languages"
+   }
+ ]}
