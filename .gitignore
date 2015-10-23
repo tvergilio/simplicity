@@ -3,6 +3,7 @@
 .lazybones/
 build/
 lecture/*.key
+target/
 *.iml
 *.ipr
 *.iws
