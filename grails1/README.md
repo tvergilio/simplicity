@@ -24,7 +24,7 @@ Once you have the application up and running, you can start working on the exerc
 
 5. (Optional) Add a custom URL for this page at "/status".
 
-6. (Optional) Write a unit test for the `status` action. You will need to use the `@TestFor` annotation to make sure that the injected controller methods and properties work. You shouldn't need to use `@Mock` because the action shouldn't be using any other Grails artifact (a class with a special meaning in Grails, such as controllers, services, persistence classes, etc.).
+6. (Optional) Write a org test for the `status` action. You will need to use the `@TestFor` annotation to make sure that the injected controller methods and properties work. You shouldn't need to use `@Mock` because the action shouldn't be using any other Grails artifact (a class with a special meaning in Grails, such as controllers, services, persistence classes, etc.).
 
 ## The database model
 
@@ -56,7 +56,7 @@ Next we'll add the main entry pages of the application, which will allow users t
 
     If you use the `id` property of the `Course` object as the identifier, use `Course.get(ID)` to retrieve the course object. If you are using the course code as the identifier, use a simple query to fetch the matching `Course` object. Use a GSP view to render the page, passing the course to the view via the view model. It should display the course code, the title, the description and the name of the faculty running the course.
 6. Modify the first page that lists the courses so that each course code is a hyperlink to the corresponding course page. The `<g:link>` tag is the best one for this job.
-7. (Optional) Add unit tests for the two actions you created for this section.
+7. (Optional) Add org tests for the two actions you created for this section.
 8. (Optional) Modify the main course page so that it has a text field + search button. If the search field contains only "*", display all courses after the search is submitted. Otherwise, display only those courses that have a matching course code or title. You can use any wildcards you want with the database query. In this case, `Course.list()` won't cut it. You'll need one of the other query options.
 9. (Optional) Use a partial template to ensure that each course is rendered the same in the course list.
 10. (Really optional) Make the search AJAX in any way you see fit. You could experiment with the adaptive AJAX tags provided by Grails, such as <g:submitToRemote/>, or use native jQuery code.
@@ -84,14 +84,14 @@ In the next phase, you'll add the option for users (students) to register for pa
 10. (Optional) On the page that shows a single course, add a _Register_ button or link that goes to a `Course.register` action. The button should only be displayed if there is a user in the session. This action should pick the user out of the session, call `Student.attach()` on it, retrieve the corresponding `Course` instance for the course that was being displayed, and finally add the `Course` to the `Student` via that `hasMany` relationship from step 2.
 
     At the end of the action, redirect to a page listing the course that the current student is registered for. You'll have to create the corresponding page of course.
-11. (Optional) Add unit tests for any controller actions that don't have them.
+11. (Optional) Add org tests for any controller actions that don't have them.
 
 ## Ask a question
 
-(Advanced) This last exercise is a bit more involved as we introduce a collaborator for a controller. It's partly here to provide practice at using Spock mocks inside a Grails controller unit test.
+(Advanced) This last exercise is a bit more involved as we introduce a collaborator for a controller. It's partly here to provide practice at using Spock mocks inside a Grails controller org test.
 
 1. Add a `mailSender` property to `CourseController`.
 2. Add an _Ask a question_ button to the page that displays the information about a single course. Note that this should be in a separate form if your _Register_ button/link is already inside a form. Add `from` (an email address) and `body` (the question text) fields to the new form. The form should submit to a new action, which you will create next.
 3. Add a `contactHead` action to `CourseController`. This action should accept `from` and `body` from a form submission. It should then call the `void sendEmail(String to, String from, String subject, String body)` method on the `mailSender` object. Don't worry, for the running application, the property will be appropriately populated before your action is called. Hard code the `to` and `from` arguments based on the course that the _Ask a question_ button was on. It's up to you where this information comes from.
-4. Write a unit test for `contactHead` that verifies the appropriate email is sent once, and once only.
+4. Write a org test for `contactHead` that verifies the appropriate email is sent once, and once only.
 5. Hide the _Ask a question_ form by default and only display it when a link or something is clicked on. Make sure this only happens within the browser, i.e. use Javascript and don't send an extra request to the server.

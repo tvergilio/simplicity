@@ -13,8 +13,10 @@
 		<link rel="apple-touch-icon" href="${assetPath(src: 'apple-touch-icon.png')}">
 		<link rel="apple-touch-icon" sizes="114x114" href="${assetPath(src: 'apple-touch-icon-retina.png')}">
   		<asset:stylesheet src="application.css"/>
+		<asset:stylesheet src="bootstrap.min.css"/> <!--might as well make it look nice...-->
 		<asset:javascript src="application.js"/>
 		<g:layoutHead/>
+		<g:javascript library="jquery" /> <!--making the search AJAX-->
 	</head>
 	<body>
 		<div id="grailsLogo" role="banner"><a href="http://grails.org"><asset:image src="grails_logo.png" alt="Grails"/></a></div>
