@@ -25,10 +25,9 @@
                 <span class="input-group-btn">
                     <g:actionSubmit class="btn btn-default" type="button" value="Search"/>
                 </span>
-            </g:form><!-- /input-group -->
-        </div><!-- /.col-lg-6 -->
-    </div><!-- /.row -->
-
+            </g:form>
+        </div>
+    </div>
 &nbsp;
 <g:render template="course" collection="${courses}" var="course"/>
 </div>

@@ -13,6 +13,7 @@ class MainController {
     def search(String searchString) {
         if ("*".equals(searchString)) {
             redirect action: 'index'
+            return
         } else {
             render(view: 'index', model: [courses: Course.findAllByCodeIlikeOrDescriptionIlike(searchString, searchString)])
         }
