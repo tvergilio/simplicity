@@ -45,7 +45,7 @@
             <g:form name="contactHead" controller="course" action="contactHead">
                 <div class="form-group">
                     <label for="from">E-mail</label>
-                    <g:textField class="form-control" name="from"></g:textField>
+                    <input id="from" type="email" class="form-control" name="from"/>
                 </div>
 
                 <div class="form-group">
