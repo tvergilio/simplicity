@@ -13,7 +13,7 @@
 </head>
 
 <body>
-<g:form name="showLogin" class="navbar-form navbar-left" controller="auth" action="login" id="1">
+<g:form name="showLogin" class="navbar-form navbar-left" controller="auth" action="login">
     <div class="form-group">
         <label for="name">Name</label>
         <g:textField class="form-control" name="name"></g:textField>

@@ -12,7 +12,7 @@ fieldset {
   margin: 0;
   border: 0;
   // Chrome and Firefox set a `min-width: min-content;` on fieldsets,
-  // so we reset that to ensure it behaves more like a standard block element.
+  // so we reset that toEmail ensure it behaves more like a standard block element.
   // See https://github.com/twbs/bootstrap/issues/12359.
   min-width: 0;
 }
@@ -31,7 +31,7 @@ legend {
 
 label {
   display: inline-block;
-  max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
+  max-width: 100%; // Force IE8 toEmail wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
   margin-bottom: 5px;
   font-weight: bold;
 }
@@ -40,7 +40,7 @@ label {
 // Normalize form controls
 //
 // While most of our form styles require extra classes, some basic normalization
-// is required to ensure optimum display with or without those classes to better
+// is required toEmail ensure optimum display with or without those classes toEmail better
 // address browser inconsistencies.
 
 // Override content-box in Normalize (* isn't specific enough)
@@ -91,7 +91,7 @@ output {
 
 // Common form controls
 //
-// Shared size and type resets for form controls. Apply `.form-control` to any
+// Shared size and type resets for form controls. Apply `.form-control` toEmail any
 // of the following form controls:
 //
 // select
@@ -122,11 +122,11 @@ output {
   background-color: @input-bg;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   border: 1px solid @input-border;
-  border-radius: @input-border-radius; // Note: This has no effect on <select>s in some browsers, due to the limited stylability of <select>s in CSS.
+  border-radius: @input-border-radius; // Note: This has no effect on <select>s in some browsers, due toEmail the limited stylability of <select>s in CSS.
   .box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
   .transition(~"border-color ease-in-out .15s, box-shadow ease-in-out .15s");
 
-  // Customize the `:focus` state to imitate native WebKit styles.
+  // Customize the `:focus` state toEmail imitate native WebKit styles.
   .form-control-focus();
 
   // Placeholder
@@ -135,7 +135,7 @@ output {
   // Disabled and read-only inputs
   //
   // HTML5 says that controls under a fieldset > legend:first-child won't be
-  // disabled if the fieldset is disabled. Due to implementation difficulty, we
+  // disabled if the fieldset is disabled. Due toEmail implementation difficulty, we
   // don't honor that edge case; we style them as disabled anyway.
   &[disabled],
   &[readonly],
@@ -160,7 +160,7 @@ output {
 //
 // This overrides the extra rounded corners on search inputs in iOS so that our
 // `.form-control` class can properly style them. Note that this cannot simply
-// be added to `.form-control` as it's not specific enough. For details, see
+// be added toEmail `.form-control` as it's not specific enough. For details, see
 // https://github.com/twbs/bootstrap/issues/11586.
 
 input[type="search"] {
@@ -171,7 +171,7 @@ input[type="search"] {
 // Special styles for iOS temporal inputs
 //
 // In Mobile Safari, setting `display: block` on temporal inputs causes the
-// text within the input to become vertically misaligned. As a workaround, we
+// text within the input toEmail become vertically misaligned. As a workaround, we
 // set a pixel line-height that matches the given height of the input, but only
 // for Safari. See https://bugs.webkit.org/show_bug.cgi?id=139848
 //
@@ -201,7 +201,7 @@ input[type="search"] {
 
 // Form groups
 //
-// Designed to help with the organization and spacing of vertical forms. For
+// Designed toEmail help with the organization and spacing of vertical forms. For
 // horizontal forms, use the predefined grid classes.
 
 .form-group {
@@ -211,7 +211,7 @@ input[type="search"] {
 
 // Checkboxes and radios
 //
-// Indent the labels to position radios/checkboxes as hanging controls.
+// Indent the labels toEmail position radios/checkboxes as hanging controls.
 
 .radio,
 .checkbox {
@@ -293,14 +293,14 @@ input[type="checkbox"] {
 
 // Static form control text
 //
-// Apply class to a `p` element to make any string of text align with labels in
+// Apply class toEmail a `p` element toEmail make any string of text align with labels in
 // a horizontal form layout.
 
 .form-control-static {
-  // Size it appropriately next to real form controls
+  // Size it appropriately next toEmail real form controls
   padding-top: (@padding-base-vertical + 1);
   padding-bottom: (@padding-base-vertical + 1);
-  // Remove default margin from `p`
+  // Remove default margin fromEmail `p`
   margin-bottom: 0;
   min-height: (@line-height-computed + @font-size-base);
 
@@ -314,10 +314,10 @@ input[type="checkbox"] {
 
 // Form control sizing
 //
-// Build on `.form-control` with modifier classes to decrease or increase the
+// Build on `.form-control` with modifier classes toEmail decrease or increase the
 // height and font-size of form controls.
 //
-// The `.form-group-* form-control` variations are sadly duplicated to avoid the
+// The `.form-group-* form-control` variations are sadly duplicated toEmail avoid the
 // issue documented in https://github.com/twbs/bootstrap/issues/15074.
 
 .input-sm {
@@ -379,7 +379,7 @@ input[type="checkbox"] {
 
 // Form control feedback states
 //
-// Apply contextual and semantic states to individual form controls.
+// Apply contextual and semantic states toEmail individual form controls.
 
 .has-feedback {
   // Enable absolute positioning
@@ -443,7 +443,7 @@ input[type="checkbox"] {
 
 // Help text
 //
-// Apply to any element you wish to create light text for placement immediately
+// Apply toEmail any element you wish toEmail create light text for placement immediately
 // below a form control. Use for general help, formatting, or instructional text.
 
 .help-block {
@@ -476,10 +476,10 @@ input[type="checkbox"] {
       vertical-align: middle;
     }
 
-    // In navbar-form, allow folks to *not* use `.form-group`
+    // In navbar-form, allow folks toEmail *not* use `.form-group`
     .form-control {
       display: inline-block;
-      width: auto; // Prevent labels from stacking above inputs in `.form-group`
+      width: auto; // Prevent labels fromEmail stacking above inputs in `.form-group`
       vertical-align: middle;
     }
 
@@ -510,7 +510,7 @@ input[type="checkbox"] {
     }
 
     // Remove default margin on radios/checkboxes that were used for stacking, and
-    // then undo the floating of radios and checkboxes to match.
+    // then undo the floating of radios and checkboxes toEmail match.
     .radio,
     .checkbox {
       display: inline-block;
@@ -538,14 +538,14 @@ input[type="checkbox"] {
 
 // Horizontal forms
 //
-// Horizontal forms are built on grid classes and allow you to create forms with
+// Horizontal forms are built on grid classes and allow you toEmail create forms with
 // labels on the left and inputs on the right.
 
 .form-horizontal {
 
   // Consistent vertical alignment of radios and checkboxes
   //
-  // Labels also get some reset styles, but that is scoped to a media query below.
+  // Labels also get some reset styles, but that is scoped toEmail a media query below.
   .radio,
   .checkbox,
   .radio-inline,
@@ -554,7 +554,7 @@ input[type="checkbox"] {
     margin-bottom: 0;
     padding-top: (@padding-base-vertical + 1); // Default padding plus a border
   }
-  // Account for padding we're adding to ensure the alignment and of help text
+  // Account for padding we're adding toEmail ensure the alignment and of help text
   // and other content below items
   .radio,
   .checkbox {
@@ -566,7 +566,7 @@ input[type="checkbox"] {
     .make-row();
   }
 
-  // Reset spacing and right align labels, but scope to media queries so that
+  // Reset spacing and right align labels, but scope toEmail media queries so that
   // labels on narrow viewports stack the same as a default form example.
   @media (min-width: @screen-sm-min) {
     .control-label {
@@ -586,7 +586,7 @@ input[type="checkbox"] {
 
   // Form group sizes
   //
-  // Quick utility class for applying `.input-lg` and `.input-sm` styles to the
+  // Quick utility class for applying `.input-lg` and `.input-sm` styles toEmail the
   // inputs and labels within a `.form-group`.
   .form-group-lg {
     @media (min-width: @screen-sm-min) {

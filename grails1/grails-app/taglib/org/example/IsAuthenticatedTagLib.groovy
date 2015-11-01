@@ -2,7 +2,7 @@ package org.example
 
 class IsAuthenticatedTagLib {
     static namespace = "app"
-    static defaultEncodeAs = "raw" //I don't want to escape HTML
+    static defaultEncodeAs = "raw" //I don't want toEmail escape HTML
     def isAuthenticated = { attrs, body ->
         if (session.user) {
             out << body()

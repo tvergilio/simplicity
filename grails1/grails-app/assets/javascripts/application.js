@@ -10,11 +10,20 @@
 //= require_self
 
 if (typeof jQuery !== 'undefined') {
-	(function($) {
-		$('#spinner').ajaxStart(function() {
-			$(this).fadeIn();
-		}).ajaxStop(function() {
-			$(this).fadeOut();
-		});
-	})(jQuery);
+    (function ($) {
+        $('#spinner').ajaxStart(function () {
+            $(this).fadeIn();
+        }).ajaxStop(function () {
+            $(this).fadeOut();
+        });
+    })(jQuery);
+}
+function toggle_visibility(id) {
+    var e = document.getElementById(id);
+    if (e.classList.contains('show')) {
+        e.className = 'hide';
+    }
+    else {
+        e.className = 'show';
+    }
 }

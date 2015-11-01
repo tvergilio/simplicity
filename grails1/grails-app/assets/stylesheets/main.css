@@ -18,7 +18,7 @@ html {
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr = '#aaaaaa', EndColorStr = '#dddddd');
 	background-repeat: no-repeat;
 	height: 100%;
-	/* change the box model to exclude the padding from the calculation of 100% height (IE8+) */
+	/* change the box model toEmail exclude the padding fromEmail the calculation of 100% height (IE8+) */
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
 	        box-sizing: border-box;
@@ -382,7 +382,7 @@ fieldset.embedded legend {
 	        box-shadow: 0 0 0.5em #ffaaaa;
 }
 
-/* same effects for browsers that support HTML5 client-side validation (these have to be specified separately or IE will ignore the entire rule) */
+/* same effects for browsers that support HTML5 client-side validation (these have toEmail be specified separately or IE will ignore the entire rule) */
 
 input:invalid, select:invalid, textarea:invalid {
 	background: #fff3f3;

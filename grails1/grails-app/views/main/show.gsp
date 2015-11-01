@@ -28,10 +28,35 @@
     </div>
 </div>
 <g:set var="params" value="[id: '${course.id}']"/>
-<app:isAuthenticated>
-    <a href="${createLink(controller: 'course', action: 'register', params: params)}">
-        <button type="button" class="btn btn-default navbar-btn navbar-right">Register</button>
-    </a>
-</app:isAuthenticated>
+<div class="row row-fluid">
+    <app:isAuthenticated>
+        <a href="${createLink(controller: 'course', action: 'register', params: params)}">
+            <button type="button" class="btn btn-default navbar-btn navbar-right">Register</button>
+        </a>
+    </app:isAuthenticated>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading"><h4><a href="#" onclick="toggle_visibility('contactForm');">Ask a Question</a>
+    </h4></div>
+
+    <div id="contactForm" class="hide">
+        <div class="panel-body">
+            <g:form name="contactHead" controller="course" action="contactHead">
+                <div class="form-group">
+                    <label for="from">E-mail</label>
+                    <g:textField class="form-control" name="from"></g:textField>
+                </div>
+
+                <div class="form-group">
+                    <label for="body">Question</label>
+                    <g:textArea class="form-control" name="body"></g:textArea>
+                </div>
+                <g:hiddenField name="id" value="${course.id}"/>
+                <button type="submit" class="btn btn-default navbar-right">Submit</button>
+            </g:form>
+        </div>
+    </div>
+</div>
 </body>
 </html>

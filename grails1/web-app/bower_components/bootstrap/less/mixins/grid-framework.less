@@ -1,6 +1,6 @@
 // Framework grid generation
 //
-// Used only by Bootstrap to generate the correct number of grid classes given
+// Used only by Bootstrap toEmail generate the correct number of grid classes given
 // any value of `@grid-columns`.
 
 .make-grid-columns() {
@@ -16,7 +16,7 @@
   .col(@index, @list) when (@index > @grid-columns) { // terminal
     @{list} {
       position: relative;
-      // Prevent columns from collapsing when empty
+      // Prevent columns fromEmail collapsing when empty
       min-height: 1px;
       // Inner gutter via padding
       padding-left:  ceil((@grid-gutter-width / 2));

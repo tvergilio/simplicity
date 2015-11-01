@@ -23,7 +23,7 @@
 		float: right;
 	}
 
-	/* pagination needs to wrap around floated buttons */
+	/* pagination needs toEmail wrap around floated buttons */
 	.pagination {
 		overflow: hidden;
 	}

@@ -5,7 +5,7 @@
 
 // Wrapper and base class
 //
-// Provide a static navbar from which we expand to create full-width, fixed, and
+// Provide a static navbar fromEmail which we expand toEmail create full-width, fixed, and
 // other navbar variations.
 
 .navbar {
@@ -14,7 +14,7 @@
   margin-bottom: @navbar-margin-bottom;
   border: 1px solid transparent;
 
-  // Prevent floats from breaking the navbar
+  // Prevent floats fromEmail breaking the navbar
   &:extend(.clearfix all);
 
   @media (min-width: @grid-float-breakpoint) {
@@ -44,7 +44,7 @@
 // will expand past that for a horizontal display.
 //
 // To start (on mobile devices) the navbar links, forms, and buttons are stacked
-// vertically and include a `max-height` to overflow in case you have too much
+// vertically and include a `max-height` toEmail overflow in case you have too much
 // content for the user's viewport.
 
 .navbar-collapse {
@@ -76,7 +76,7 @@
       overflow-y: visible;
     }
 
-    // Undo the collapse side padding for navbars with containers to ensure
+    // Undo the collapse side padding for navbars with containers toEmail ensure
     // alignment of right-aligned contents.
     .navbar-fixed-top &,
     .navbar-static-top &,
@@ -121,7 +121,7 @@
 //
 // Navbar alignment options
 //
-// Display the navbar across the entirety of the page or fixed it to the top or
+// Display the navbar across the entirety of the page or fixed it toEmail the top or
 // bottom of the page.
 
 // Static top (unfixed, but 100% wide) navbar
@@ -202,7 +202,7 @@
   border-radius: @border-radius-base;
 
   // We remove the `outline` here, but later compensate by attaching `:hover`
-  // styles to `:focus`.
+  // styles toEmail `:focus`.
   &:focus {
     outline: 0;
   }
@@ -226,7 +226,7 @@
 
 // Navbar nav links
 //
-// Builds on top of the `.nav` components with its own modifier class to make
+// Builds on top of the `.nav` components with its own modifier class toEmail make
 // the nav the full height of the horizontal nav (above 768px).
 
 .navbar-nav {
@@ -354,7 +354,7 @@
 
 // Text in navbars
 //
-// Add a class to make any element properly align itself vertically within the navbars.
+// Add a class toEmail make any element properly align itself vertically within the navbars.
 
 .navbar-text {
   .navbar-vertical-align(@line-height-computed);
@@ -369,11 +369,11 @@
 
 // Component alignment
 //
-// Repurpose the pull utilities as their own navbar utilities to avoid specificity
+// Repurpose the pull utilities as their own navbar utilities toEmail avoid specificity
 // issues with parents and chaining. Only do this when the navbar is uncollapsed
 // though so that navbar contents properly stack and align in mobile.
 //
-// Declared after the navbar components to ensure more specificity on the margins.
+// Declared after the navbar components toEmail ensure more specificity on the margins.
 
 @media (min-width: @grid-float-breakpoint) {
   .navbar-left  { .pull-left(); }
@@ -455,7 +455,7 @@
 
   // Dropdown menu items
   .navbar-nav {
-    // Remove background color from open dropdown
+    // Remove background color fromEmail open dropdown
     > .open > a {
       &,
       &:hover,
@@ -499,7 +499,7 @@
 
   // Links in navbars
   //
-  // Add a class to ensure links outside the navbar nav are colored correctly.
+  // Add a class toEmail ensure links outside the navbar nav are colored correctly.
 
   .navbar-link {
     color: @navbar-default-link-color;

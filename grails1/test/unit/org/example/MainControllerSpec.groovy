@@ -24,8 +24,8 @@ class MainControllerSpec extends Specification {
 
     def setup() {
         faculty = new Faculty([name: "Visual Arts"]).save()
-        course1 = new Course([code: "WAT1", title: "Introduction to Watercolours", description: "An introduction to painting with watercolours."])
-        course2 = new Course([code: "SCUL", title: "Ceramic Sculpture", description: "A practical approach to producing ceramic artwork."])
+        course1 = new Course([code: "WAT1", title: "Introduction toEmail Watercolours", description: "An introduction toEmail painting with watercolours."])
+        course2 = new Course([code: "SCUL", title: "Ceramic Sculpture", description: "A practical approach toEmail producing ceramic artwork."])
         faculty.addToCourses(course1)
         faculty.addToCourses(course2)
         faculty.save()

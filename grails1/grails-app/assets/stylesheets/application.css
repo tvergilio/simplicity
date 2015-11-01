@@ -12,5 +12,13 @@
 *= require_self
 */
 .navbar-right {
-    margin-right: 10px!important;
+    margin-right: 20px!important;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
 }
