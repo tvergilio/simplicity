@@ -83,7 +83,7 @@ In the next phase, you'll add the option for users (students) to register for pa
 9. (Optional) Add a URL mapping from "/login" to `Auth.showLogin` for a _GET_ and from "/login" to `Auth.login` for a _POST_. See the URL mappings chapter of the Grails user guide for details on how to do this.
 10. (Optional) On the page that shows a single course, add a _Register_ button or link that goes to a `Course.register` action. The button should only be displayed if there is a user in the session. This action should pick the user out of the session, call `Student.attach()` on it, retrieve the corresponding `Course` instance for the course that was being displayed, and finally add the `Course` to the `Student` via that `hasMany` relationship from step 2.
 
-    At the end of the action, redirect to a page listing the course that the current student is registered for. You'll have to create the corresponding page of course.
+    At the end of the action, redirect to a page listing the courses that the current student is registered for. You'll have to create the corresponding page of course.
 11. (Optional) Add unit tests for any controller actions that don't have them.
 
 ## Ask a question

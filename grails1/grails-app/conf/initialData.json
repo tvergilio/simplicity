@@ -53,4 +53,86 @@
      "description": "Learn the most widely spoken Chinese dialect",
      "faculty": "Modern Foreign Languages"
    }
+ ],
+ "students": [
+   {
+     "name": "Joe Bloggs",
+     "email": "joe.bloggs@nowhere.net",
+     "courses": [
+       "MSCP",
+       "FRCH"
+     ]
+   },
+   {
+     "name": "Jane Doe",
+     "email": "jane.doe@nowhere.net",
+     "courses": [
+       "PHYS",
+       "CHEM"
+     ]
+   },
+   {
+     "name": "Amy Bloggs",
+     "email": "amy.bloggs@nowhere.net",
+     "courses": [
+       "MDRN"
+     ]
+   },
+   {
+     "name": "Austin Smith",
+     "email": "austin.smith@nowhere.net",
+     "courses": [
+       "ENG",
+       "HIST",
+       "SPN"
+     ]
+   },
+   {
+     "name": "Jill Peel",
+     "email": "jill.peel@nowhere.net",
+     "courses": [
+       "FRCH",
+       "MDRN",
+       "SPN"
+     ]
+   },
+   {
+     "name": "Gary Bloggs",
+     "email": "gary.bloggs@nowhere.net",
+     "courses": [
+       "CHEM",
+       "ENG"
+     ]
+   },
+   {
+     "name": "Kim Wild",
+     "email": "kim.wild@nowhere.net",
+     "courses": [
+       "ENG",
+       "HIST"
+     ]
+   },
+   {
+     "name": "Terry Doe",
+     "email": "terry@nowhere.net",
+     "courses": [
+       "CHEM",
+       "SPN"
+     ]
+   },
+   {
+     "name": "Anne Horn",
+     "email": "anne@nowhere.net",
+     "courses": [
+       "PHYS",
+       "MDRN"
+     ]
+   },
+   {
+     "name": "Elvis Doe",
+     "email": "elvis.doe@nowhere.net",
+     "courses": [
+       "PHYS"
+     ]
+   }
  ]}

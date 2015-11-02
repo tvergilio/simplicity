@@ -12,4 +12,8 @@ class Email {
         subject blank: false
         body blank: false, maxSize: 2000
     }
+
+    static mapping = {
+        from column: "`from_email`"
+    }
 }
