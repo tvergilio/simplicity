@@ -9,4 +9,8 @@ class Faculty {
     static constraints = {
         name nullable: false, blank: false, maxSize: 25 //needs toEmail be a bit bigger
     }
+
+    static mapping = {
+        table 'faculties'
+    }
 }

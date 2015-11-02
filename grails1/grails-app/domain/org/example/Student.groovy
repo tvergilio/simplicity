@@ -11,4 +11,8 @@ class Student {
         name nullable: false, blank: false
         email email: true, nullable: false, blank: false
     }
+
+    static mapping = {
+        table 'students'
+    }
 }

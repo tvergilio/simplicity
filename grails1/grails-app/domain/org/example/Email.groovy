@@ -14,6 +14,6 @@ class Email {
     }
 
     static mapping = {
-        from column: "`from_email`"
+        table 'emails'
     }
 }
