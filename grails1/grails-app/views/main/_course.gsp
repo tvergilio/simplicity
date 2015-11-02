@@ -1,6 +1,6 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title">${course.title}</h3>
+        <g:link action="show" id="${course.id}"><h3 class="panel-title">${course.title}</h3></g:link>
     </div>
 
     <div class="panel-body">
