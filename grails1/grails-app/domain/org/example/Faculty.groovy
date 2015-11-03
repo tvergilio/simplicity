@@ -15,5 +15,6 @@ class Faculty {
 
     static mapping = {
         table 'faculties'
+        courses lazy: false
     }
 }
