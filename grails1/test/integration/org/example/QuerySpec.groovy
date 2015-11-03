@@ -37,4 +37,17 @@ class QuerySpec extends IntegrationSpec {
         assert result == faculty
         assert result.courses.contains(course)
     }
+
+    void "test which returns all Faculties associated with Courses PHYS, CHEM and FRCH"() {
+        given: "The criteria for the Course query"
+        def courseQuery = Course.where {
+            code in (['PHYS', 'CHEM', 'FRCH'])
+        }
+        when: "A query is executed for Faculties with Courses which fulfil the criteria"
+        def faculties = courseQuery.list()?.faculty?.toSet() //interesting! is this messy?
+        then: "The expected Faculties are returned"
+        assert faculties.size() == 2
+        assert faculties.name.contains('Physical Sciences')
+        assert faculties.name.contains('Modern Foreign Languages')
+    }
 }
