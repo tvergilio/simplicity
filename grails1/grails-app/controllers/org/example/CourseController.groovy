@@ -3,6 +3,7 @@ package org.example
 class CourseController {
     static scaffold = true
     def mailSender
+    def studentRegistrationService
 
     def register() {
         def student = session.user
@@ -10,8 +11,7 @@ class CourseController {
             student.attach()
         }
         def course = Course.findById(params.id)
-        student.addToCourses(course)
-        student.save(flush: true)
+        studentRegistrationService.registerStudent(student, course)
         redirect([controller: 'student', action: 'show', params: [id: student.id]])
     }
 

@@ -8,7 +8,7 @@ import spock.lang.Specification
 /**
  * See the API for {@link grails.test.mixin.web.ControllerUnitTestMixin} for usage instructions
  */
-@Mock([Course, Faculty, Email])
+@Mock([Course, Faculty, Email, Student])
 @TestFor(CourseController)
 class CourseControllerSpec extends Specification {
     @Shared
@@ -29,6 +29,23 @@ class CourseControllerSpec extends Specification {
     }
 
     def cleanup() {
+        faculty.delete()
+    }
+
+    void "test register uses the StudentRegistrationService to register a Student on a Course"() {
+        given: "an existing Student attached to the session"
+        def name = "Tina Test"
+        def email = "t@test.com"
+        def student = new Student([name: name, email: email]).save(flush: true)
+        session.putValue('user', student)
+        and: "a mock instance of the StudentRegistrationService"
+        controller.studentRegistrationService = Mock(StudentRegistrationService)
+        when: "the register action is called on the controller"
+        controller.register()
+        then: "the service's registerStudent method is called once"
+        1 * controller.studentRegistrationService.registerStudent(_, _)
+        and: "the response is redirected accordintly"
+        assert response.redirectedUrl == "/student/show/${student.id}"
     }
 
     void "test contactHead"() {

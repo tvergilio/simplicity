@@ -2,10 +2,12 @@ package org.example
 
 class AuthController {
 
+    def studentRegistrationService
+
     def login(String name, String email) {
         def sessionStudent = Student.findByEmail(email)
         if (!sessionStudent) {
-            sessionStudent = new Student([name: name, email: email]).save()
+            sessionStudent = studentRegistrationService.createStudent(name, email)
         } else if (sessionStudent.name != name) {
             redirect([action: 'error', view: 'error'])
             return
