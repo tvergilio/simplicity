@@ -21,7 +21,7 @@
 
     <div class="form-group">
         <label for="email">E-mail address</label>
-        <g:textField class="form-control" name="email"></g:textField>
+        <input id="email" type="email" class="form-control" name="email"/>
     </div>
     <button type="submit" class="btn btn-default">Submit</button>
 </g:form>
