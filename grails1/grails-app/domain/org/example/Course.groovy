@@ -1,5 +1,8 @@
 package org.example
 
+import groovy.transform.EqualsAndHashCode
+
+@EqualsAndHashCode
 class Course {
 
     String code
