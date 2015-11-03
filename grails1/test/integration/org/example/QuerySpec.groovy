@@ -56,12 +56,37 @@ class QuerySpec extends IntegrationSpec {
         def c = Course.createCriteria()
         def results = c.list {
             faculty {
-                eq('name','Humanities')
+                eq('name', 'Humanities')
             }
         }
         then: "The expected Courses are returned"
         assert results.size() == 2
         assert results.title.contains("English BA")
         assert results.title.contains("History BA")
+    }
+
+    void "test that returns the number of registered students for each course"() {
+        when: "A query is submitted for Courses with the criteria specified"
+        def courses = Course.executeQuery("select c.code, count(s.email) from Course as c left join c.students as s group by c.code order by c.code")
+        then:
+        assert courses
+        assert courses[0][0] == "CHEM"
+        assert courses[0][1] == 3
+        assert courses[1][0] == "ENG"
+        assert courses[1][1] == 3
+        assert courses[2][0] == "FRCH"
+        assert courses[2][1] == 2
+        assert courses[3][0] == "HIST"
+        assert courses[3][1] == 2
+        assert courses[4][0] == "MDRN"
+        assert courses[4][1] == 3
+        assert courses[5][0] == "MSCP"
+        assert courses[5][1] == 1
+        assert courses[6][0] == "PHYS"
+        assert courses[6][1] == 3
+        assert courses[7][0] == "SPN"
+        assert courses[7][1] == 3
+        assert courses[8][0] == "WAT"
+        assert courses[8][1] == 0
     }
 }
