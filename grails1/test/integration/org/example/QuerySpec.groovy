@@ -50,4 +50,18 @@ class QuerySpec extends IntegrationSpec {
         assert faculties.name.contains('Physical Sciences')
         assert faculties.name.contains('Modern Foreign Languages')
     }
+
+    void "test that finds all courses in the Humanities Faculty"() {
+        when: "A query is submitted for Courses with the criteria specified"
+        def c = Course.createCriteria()
+        def results = c.list {
+            faculty {
+                eq('name','Humanities')
+            }
+        }
+        then: "The expected Courses are returned"
+        assert results.size() == 2
+        assert results.title.contains("English BA")
+        assert results.title.contains("History BA")
+    }
 }
