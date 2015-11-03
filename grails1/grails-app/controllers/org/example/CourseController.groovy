@@ -2,7 +2,7 @@ package org.example
 
 class CourseController {
     static scaffold = true
-    def mailSender
+    def askAQuestionService
     def studentRegistrationService
 
     def register() {
@@ -17,7 +17,7 @@ class CourseController {
 
     def contactHead(String from, String body, int id) {
         def course = Course.findById(id)
-        mailSender.sendEmail('head@department.leedsbeckett.ac.uk', from, "${course.title}", body)
+        askAQuestionService.askAQuestion('tvergilio@gmail.com', from, "${course.title}", body)
         return
     }
 }
