@@ -31,18 +31,12 @@ class MainControllerSpec extends Specification {
         faculty.save()
     }
 
-    def cleanup() {
-        course1.delete()
-        course2.delete()
-        faculty.delete()
-    }
-
     void "test index() returns a list of Courses"() {
         when: "the index() method is called on the controller"
-        controller.index()
+        def model = controller.index()
 
         then: "the index view is displayed and the two expected Course are returned, with their associated faculty"
-        view == '/main/index'
+//        view == '/main/index'
         model.courses.size() == 2
         model.courses[0].id == course1.id
         model.courses[1].id == course2.id
@@ -52,10 +46,10 @@ class MainControllerSpec extends Specification {
 
     void "test show() returns the expected Course"() {
         when: "the show() method is called on the controller passing the id of the expected Course"
-        controller.show(course1.id as int)
+        def model = controller.show(course1.id as int)
 
         then: "the show view is displayed and the expected Course is returned, with its associated faculty"
-        view == '/main/show'
+//        view == '/main/show'
         model.course.id == course1.id
         model.course.title == course1.title
         model.course.description == course1.description

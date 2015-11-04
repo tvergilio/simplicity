@@ -23,7 +23,7 @@
     </div>
 
     <div class="panel-body">
-        <g:render template="../main/course" collection="${student.courses}" var="course"/>
+        <g:render template="/main/course" collection="${student.courses}" var="course"/>
     </div>
 </div>
 </body>

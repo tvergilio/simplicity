@@ -3,19 +3,29 @@ package org.example
 class MainController {
 
     def index() {
-        render(view: 'index', model: [courses: Course.list()])
+        return [courses: Course.list()]
     }
 
     def show(int id) {
-        render(view: 'show', model: [course: Course.findById(id)])
+        def course = Course.findById(id)
+        if (course) {
+            return [course: Course.findById(id)]
+        } else {
+            redirect action: 'courseNotFoundError', id: "${id}"
+            return
+        }
     }
 
     def search(String searchString) {
-        if ("*".equals(searchString)) {
+        if (searchString == "*") {
             redirect action: 'index'
             return
         } else {
-            render(view: 'index', model: [courses: Course.findAllByCodeIlikeOrDescriptionIlike(searchString, searchString)])
+            render(view: 'index', model: [courses: Course.findAllByCodeIlikeOrTitleIlike(searchString, searchString)])
         }
+    }
+
+    def courseNotFoundError(int id) {
+        return [id: id]
     }
 }

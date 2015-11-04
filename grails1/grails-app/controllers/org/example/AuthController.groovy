@@ -9,7 +9,7 @@ class AuthController {
         if (!sessionStudent) {
             sessionStudent = studentRegistrationService.createStudent(name, email)
         } else if (sessionStudent.name != name) {
-            redirect([action: 'error', view: 'error'])
+            redirect(action: 'error')
             return
         }
         session.setAttribute('user', sessionStudent)
@@ -23,6 +23,5 @@ class AuthController {
     }
 
     def error() {
-        return
     }
 }

@@ -50,11 +50,11 @@ class CourseControllerSpec extends Specification {
 
     void "test contactHead"() {
         given: "A mock implementation for the mailSender's sendEmail() method"
-        def mailSender = Mock(DummyMailSender)
-        1 * mailSender.sendEmail(_, _, _, _) >> { to, from, subject, body ->
-            new Email([toEmail: to, fromEmail: from, subject: subject, body: body]).save()
+        def askAquestionService = Mock(AskAQuestionService)
+        1 * askAquestionService.askAQuestion(_, _, _, _) >> { to, from, subject, body ->
+            new Email([to: to, from: from, subject: subject, body: body]).save()
         }
-        controller.mailSender = mailSender
+        controller.askAQuestionService = askAquestionService
 
         when: "The contactHead() action is called on the controller"
         controller.contactHead(messageDetails.fromEmail, messageDetails.body, course.id as int)

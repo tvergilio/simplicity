@@ -10,9 +10,6 @@ import spock.lang.Specification
 class HealthControllerSpec extends Specification {
 
     void "test status"() {
-        given: "A request for text/plain"
-        controller.request.contentType='text/plain'
-
         when: "The controller's status action is called"
         controller.status()
 
