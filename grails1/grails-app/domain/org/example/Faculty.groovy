@@ -10,7 +10,7 @@ class Faculty {
     static hasMany = [courses: Course]
 
     static constraints = {
-        name nullable: false, blank: false, maxSize: 25 //needs toEmail be a bit bigger
+        name nullable: false, blank: false, maxSize: 25 //needs to be a bit bigger
     }
 
     static mapping = {

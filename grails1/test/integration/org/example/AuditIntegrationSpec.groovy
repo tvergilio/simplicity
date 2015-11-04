@@ -9,7 +9,7 @@ import spock.lang.Shared
  */
 @Rollback
 class AuditIntegrationSpec extends IntegrationSpec {
-    
+
     @Shared
     def studentRegistrationService
 

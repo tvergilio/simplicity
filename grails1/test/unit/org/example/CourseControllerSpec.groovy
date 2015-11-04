@@ -60,7 +60,7 @@ class CourseControllerSpec extends Specification {
         controller.contactHead(messageDetails.fromEmail, messageDetails.body, course.id as int)
 
         then: "The correct e-mail is sent once and only once"
-        def emails = Email.findAllByFromEmailAndSubjectAndBody(messageDetails.fromEmail, course.title, messageDetails.body)
+        def emails = Email.findAllByFromAndSubjectAndBody(messageDetails.fromEmail, course.title, messageDetails.body)
         assert emails.size() == 1
     }
 }
