@@ -11,7 +11,7 @@ class MainController {
         if (course) {
             return [course: Course.findById(id)]
         } else {
-            redirect action: 'courseNotFoundError', id: "${id}"
+            redirect action: 'courseNotFoundError', id: id
             return
         }
     }
@@ -25,7 +25,7 @@ class MainController {
         }
     }
 
-    def courseNotFoundError(int id) {
+    def courseNotFoundError(Long id) {
         return [id: id]
     }
 }
