@@ -15,9 +15,9 @@ class CourseController {
         redirect([controller: 'student', action: 'show', params: [id: student.id]])
     }
 
-    def contactHead(String from, String body, int id) {
+    def contactHead(String from, String body, Long id) {
         def course = Course.findById(id) //the unit test fails with Course.get(), it returns null
-        askAQuestionService.askAQuestion('tvergilio@gmail.com', from, "${course.title}", body)
+        askAQuestionService.askAQuestion('tvergilio@gmail.com', from, course.title, body)
         return
     }
 }

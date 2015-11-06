@@ -46,7 +46,7 @@ class MainControllerSpec extends Specification {
 
     void "test show() returns the expected Course"() {
         when: "the show() method is called on the controller passing the id of the expected Course"
-        def model = controller.show(course1.id as int)
+        def model = controller.show(course1.id)
 
         then: "the show view is displayed and the expected Course is returned, with its associated faculty"
 //        view == '/main/show'

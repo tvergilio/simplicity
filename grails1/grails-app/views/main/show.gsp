@@ -37,10 +37,10 @@
 </div>
 
 <div class="panel panel-default">
-    <div class="panel-heading"><h4><a href="#" onclick="toggle_visibility('contactForm');">Ask a Question</a>
+    <div class="panel-heading"><h4><a href="#" id="toggleForm">Ask a Question</a>
     </h4></div>
 
-    <div id="contactForm" class="hide">
+    <div id="contactForm" class="toggleForm" style="display: none;">
         <div class="panel-body">
             <g:form name="contactHead" controller="course" action="contactHead">
                 <div class="form-group">

@@ -6,7 +6,7 @@ class MainController {
         return [courses: Course.list()]
     }
 
-    def show(int id) {
+    def show(Long id) {
         def course = Course.findById(id)
         if (course) {
             return [course: Course.findById(id)]

@@ -1,5 +1,6 @@
 package org.example
 
+import grails.plugin.mail.MailService
 import grails.test.mixin.Mock
 import grails.test.mixin.TestFor
 import spock.lang.Shared
@@ -11,26 +12,6 @@ import spock.lang.Specification
 @Mock([Course, Faculty, Email, Student])
 @TestFor(CourseController)
 class CourseControllerSpec extends Specification {
-    @Shared
-    def course
-
-    @Shared
-    def faculty
-
-    @Shared
-    def messageDetails
-
-    def setup() {
-        faculty = new Faculty([name: "Visual Arts"]).save()
-        course = new Course([code: "WAT", title: "Watercolours", description: "Painting with watercolours."])
-        faculty.addToCourses(course)
-        faculty.save()
-        messageDetails = [fromEmail: 't.vergilio@leedsbeckett.ac.uk', body: 'Is the tutor for this course any good?']
-    }
-
-    def cleanup() {
-        faculty.delete()
-    }
 
     void "test register uses the StudentRegistrationService to register a Student on a Course"() {
         given: "an existing Student attached to the session"
@@ -49,18 +30,21 @@ class CourseControllerSpec extends Specification {
     }
 
     void "test contactHead"() {
-        given: "A mock implementation for the mailSender's sendEmail() method"
-        def askAquestionService = Mock(AskAQuestionService)
-        1 * askAquestionService.askAQuestion(_, _, _, _) >> { to, from, subject, body ->
-            new Email([to: to, from: from, subject: subject, body: body]).save()
-        }
-        controller.askAQuestionService = askAquestionService
+        given: "A Faculty and a Course"
+        def faculty = new Faculty([name: "Visual Arts"]).save()
+        def course = new Course([code: "WAT", title: "Watercolours", description: "Painting with watercolours."])
+        faculty.addToCourses(course)
+        faculty.save()
+        def messageDetails = [fromEmail: 't.vergilio@leedsbeckett.ac.uk', body: 'Is the tutor for this course any good?']
+
+        and: "A mock implementation for the CourseController's AskAQuestionService"
+        def askAQuestionService = Mock(AskAQuestionService)
+        controller.askAQuestionService = askAQuestionService
 
         when: "The contactHead() action is called on the controller"
-        controller.contactHead(messageDetails.fromEmail, messageDetails.body, course.id as int)
+        controller.contactHead(messageDetails.fromEmail, messageDetails.body, course.id)
 
-        then: "The correct e-mail is sent once and only once"
-        def emails = Email.findAllByFromAndSubjectAndBody(messageDetails.fromEmail, course.title, messageDetails.body)
-        assert emails.size() == 1
+        then: "The askAQuestion method on AskAQuestionService is called once and only once"
+        1 * askAQuestionService.askAQuestion(_, _, _, _)
     }
 }

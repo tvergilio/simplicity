@@ -13,7 +13,7 @@ class AuthController {
             return
         }
         session.setAttribute('user', sessionStudent)
-        redirect([controller: 'main', action: 'index'])
+        redirect(controller: 'main', action: 'index')
         return
     }
 

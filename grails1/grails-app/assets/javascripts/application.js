@@ -18,12 +18,20 @@ if (typeof jQuery !== 'undefined') {
         });
     })(jQuery);
 }
-function toggle_visibility(id) {
-    var e = document.getElementById(id);
-    if (e.classList.contains('show')) {
-        e.className = 'hide';
-    }
-    else {
-        e.className = 'show';
-    }
-}
+//function toggle_visibility(id) {
+//    var e = document.getElementById(id);
+//    if (e.classList.contains('show')) {
+//        e.className = 'hide';
+//    }
+//    else {
+//        e.className = 'show';
+//    }
+//}
+$(function() {
+    $('#toggleForm').click(function() {
+        $('.toggleForm').toggle();
+        return false;
+    });
+});
+
+
