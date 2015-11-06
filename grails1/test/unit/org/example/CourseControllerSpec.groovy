@@ -34,7 +34,7 @@ class CourseControllerSpec extends Specification {
         def faculty = new Faculty([name: "Visual Arts"]).save()
         def course = new Course([code: "WAT", title: "Watercolours", description: "Painting with watercolours."])
         faculty.addToCourses(course)
-        faculty.save()
+        faculty.save(flush: true)
         def messageDetails = [fromEmail: 't.vergilio@leedsbeckett.ac.uk', body: 'Is the tutor for this course any good?']
 
         and: "A mock implementation for the CourseController's AskAQuestionService"

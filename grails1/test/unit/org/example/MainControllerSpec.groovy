@@ -28,7 +28,7 @@ class MainControllerSpec extends Specification {
         course2 = new Course([code: "SCUL", title: "Ceramic Sculpture", description: "A practical approach to producing ceramic artwork."])
         faculty.addToCourses(course1)
         faculty.addToCourses(course2)
-        faculty.save()
+        faculty.save(flush: true)
     }
 
     void "test index() returns a list of Courses"() {

@@ -7,9 +7,9 @@ class MainController {
     }
 
     def show(Long id) {
-        def course = Course.findById(id)
+        def course = Course.get(id)
         if (course) {
-            return [course: Course.findById(id)]
+            return [course: Course.get(id)]
         } else {
             redirect action: 'courseNotFoundError', id: id
             return

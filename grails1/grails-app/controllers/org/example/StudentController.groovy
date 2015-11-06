@@ -3,7 +3,7 @@ package org.example
 class StudentController {
 
     def show(Long id) {
-        def student = Student.findById(id)
+        def student = Student.get(id)
         if (student) {
             return [student: student]
         } else {
