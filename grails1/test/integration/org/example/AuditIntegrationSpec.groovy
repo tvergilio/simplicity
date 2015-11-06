@@ -3,6 +3,7 @@ package org.example
 import grails.test.spock.IntegrationSpec
 import grails.transaction.Rollback
 import spock.lang.Shared
+import uk.ac.leedsbeckett.*
 
 /**
  * Created by vergil01 on 03/11/2015.

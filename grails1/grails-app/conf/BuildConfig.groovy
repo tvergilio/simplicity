@@ -24,6 +24,13 @@ grails.project.fork = [
 
 grails.project.dependency.resolver = "maven" // or ivy
 grails.project.dependency.resolution = {
+    //proxy settings (these need to be added to grails apps running from Leeds Beckett)
+    System.setProperty("http.proxyHost", "wwwcache.leedsbeckett.ac.uk");
+    System.setProperty("http.proxyPort", "3128");
+    Authenticator.setDefault(new Authenticator() {
+        protected PasswordAuthentication getPasswordAuthentication() {
+            return new PasswordAuthentication("username","password".toCharArray());
+        }});
     // inherit Grails' default dependencies
     inherits("global") {
         // specify dependency exclusions here; for example, uncomment this to disable ehcache:
@@ -41,6 +48,14 @@ grails.project.dependency.resolution = {
         mavenLocal()
         grailsCentral()
         mavenCentral()
+        mavenRepo ("http://artifactory-train.leedsbeckett.ac.uk:8081/artifactory/plugins-release-local/"){
+            auth([
+                    username: grailsSettings.config.lbartifactory.username,
+                    password: grailsSettings.config.lbartifactory.password
+            ])
+
+            updatePolicy "always"
+        }
         // uncomment these (or add new ones) to enable remote dependency resolution fromEmail public Maven repositories
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
@@ -74,5 +89,6 @@ grails.project.dependency.resolution = {
         //compile ":coffee-asset-pipeline:1.8.0"
         //compile ":handlebars-asset-pipeline:1.3.0.3"
         compile ":mail:1.0.7" //Grails mail service
+        compile ":audit:0.1"
     }
 }
