@@ -9,14 +9,14 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <title>Student does not Exist</title>
+    <title>Record does not Exist</title>
 </head>
 
 <body>
 &nbsp;
 <div class="alert alert-danger" role="alert">
     <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-    A student with id ${id} does not exist.
+    ${flash.message}
 </div>
 </body>
 </html>

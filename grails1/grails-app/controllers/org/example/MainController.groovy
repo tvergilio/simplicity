@@ -11,7 +11,8 @@ class MainController {
         if (course) {
             return [course: Course.get(id)]
         } else {
-            redirect action: 'courseNotFoundError', id: id
+            flash.message = "A course with id ${id} does not exist."
+            response.sendError(404)
             return
         }
     }
@@ -23,9 +24,5 @@ class MainController {
         } else {
             render(view: 'index', model: [courses: Course.findAllByCodeIlikeOrTitleIlike(searchString, searchString)])
         }
-    }
-
-    def courseNotFoundError(Long id) {
-        return [id: id]
     }
 }

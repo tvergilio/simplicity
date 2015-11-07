@@ -7,12 +7,9 @@ class StudentController {
         if (student) {
             return [student: student]
         } else {
-            redirect action: 'studentNotFoundError', id: id
+            flash.message = "A student with id ${id} does not exist."
+            response.sendError(404)
             return
         }
-    }
-
-    def studentNotFoundError(Long id){
-        return [id: id]
     }
 }
