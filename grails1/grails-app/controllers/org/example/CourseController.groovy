@@ -17,7 +17,7 @@ class CourseController {
 
     def contactHead(String from, String body, Long id) {
         def course = Course.get(id)
-        askAQuestionService.askAQuestion('tvergilio@gmail.com', from, course.title, body)
+        askAQuestionService.askAQuestion(askAQuestionService.DEFAULT_SEND_TO, from, course.title, body)
         return
     }
 }

@@ -8,7 +8,7 @@ class BootStrap {
         def savedFaculties = [:]
         resourcesJson.faculties.each { facultyLazyMap ->
             def faculty = new org.example.Faculty(facultyLazyMap).save(flush: true)
-            savedFaculties.put(faculty.name, faculty)
+            savedFaculties[faculty.name] = faculty
         }
         resourcesJson.courses.each { courseLazyMap ->
             def course = new org.example.Course(code: courseLazyMap.code, description: courseLazyMap.description, title: courseLazyMap.title)

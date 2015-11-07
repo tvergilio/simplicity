@@ -26,10 +26,16 @@ class AskAQuestionServiceSpec extends Specification {
         def mailService = Mock(MailService)
         service.mailService = mailService
 
-        when: "The askAQuestion() action is called on the service"
-        service.askAQuestion(messageDetails.toEmail, messageDetails.fromEmail, messageDetails.body, course.id.toString())
+       when: "The askAQuestion() action is called on the service"
+        service.askAQuestion(messageDetails.toEmail, messageDetails.fromEmail, course.title, messageDetails.body)
 
-        then: "The mailService's sendMail method is called once and only once"
-        1 * mailService.sendMail(_)
+        then: "The mailService's sendMail method is called once and only once with the correct arguments"
+        1 * mailService.sendMail({ it instanceof Closure }) >> { arguments ->
+            def properties = arguments[0].getProperties()
+            assert properties.sendTo == messageDetails.toEmail
+            assert properties.sentFrom == messageDetails.fromEmail
+            assert properties.emailSubject == course.title
+            assert properties.emailBody == messageDetails.body
+        }
     }
 }
