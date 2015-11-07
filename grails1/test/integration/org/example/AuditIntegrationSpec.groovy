@@ -18,7 +18,7 @@ class AuditIntegrationSpec extends IntegrationSpec {
         when: "a Student is created"
         def student = studentRegistrationService.createStudent('Thalita Vergilio', 't.vergilio@leedsbeckett.ac.uk')
         then: "an AuditEvent record is created"
-        def auditEvent = AuditEvent.findByOriginAndRecordId(Student.class.getName(), student.id as Integer)
+        def auditEvent = AuditEventImpl.findByOriginAndRecordId(Student.class.getName(), student.id as Integer)
         assert auditEvent
         assert auditEvent.event == AuditEvent.CREATED
     }
@@ -30,7 +30,7 @@ class AuditIntegrationSpec extends IntegrationSpec {
         when: "a Student is linked to the Course"
         studentRegistrationService.registerStudent(existingStudent, existingCourse)
         then: "an AuditEvent record is created"
-        def auditEvent = AuditEvent.findByOriginAndRecordId(Student.class.getName(), existingStudent.id as Integer)
+        def auditEvent = AuditEventImpl.findByOriginAndRecordId(Student.class.getName(), existingStudent.id as Integer)
         assert auditEvent
         assert auditEvent.event == AuditEvent.UPDATED
     }
