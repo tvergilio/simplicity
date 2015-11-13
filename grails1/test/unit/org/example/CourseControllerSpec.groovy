@@ -45,11 +45,6 @@ class CourseControllerSpec extends Specification {
         controller.contactHead(messageDetails.fromEmail, messageDetails.body, course.id)
 
        then: "The askAQuestion method on AskAQuestionService is called once and only once with the correct arguments"
-        1 * askAQuestionService.askAQuestion(_, _, _, _) >> { arguments ->
-            assert arguments[0] == askAQuestionService.DEFAULT_SEND_TO
-            assert arguments[1] == messageDetails.fromEmail
-            assert arguments[2] == course.title
-            assert arguments[3] == messageDetails.body
-        }
+        1 * askAQuestionService.askAQuestion(askAQuestionService.DEFAULT_SEND_TO, messageDetails.fromEmail, course.title, messageDetails.body)
     }
 }

@@ -26,7 +26,7 @@ class AskAQuestionServiceSpec extends Specification {
         def mailService = Mock(MailService)
         service.mailService = mailService
 
-       when: "The askAQuestion() action is called on the service"
+        when: "The askAQuestion() action is called on the service"
         service.askAQuestion(messageDetails.toEmail, messageDetails.fromEmail, course.title, messageDetails.body)
 
         then: "The mailService's sendMail method is called once and only once with the correct arguments"
