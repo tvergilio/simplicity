@@ -59,7 +59,7 @@ Next we'll add the main entry pages of the application, which will allow users t
 7. (Optional) Add unit tests for the two actions you created for this section.
 8. (Optional) Modify the main course page so that it has a text field + search button. If the search field contains only "*", display all courses after the search is submitted. Otherwise, display only those courses that have a matching course code or title. You can use any wildcards you want with the database query. In this case, `Course.list()` won't cut it. You'll need one of the other query options.
 9. (Optional) Use a partial template to ensure that each course is rendered the same in the course list.
-10. (Really optional) Make the search AJAX in any way you see fit. You could experiment with the adaptive AJAX tags provided by Grails, such as <g:submitToRemote/>, or use native jQuery code.
+10. (Really optional) Make the search AJAX in any way you see fit. You could experiment with the adaptive AJAX tags provided by Grails, such as `<g:submitToRemote/>`, or use native jQuery code.
 
 ## Student registration
 
