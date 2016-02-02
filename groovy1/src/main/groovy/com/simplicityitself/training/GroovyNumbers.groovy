@@ -1,5 +1,10 @@
 package com.simplicityitself.training
 
+import java.util.concurrent.ConcurrentHashMap
+import java.util.concurrent.ConcurrentMap
+import java.util.concurrent.ForkJoinPool
+import java.util.concurrent.RecursiveTask
+
 /**
  * <p>These exercises give you a chance to work with various types of number in
  * Groovy. If you would like a gentle introduction beyond the Groovy quick
@@ -7,8 +12,18 @@ package com.simplicityitself.training
  * <a href="http://pledbrook.github.io/practical-groovy-public/#_groovy_as_a_calculator">Groovy
  * as a calculator</a> section of the in-progress Practical Groovy book.</p>
  */
-class GroovyNumbers {
-    List<Integer> seq
+class GroovyNumbers extends RecursiveTask<BigInteger> {
+    final Integer fib
+    static final ConcurrentMap<Integer, BigInteger> map = new ConcurrentHashMap<>();
+
+    public GroovyNumbers() {
+        super();
+    }
+
+    public GroovyNumbers(int n) {
+        this();
+        this.fib = n;
+    }
     /**
      * <p>TODO #4: Calculate the VAT to be applied to the given value, with a
      * VAT rate of 20%. The result should ideally be rounded to two decimal
@@ -20,7 +35,7 @@ class GroovyNumbers {
      * so a scale of 2 means the number has two decimal places.</p>
      */
     BigDecimal calculateVat(BigDecimal value) {
-        (value*0.20).setScale(2, BigDecimal.ROUND_UP)
+        (value * 0.20).setScale(2, BigDecimal.ROUND_UP)
     }
 
     /**
@@ -37,7 +52,6 @@ class GroovyNumbers {
     double hypotenuseLength(double side1, double side2) {
         Math.sqrt(side1**2 + side2**2)
     }
-
 
     /**
      * <p>TODO #6: (Advanced) Calculate the number at a given position in the
@@ -64,25 +78,37 @@ class GroovyNumbers {
      * test case.</p>
      */
 
-    int fibonacci(int n) {
-        assert n >= 0 : "this only works for positive numbers!"
-        if (seq == null) {
-            seq = new ArrayList<>()
-            seq.add(0, 0)
+    BigInteger fibonacci(int n) {
+        assert n >= 0: "this only works for positive numbers!"
+        def max = 15;
+        if (n > max) {
+            Deque<Integer> allNumbers = new ArrayDeque<>();
+            for (int i = 0; i <= n; i++) {
+                allNumbers.offer(i);
+            }
+            while (allNumbers.size() > max) {
+                max.times { allNumbers.poll() }
+                new GroovyNumbers(allNumbers.poll()).compute();
+            }
         }
-        if (seq.size() > n) {
-            return seq.get(n)
-        }
-        //need to return a value for zero for the recursion logic to work when n==1, but zero is not part of the sequence
-        if (n == 0 || n == 1) {
-            seq.add(n, n)
-            return n
+        ForkJoinPool forkJoinPool = new ForkJoinPool();
+        return forkJoinPool.invoke(new GroovyNumbers(n));
+    }
+
+    @Override
+    protected BigInteger compute() {
+        if (map.containsKey(fib)) {
+            return map.get(fib);
+        } else if (fib <= 1) {
+            map.put(fib, fib);
+            return fib;
         } else {
-//            ​recurrence - add the value of the preceding item in the sequence (n-1) to the value of the item preceding that one (n-2)
-//            not very efficient because all the calculations are repeated for each new element that is added to the sequence
-            def fib = fibonacci(n - 1) + fibonacci(n - 2)
-            seq.add(n, fib)
-            return fib
+            def fibonacci1 = new GroovyNumbers(fib - 1);
+            fibonacci1.fork();
+            def fibonacci2 = new GroovyNumbers(fib - 2);
+            def result = fibonacci2.compute() + fibonacci1.join();
+            map.put(fib, result);
+            return result;
         }
     }
 }
