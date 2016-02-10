@@ -100,14 +100,15 @@ class GroovyNumbers extends RecursiveTask<BigInteger> {
         if (map.containsKey(fib)) {
             return map.get(fib);
         } else if (fib <= 1) {
-            map.put(fib, fib);
+            map.put(fib, fib as BigInteger);
             return fib;
         } else {
             def fibonacci1 = new GroovyNumbers(fib - 1);
             fibonacci1.fork();
+            System.out.println(Thread.activeCount()); //around 30 - good
             def fibonacci2 = new GroovyNumbers(fib - 2);
             def result = fibonacci2.compute() + fibonacci1.join();
-            map.put(fib, result);
+            map.put(fib, result as BigInteger);
             return result;
         }
     }
