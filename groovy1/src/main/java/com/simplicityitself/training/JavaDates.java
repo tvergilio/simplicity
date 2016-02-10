@@ -4,7 +4,6 @@ import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
 
 class JavaDates {
 
@@ -20,7 +19,7 @@ class JavaDates {
      */
     int diffDays(long time1, long time2) {
         return (int) Duration.between(Instant.ofEpochMilli(time1), Instant.ofEpochMilli(time2))
-                .get(ChronoUnit.DAYS);
+                .toDays();
     }
 
     /**

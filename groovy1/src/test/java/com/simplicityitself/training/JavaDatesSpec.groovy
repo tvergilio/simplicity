@@ -29,7 +29,7 @@ class JavaDatesSpec extends Specification {
     @Unroll
     def "Calculate a the number of days between dates"() {
         given: "The date exercise"
-        def exercise = new GroovyDates()
+        def exercise = new JavaDates()
 
         expect: "The correct date"
         exercise.diffDays(Date.parse("yyyy-MM-dd", "2010-11-01").time, input.time) == expected
@@ -42,19 +42,17 @@ class JavaDatesSpec extends Specification {
     }
 
     @Unroll
-    def "Format the date #formattedInput"() {
+    def "Format the date"() {
         given: "The date exercise"
-        def exercise = new GroovyDates()
+        def exercise = new JavaDates()
 
         expect: "The correctly formatted date"
         exercise.formattedDate(input) == expected
 
         where:
         input                                  | expected
-        Date.parse("yyyy-MM-dd", "2010-11-01") | "01 Nov 2010"
-        Date.parse("yyyy-MM-dd", "2016-06-02") | "02 Jun 2016"
-        Date.parse("yyyy-MM-dd", "1666-09-02") | "02 Sep 1666"
-
-        formattedInput = input.format("dd MMM yyyy")
+        LocalDate.of(2010, Month.NOVEMBER, 1)  | "01 Nov 2010"
+        LocalDate.of(2016, Month.JUNE, 2)      | "02 Jun 2016"
+        LocalDate.of(1666, Month.SEPTEMBER, 2) | "02 Sep 1666"
     }
 }
