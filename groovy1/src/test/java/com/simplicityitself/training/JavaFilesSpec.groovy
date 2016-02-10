@@ -1,16 +1,15 @@
 package com.simplicityitself.training
 
-import spock.lang.Shared
 import spock.lang.Specification
 import spock.lang.Unroll
 
-class GroovyFilesSpec extends Specification {
+class JavaFilesSpec extends Specification {
     final String encoding = "UTF-8"
     final String testFilePath = resolveFilePath("src/test/resources/README.txt")
 
     def "Calculate the byte size of a file"() {
         given: "The files exercise"
-        def exercise = new GroovyFiles()
+        def exercise = new JavaFiles()
 
         expect: "The correct size of the test file to be returned"
         exercise.fileSize(testFilePath) == 6890
@@ -18,7 +17,7 @@ class GroovyFilesSpec extends Specification {
 
     def "Calculate the number of characters in a text file"() {
         given: "The files exercise"
-        def exercise = new GroovyFiles()
+        def exercise = new JavaFiles()
 
         expect: "The correct size of the test file to be returned"
         exercise.characterCount(testFilePath) == 6874
@@ -27,7 +26,7 @@ class GroovyFilesSpec extends Specification {
     @Unroll
     def "Fetch first #count characters of a text file"() {
         given: "The files exercise"
-        def exercise = new GroovyFiles()
+        def exercise = new JavaFiles()
 
         expect: "The correct size of the test file to be returned"
         exercise.firstChars(testFilePath, count) == expected
@@ -41,7 +40,7 @@ class GroovyFilesSpec extends Specification {
 
     def "Write binary data to a file"() {
         given: "The files exercise and a temporary file location"
-        def exercise = new GroovyFiles()
+        def exercise = new JavaFiles()
         def destFile = File.createTempFile("training-", "")
         destFile.deleteOnExit()
 
