@@ -10,6 +10,7 @@ import java.nio.file.Paths;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.stream.Stream;
 
 class JavaFiles {
 
@@ -52,11 +53,12 @@ class JavaFiles {
     String firstChars(String path, int count) throws IOException {
         Path nioPath = Paths.get(path);
         StringBuilder chars = new StringBuilder();
-        Files.lines(nioPath)
-                .collect(ArrayList<Character>::new, (a, s) -> s.chars().mapToObj(i -> (char) i).forEach(a::add), Collection::addAll)
-                .stream()
-                .limit(count)
-                .forEach(chars::append);
+        try (Stream<String> lines = Files.lines(nioPath)) {
+            lines.collect(ArrayList<Character>::new, (a, s) -> s.chars().mapToObj(i -> (char) i).forEach(a::add), Collection::addAll)
+                    .stream()
+                    .limit(count)
+                    .forEach(chars::append);
+        }
         return chars.toString();
     }
 

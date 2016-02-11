@@ -7,6 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * <p>These exercises give you a chance to work with exception-based error
@@ -47,9 +48,8 @@ public class JavaExceptions {
         }
         Path pathInstance = Paths.get(path);
 
-        try {
-            count = Files.lines(pathInstance)
-                    .collect(ArrayList<Character>::new, (c, s) -> s.chars().forEach(e -> c.add((char) e)), List::addAll)
+        try (Stream<String> read = Files.lines(pathInstance)) {
+            count = read.collect(ArrayList<Character>::new, (c, s) -> s.chars().forEach(e -> c.add((char) e)), List::addAll)
                     .size();
         } catch (NoSuchFileException e) {
             return -1;
