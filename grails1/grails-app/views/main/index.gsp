@@ -23,7 +23,7 @@
                 <g:textField type="text" name="searchString" class="form-control"
                              placeholder="Search for course..."></g:textField>
                 <span class="input-group-btn">
-                    <g:actionSubmit class="btn btn-default" type="button" value="Search"/>
+                    <g:submitToRemote url="[action: 'search']" update="listCourses" />
                 </span>
             </g:form>
         </div>

@@ -1,4 +1,4 @@
-<div class="panel panel-default">
+<div id="listCourses" class="panel panel-default">
     <div class="panel-heading">
         <g:link action="show" id="${course.id}"><h3 class="panel-title">${course.title}</h3></g:link>
     </div>
