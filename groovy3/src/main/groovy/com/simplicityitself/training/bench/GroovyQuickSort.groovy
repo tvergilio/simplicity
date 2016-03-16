@@ -6,7 +6,7 @@ import groovy.transform.TypeChecked
 /**
  * Created by pledbrook on 09/10/15.
  */
-@TypeChecked
+@CompileStatic
 class GroovyQuickSort {
     public static void quickSort(int[] numbers) {
         quickSort(numbers, 0, numbers.length - 1)

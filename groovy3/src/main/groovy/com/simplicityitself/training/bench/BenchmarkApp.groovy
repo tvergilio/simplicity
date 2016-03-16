@@ -57,6 +57,9 @@ class BenchmarkApp {
             'Java quicksort' {
                 JavaQuickSort.quickSort(numbers.clone())
             }
+            'Forked Java quicksort' {
+                ForkedJavaQuickSort.quickSort(numbers.clone())
+            }
         }
     }
 

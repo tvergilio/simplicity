@@ -8,8 +8,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.attribute.BasicFileAttributes;
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 class JavaFiles {
@@ -52,14 +52,13 @@ class JavaFiles {
      */
     String firstChars(String path, int count) throws IOException {
         Path nioPath = Paths.get(path);
-        StringBuilder chars = new StringBuilder();
+        String chars = "";
         try (Stream<String> lines = Files.lines(nioPath)) {
-            lines.collect(ArrayList<Character>::new, (a, s) -> s.chars().mapToObj(i -> (char) i).forEach(a::add), Collection::addAll)
-                    .stream()
+            chars = lines.flatMap(s -> Arrays.stream(s.split("")))
                     .limit(count)
-                    .forEach(chars::append);
+                    .collect(Collectors.joining());
         }
-        return chars.toString();
+        return chars;
     }
 
     /**

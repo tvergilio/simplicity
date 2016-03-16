@@ -2,7 +2,6 @@ package com.simplicityitself.training;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -28,11 +27,11 @@ class JavaNumbers2 {
     Integer getFirstMagnitudeGreaterThanTen(List<Integer> numberList) {
         Integer result = null;
         if (numberList != null) {
-            Optional<Integer> optional = numberList
+            result = numberList
                     .stream()
                     .filter(x -> Math.abs(x) > 10)
-                    .findFirst();
-            result = optional.orElse(null);
+                    .findFirst()
+                    .orElse(null);
         }
         return result;
     }
@@ -48,7 +47,6 @@ class JavaNumbers2 {
         return numberList == null ? null : numberList
                 .stream()
                 .filter(x -> Math.abs(x) > 10)
-                .mapToInt(p -> p)
                 .count();
     }
 

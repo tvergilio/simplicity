@@ -82,7 +82,7 @@ class GroovyNumbers extends RecursiveTask<BigInteger> {
         assert n >= 0: "this only works for positive numbers!"
         def max = 15;
         if (n > max) {
-            Deque<Integer> allNumbers = new ArrayDeque<>();
+            Queue<Integer> allNumbers = new ArrayDeque<>();
             for (int i = 0; i <= n; i++) {
                 allNumbers.offer(i);
             }

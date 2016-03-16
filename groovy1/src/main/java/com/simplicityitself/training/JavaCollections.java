@@ -60,8 +60,9 @@ class JavaCollections {
      * do this manually rather than using the <tt>reverse()</tt> method
      */
     List<Integer> reverse(List<Integer> numbers) {
-        ArrayDeque<Integer> queue = numbers.stream().collect(ArrayDeque::new, (n, q) -> n.offerFirst(q), (n, p) -> n.addAll(p));
-        return new ArrayList<Integer>(queue);
+        Deque<Integer> queue = numbers.stream()
+                .collect(ArrayDeque::new, Deque::offerFirst, Collection::addAll);
+        return queue.stream().collect(Collectors.toList());
     }
 
     /**

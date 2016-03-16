@@ -17,7 +17,7 @@ class JavaInterfaces {
 
     List<String> getWordsSortedAlphabetically(List<String> words) {
         if (words != null) {
-            words.sort((x, y) -> x.toUpperCase().compareTo(y.toUpperCase()));
+            words.sort(Comparator.comparing(String::toUpperCase));
         }
         return words;
     }
